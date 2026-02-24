@@ -1,30 +1,47 @@
 import Image from 'next/image';
 import SectionHeading from './SectionHeading';
 
-const STRENGTHS = [
+interface Strength {
+  icon: string;
+  title: string;
+  summary: string;
+  work: string;
+  personal: string;
+}
+
+const STRENGTHS: Strength[] = [
   {
     icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
     title: '市場を読む',
-    description:
-      'フリーランス求人300件以上を分析し、今求められている技術を特定。個人開発でキャッチアップすることで、常に市場価値のあるスキルセットを維持。',
+    summary: '求人300件以上を技術スタック・単価・リモート可否で定量分析し、需要のある技術を特定。',
+    work: '独立前から市場調査を習慣化。自動車メーカー案件では上流〜下流の一気通貫経験を獲得し、フルスタックとしての市場価値を実証。',
+    personal:
+      '分析で見つけた不足スキルを個人開発のテーマに組み込み実践的にキャッチアップ。darts Lab（Firebase + Stripe）→ MonkMode（Supabase + PostgreSQL）と意図的に技術領域を広げている。',
   },
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
     title: 'AI時代に適応する',
-    description:
-      'Claude Code を活用したAI駆動開発を実践。生成コードをブラックボックスにせず実装意図を理解した上でマージし、設計ドキュメントもAIと協働で整備。',
+    summary: '「AIを道具として使いこなせるエンジニア」が今後の差別化と考え、全フェーズで活用。',
+    work: '実務での設計書作成やコードレビュー時にAIで叩き台を生成し、チームへの提案スピードを向上。ただし最終判断は自分の目で行い、品質を担保。',
+    personal:
+      'Claude Code で設計〜実装〜テスト〜リファクタリングまでAI協働開発を実践。生成コードをブラックボックスにせず、実装意図とエッジケースを自分で検証してからマージする。',
   },
   {
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
     title: '「動く」で終わらせない',
-    description:
-      '個人開発でもCI/CD・125+テスト・設計書・セキュリティレビューを整備。保守性と品質を妥協しないコードを書く。',
+    summary: '一人でも省略せず、チーム開発にそのまま持ち込めるコード品質を常に維持する。',
+    work: '電子新聞PJではDependabot PR（週次約15件）のリリースノート精査・マージ判断を主導。CircleCI / GitHub Actions によるCI/CDパイプラインの運用・改善にも関与。',
+    personal:
+      'lint → format → test → build の4段階CIゲートを構築し、全パスしないとマージしない運用を徹底。Vitest 158テスト、Storybook UIカタログ、設計書10本、Sentryエラー監視を整備。',
   },
   {
     icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
     title: '疑問を放置しない',
-    description:
-      '仕様の曖昧な箇所をそのままにできない性格。フルリモートの大規模PJでも進捗報告を密にし、タスク分割・PRの規模を最適化してレビュワーの負担を軽減。幅広い年齢層との対面コミュニケーションにも抵抗がなく、認識齟齬を防いで手戻りの少ない開発を実現。',
+    summary:
+      '仕様の曖昧な箇所をそのままにコードを書き始められない性格。「聞きすぎるくらいがちょうどいい」がスタンス。',
+    work: '電子新聞PJ（500万会員超・フルリモート）では判断に迷った点を即日エスカレーションし、認識齟齬による手戻りをゼロに近づけた。PRは1機能1PRを徹底し差分を小さく保つことでレビュワーの負荷を軽減。20代〜50代の幅広い年齢層と協働し、技術的な議論だけでなくビジネス要件のすり合わせにも対応。',
+    personal:
+      '個人開発でも要件定義書から着手し、実装前に仕様の曖昧さを潰してから開発に入る。設計段階でAIとレビューし合うことで、一人開発でも「第三者の目」を常に確保している。',
   },
 ];
 
@@ -173,7 +190,21 @@ export default function AboutSection() {
                 </div>
                 <h4 className="font-bold">{s.title}</h4>
               </div>
-              <p className="text-sm text-muted leading-relaxed">{s.description}</p>
+              <p className="text-sm text-muted leading-relaxed mb-3">{s.summary}</p>
+              <div className="space-y-2">
+                <div className="flex items-start gap-2">
+                  <span className="shrink-0 mt-0.5 px-1.5 py-0.5 text-[10px] font-bold rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    実務
+                  </span>
+                  <p className="text-xs text-muted leading-relaxed">{s.work}</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="shrink-0 mt-0.5 px-1.5 py-0.5 text-[10px] font-bold rounded bg-green-500/10 text-green-400 border border-green-500/20">
+                    個人
+                  </span>
+                  <p className="text-xs text-muted leading-relaxed">{s.personal}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

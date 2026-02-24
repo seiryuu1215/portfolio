@@ -1,3 +1,10 @@
+const STATS = [
+  { value: '3年9ヶ月', label: '実務経験' },
+  { value: '44,000+', label: '行（TypeScript）' },
+  { value: '158', label: 'テスト' },
+  { value: '500万+', label: '担当サービス会員' },
+];
+
 export default function HeroSection() {
   return (
     <section className="min-h-[85vh] flex items-center justify-center px-6">
@@ -15,6 +22,20 @@ export default function HeroSection() {
           <br className="hidden sm:block" />
           年数ではなく、出せるアウトプットで証明します。
         </p>
+
+        {/* At a Glance */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 max-w-xl mx-auto">
+          {STATS.map((s) => (
+            <div
+              key={s.label}
+              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border"
+            >
+              <div className="text-lg font-bold text-accent">{s.value}</div>
+              <div className="text-[10px] text-muted mt-0.5">{s.label}</div>
+            </div>
+          ))}
+        </div>
+
         <div className="flex gap-4 justify-center flex-wrap">
           <a
             href="#personal"
