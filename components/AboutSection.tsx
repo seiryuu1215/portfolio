@@ -108,6 +108,20 @@ export default function AboutSection() {
                 </span>
               ))}
             </div>
+
+            {/* パーソナリティ */}
+            <div className="p-4 rounded-xl bg-card border border-border mt-2">
+              <p className="text-xs text-accent font-medium mb-2">パーソナリティ</p>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-0.5 text-xs font-bold rounded bg-accent/10 text-accent border border-accent/20">
+                  ENTJ / INTJ
+                </span>
+                <span className="text-xs text-muted">— 外向と内向のほぼ中間</span>
+              </div>
+              <p className="text-xs text-muted leading-relaxed">
+                仕組みの全体像を把握してから手を動かしたい設計志向と、「決めたら即行動」の推進力が同居するタイプ。曖昧な仕様を放置できず、認識齟齬を潰してからコードを書く性格はエンジニアの適性そのものだと感じています。
+              </p>
+            </div>
           </div>
         </div>
 

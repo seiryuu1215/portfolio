@@ -5,6 +5,7 @@ interface MilestoneItem {
   emoji: string;
   title: string;
   description: string;
+  current?: boolean;
 }
 
 const MILESTONES: MilestoneItem[] = [
@@ -32,6 +33,14 @@ const MILESTONES: MilestoneItem[] = [
     title: 'SESから独立（フリーランス）',
     description: '実務経験を積みながら準備を進め、フリーランスとして独立。',
   },
+  {
+    year: '5年目',
+    emoji: '💰',
+    title: '本業以外で継続収益を生む',
+    description:
+      'AIで誰でもサービスを作れる時代だからこそ、アイデアと実行力で差をつける。個人開発プロダクトから1円でも継続的な収益を生み出す。',
+    current: true,
+  },
 ];
 
 export default function MilestonesSection() {
@@ -54,10 +63,27 @@ export default function MilestonesSection() {
             {MILESTONES.map((item, i) => (
               <div key={i} className="relative">
                 {/* ドット */}
-                <div className="absolute -left-5 w-2.5 h-2.5 rounded-full bg-accent border-2 border-background mt-1.5 z-10" />
+                <div
+                  className={`absolute -left-5 w-2.5 h-2.5 rounded-full border-2 border-background mt-1.5 z-10 ${
+                    item.current ? 'bg-accent animate-pulse' : 'bg-accent'
+                  }`}
+                />
 
-                <div className="p-4 rounded-xl bg-card border border-border">
-                  <span className="text-xs text-accent font-mono">{item.year}</span>
+                <div
+                  className={`p-4 rounded-xl border ${
+                    item.current
+                      ? 'bg-accent/5 border-accent/30'
+                      : 'bg-card border-border'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-accent font-mono">{item.year}</span>
+                    {item.current && (
+                      <span className="px-1.5 py-px text-[10px] rounded-full bg-accent/10 text-accent border border-accent/20 font-medium">
+                        now
+                      </span>
+                    )}
+                  </div>
                   <h4 className="font-bold text-sm mt-1">
                     {item.emoji} {item.title}
                   </h4>
