@@ -85,14 +85,9 @@ const WORKS: Work[] = [
       { value: '10', label: '設計書' },
     ],
     images: [
-      { src: '/screenshots/home.png', caption: 'ダッシュボード', fit: 'cover' },
-      { src: '/screenshots/stats.png', caption: 'スタッツ分析', fit: 'contain' },
-      { src: '/screenshots/barrels.png', caption: 'バレル検索', fit: 'contain' },
-      { src: '/screenshots/simulator.png', caption: 'バレルシミュレーター', fit: 'contain' },
-      { src: '/screenshots/shops.png', caption: 'ショップ検索', fit: 'contain' },
-      { src: '/screenshots/setup.png', caption: 'セッティング管理', fit: 'contain' },
-      { src: '/screenshots/reports.png', caption: 'レポート', fit: 'contain' },
-      { src: '/screenshots/compare.png', caption: 'バレル比較', fit: 'contain' },
+      { src: '/home.png', caption: 'ダッシュボード', fit: 'cover' },
+      { src: '/countup.png', caption: 'COUNT-UP 深掘り分析', fit: 'contain' },
+      { src: '/heatmap.png', caption: 'ダーツボードヒートマップ', fit: 'contain' },
     ],
     url: 'https://darts-app-lime.vercel.app',
     github: 'https://github.com/seiryuu1215/darts-app',
@@ -145,9 +140,17 @@ const WORKS: Work[] = [
 function ImageGallery({ images }: { images: Screenshot[] }) {
   const [current, setCurrent] = useState(0);
 
+  const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
+  const next = () => setCurrent((c) => (c + 1) % images.length);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  };
+
   return (
-    <div className="space-y-2">
-      <div className="rounded-xl bg-card border border-border overflow-hidden bg-[#1a1a1a] relative">
+    <div className="space-y-2" onKeyDown={handleKeyDown}>
+      <div className="rounded-xl bg-card border border-border overflow-hidden bg-[#1a1a1a] relative group">
         <Image
           src={images[current].src}
           alt={images[current].caption}
@@ -159,15 +162,45 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
               : 'h-[420px] object-cover object-top'
           }`}
         />
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              aria-label="前の画像"
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-muted hover:text-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              onClick={next}
+              aria-label="次の画像"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-muted hover:text-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </>
+        )}
       </div>
-      <p className="text-xs text-center text-muted">{images[current].caption}</p>
+      <p className="text-xs text-center text-muted">
+        {images[current].caption}
+        {images.length > 1 && (
+          <span className="ml-1 text-muted/50">
+            ({current + 1}/{images.length})
+          </span>
+        )}
+      </p>
       {images.length > 1 && (
-        <div className="flex justify-center gap-2">
+        <div className="flex justify-center gap-2 overflow-x-auto pb-1">
           {images.map((img, idx) => (
             <button
               key={img.src}
               onClick={() => setCurrent(idx)}
-              className={`w-16 h-10 rounded-md border overflow-hidden transition-all ${
+              aria-label={`${img.caption}を表示`}
+              className={`shrink-0 w-16 h-10 rounded-md border overflow-hidden transition-all ${
                 idx === current
                   ? 'border-accent ring-1 ring-accent/30'
                   : 'border-border opacity-50 hover:opacity-80'

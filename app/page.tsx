@@ -9,20 +9,39 @@ import DevStyleSection from '@/components/DevStyleSection';
 import VisionSection from '@/components/VisionSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import FadeIn from '@/components/FadeIn';
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
-      <WorksSection />
-      <CareerSection />
-      <SkillsSection />
-      <ServicesSection />
-      <DevStyleSection />
-      <MilestonesSection />
-      <VisionSection />
-      <ContactSection />
+      <FadeIn>
+        <AboutSection />
+      </FadeIn>
+      <FadeIn>
+        <WorksSection />
+      </FadeIn>
+      <FadeIn>
+        <CareerSection />
+      </FadeIn>
+      <FadeIn>
+        <SkillsSection />
+      </FadeIn>
+      <FadeIn>
+        <ServicesSection />
+      </FadeIn>
+      <FadeIn>
+        <DevStyleSection />
+      </FadeIn>
+      <FadeIn>
+        <MilestonesSection />
+      </FadeIn>
+      <FadeIn>
+        <VisionSection />
+      </FadeIn>
+      <FadeIn>
+        <ContactSection />
+      </FadeIn>
       <Footer />
     </>
   );
