@@ -117,20 +117,20 @@ export default function AboutSection() {
                 <div className="shrink-0 flex gap-2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://www.16personalities.com/static/images/types/headers/commander-mobile.svg"
+                    src="https://www.16personalities.com/static/images/personality-types/avatars/entj-commander.png"
                     alt="ENTJ Commander"
                     width={80}
                     height={80}
-                    className="rounded-xl"
+                    className="rounded-xl bg-[#88619a]/10"
                     loading="lazy"
                   />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://www.16personalities.com/static/images/types/headers/architect-mobile.svg"
+                    src="https://www.16personalities.com/static/images/personality-types/avatars/intj-architect.png"
                     alt="INTJ Architect"
                     width={80}
                     height={80}
-                    className="rounded-xl"
+                    className="rounded-xl bg-[#88619a]/10"
                     loading="lazy"
                   />
                 </div>
