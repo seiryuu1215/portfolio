@@ -239,12 +239,12 @@ export default function SkillsSection() {
                       {style.label}
                     </span>
                   </div>
-                  <div className="flex items-center gap-1.5 mt-0.5">
+                  <div className="flex flex-wrap items-center gap-1 mt-0.5">
                     {item.source &&
                       SOURCE_STYLES[item.source].map((s) => (
                         <span
                           key={s.label}
-                          className={`px-1.5 py-px text-[10px] rounded border ${s.color}`}
+                          className={`shrink-0 px-1.5 py-px text-[10px] rounded border ${s.color}`}
                         >
                           {s.label}
                         </span>
@@ -281,12 +281,12 @@ export default function SkillsSection() {
                           </span>
                           <span className="text-sm font-medium">{item.name}</span>
                         </div>
-                        <div className="shrink-0 flex items-center gap-1.5">
+                        <div className="shrink-0 flex flex-wrap items-center justify-end gap-1">
                           {item.source &&
                             SOURCE_STYLES[item.source].map((s) => (
                               <span
                                 key={s.label}
-                                className={`px-1.5 py-px text-[10px] rounded border ${s.color}`}
+                                className={`shrink-0 px-1.5 py-px text-[10px] rounded border ${s.color}`}
                               >
                                 {s.label}
                               </span>
