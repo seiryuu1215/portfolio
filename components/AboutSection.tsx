@@ -49,10 +49,10 @@ export default function AboutSection() {
           {/* 自己紹介テキスト */}
           <div className="space-y-4">
             <p className="text-lg leading-relaxed">
-              Webアプリケーションエンジニアとして実務4年目。
-              専門学校でシステム開発の基礎を3年間学んだうえで、
-              TypeScript / React / Next.js を軸にした<strong>フロントエンド開発</strong>と
-              <strong>アジャイル開発</strong>の経験が最大の強みです。
+              25歳・実務4年目のフルスタックエンジニア。
+              TypeScript / React / Next.js を軸に、認証・決済・DB設計・インフラまで
+              <strong>企画から運用を一人で完遂</strong>できることが最大の強みです。
+              実務はすべてフルリモートで参画しており、非同期コミュニケーションとPR駆動の開発に慣れています。
             </p>
 
             {/* 経歴ストーリー */}

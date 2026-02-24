@@ -3,8 +3,8 @@ import SectionHeading from './SectionHeading';
 const GROWTH_AREAS = [
   {
     label: 'バックエンド / インフラ',
-    current: 'Firebase / Vercel / Supabase を個人開発で一通り構築済み',
-    next: 'より本格的なバックエンド設計・運用の実務経験を積み、フルスタック力を実務レベルに引き上げる。',
+    current: 'Firebase / Supabase / AWS / Stripe Webhook を個人開発+実務で構築済み',
+    next: 'RDB設計やマイクロサービス構成の実務経験を積み、バックエンドの引き出しをさらに広げる。',
   },
   {
     label: '設計 / アーキテクチャ',
@@ -21,9 +21,9 @@ const GROWTH_AREAS = [
 const GROWTH = [
   {
     icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2',
-    title: 'フルスタック力',
+    title: 'フルスタック力の深化',
     description:
-      'フロントエンドだけでなくバックエンド・インフラも含めた一気通貫の開発力を磨く。「一人で全部作れる」を実務レベルに引き上げたい。',
+      '個人開発で培ったフロント〜バックエンド〜インフラの一気通貫の開発力を、より大規模なシステムでも発揮できるレベルに引き上げたい。',
   },
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',

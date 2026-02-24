@@ -10,39 +10,41 @@ interface Service {
 const SERVICES: Service[] = [
   {
     icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
-    title: 'フロントエンド開発',
+    title: 'フルスタック開発（フロントエンド軸）',
     items: [
       'React / Next.js / TypeScript（実務3年+個人開発）',
-      'MUI / Tailwind CSS / shadcn/ui',
-      'Recharts によるデータ可視化・統計分析',
-      'アジャイル（スクラム）での週次スプリント開発',
+      'Firebase / Supabase によるバックエンド・認証・DB設計',
+      'Stripe 決済基盤（Subscription / Webhook サーバーサイド完結）',
+      'Puppeteer スクレイピング + Vercel Cron による自動データ収集',
+      'Recharts データ可視化・統計分析',
     ],
     strong: true,
   },
   {
     icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2',
-    title: 'バックエンド / インフラ',
+    title: 'インフラ / クラウド',
     items: [
-      'Firebase（Auth / Firestore / Storage）',
       'AWS（Lambda / DynamoDB / CloudWatch）',
-      'Stripe 決済基盤（Subscription / Webhook）',
+      'Vercel（ホスティング / Edge Runtime / Cron）',
+      'Firebase（Auth / Firestore / Storage）',
+      'PWA / モバイル対応（Serwist / Capacitor iOS）',
     ],
   },
   {
     icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
     title: '設計 / 品質管理',
     items: [
-      '基本設計〜詳細設計（要件定義〜テスト一貫対応）',
+      '要件定義〜詳細設計〜テスト — 全工程を一貫対応',
       'CI/CD パイプライン構築（GitHub Actions / CircleCI）',
-      'コードレビュー・Dependabot管理',
+      'コードレビュー・Dependabot管理・セキュリティレビュー',
     ],
   },
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-    title: 'AI駆動開発 / その他',
+    title: 'AI駆動開発',
     items: [
-      'Claude Code 活用による高速開発',
-      'PWA / モバイル対応（Serwist / Capacitor）',
+      'Claude Code 活用 — 設計〜実装〜テスト〜設計書をAIと協働',
+      'アジャイル（スクラム）での週次スプリント開発',
       'REST API 設計・Swagger 連携',
     ],
   },

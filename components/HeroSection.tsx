@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section className="min-h-[85vh] flex items-center justify-center px-6">
       <div className="max-w-3xl text-center">
         <p className="text-accent text-sm font-mono mb-3 tracking-widest uppercase">
-          Freelance Engineer
+          Fullstack Engineer — Remote
         </p>
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
           コードの先に、
@@ -11,9 +11,9 @@ export default function HeroSection() {
           <span className="text-accent">信頼がある。</span>
         </h1>
         <p className="text-muted text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-          曖昧な仕様は確認し、動くだけのコードでは満足しない。
+          フロントからインフラまで一人で作り切る25歳。
           <br className="hidden sm:block" />
-          市場に求められる技術を、確かな設計で届けます。
+          年数ではなく、出せるアウトプットで証明します。
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <a

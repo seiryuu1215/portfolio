@@ -10,26 +10,49 @@ export default function ContactSection() {
           お仕事のご相談、技術的なご質問など、お気軽にご連絡ください。
         </p>
 
-        <div className="flex justify-center gap-4 mb-6 text-xs">
+        <div className="flex justify-center gap-3 mb-4 text-xs flex-wrap">
           <span className="px-3 py-1.5 rounded-lg bg-card border border-border text-muted">
             稼働開始: <strong className="text-foreground">3月〜 / 即日可</strong>
           </span>
           <span className="px-3 py-1.5 rounded-lg bg-card border border-border text-muted">
-            稼働形態: <strong className="text-foreground">リモート希望</strong>
+            稼働形態: <strong className="text-foreground">フルリモート</strong>
           </span>
         </div>
 
+        {/* リモートワーク実績 */}
+        <div className="inline-flex flex-wrap justify-center gap-2 mb-6 text-[11px] text-muted">
+          {[
+            'Slack / Teams 非同期コミュニケーション',
+            'PR駆動開発・日次進捗共有',
+            'スクラム（週次スプリント）',
+            '実務すべてフルリモートで参画',
+          ].map((tag) => (
+            <span key={tag} className="px-2 py-0.5 rounded-full bg-card border border-border">
+              {tag}
+            </span>
+          ))}
+        </div>
+
         {/* メール */}
-        <a
-          href="mailto:mt.oikawa@gmail.com"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-white rounded-xl font-medium transition-colors text-lg"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="M22 4L12 13 2 4" />
-          </svg>
-          メールで連絡する
-        </a>
+        <div>
+          <a
+            href="mailto:mt.oikawa@gmail.com"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-white rounded-xl font-medium transition-colors text-lg"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M22 4L12 13 2 4" />
+            </svg>
+            メールで連絡する
+          </a>
+        </div>
 
         {/* SNS リンク */}
         <div className="flex justify-center gap-6 mt-8">
