@@ -114,23 +114,23 @@ export default function AboutSection() {
               <p className="text-xs text-accent font-medium mb-2">パーソナリティ</p>
               <div className="flex items-start gap-4">
                 {/* アバター */}
-                <div className="shrink-0 flex gap-1">
+                <div className="shrink-0 flex gap-2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="https://www.16personalities.com/static/images/types/headers/commander-mobile.svg"
                     alt="ENTJ Commander"
-                    width={48}
-                    height={48}
-                    className="rounded-lg"
+                    width={80}
+                    height={80}
+                    className="rounded-xl"
                     loading="lazy"
                   />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="https://www.16personalities.com/static/images/types/headers/architect-mobile.svg"
                     alt="INTJ Architect"
-                    width={48}
-                    height={48}
-                    className="rounded-lg"
+                    width={80}
+                    height={80}
+                    className="rounded-xl"
                     loading="lazy"
                   />
                 </div>
