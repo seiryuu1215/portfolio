@@ -34,20 +34,20 @@ export default function AboutSection() {
       <div className="max-w-5xl mx-auto">
         <SectionHeading id="about" label="About" title="自己紹介" />
 
-        <div className="grid md:grid-cols-3 gap-8 mb-10">
+        <div className="grid md:grid-cols-[120px_1fr] gap-6 mb-10">
           {/* プロフィール画像 */}
           <div className="flex justify-center md:justify-start">
             <Image
               src="/avatar.jpg"
               alt="プロフィール写真"
-              width={192}
-              height={192}
-              className="w-48 h-48 rounded-2xl bg-card border border-border object-cover object-top"
+              width={120}
+              height={120}
+              className="w-[120px] h-[120px] rounded-2xl bg-card border border-border object-cover object-top"
             />
           </div>
 
           {/* 自己紹介テキスト */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="space-y-4">
             <p className="text-lg leading-relaxed">
               Webアプリケーションエンジニアとして実務4年目。
               専門学校でシステム開発の基礎を3年間学んだうえで、
@@ -112,15 +112,40 @@ export default function AboutSection() {
             {/* パーソナリティ */}
             <div className="p-4 rounded-xl bg-card border border-border mt-2">
               <p className="text-xs text-accent font-medium mb-2">パーソナリティ</p>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-0.5 text-xs font-bold rounded bg-accent/10 text-accent border border-accent/20">
-                  ENTJ / INTJ
-                </span>
-                <span className="text-xs text-muted">— 外向と内向のほぼ中間</span>
+              <div className="flex items-start gap-4">
+                {/* アバター */}
+                <div className="shrink-0 flex gap-1">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://www.16personalities.com/static/images/types/headers/commander-mobile.svg"
+                    alt="ENTJ Commander"
+                    width={48}
+                    height={48}
+                    className="rounded-lg"
+                    loading="lazy"
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://www.16personalities.com/static/images/types/headers/architect-mobile.svg"
+                    alt="INTJ Architect"
+                    width={48}
+                    height={48}
+                    className="rounded-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="px-2 py-0.5 text-xs font-bold rounded bg-accent/10 text-accent border border-accent/20">
+                      ENTJ / INTJ
+                    </span>
+                    <span className="text-xs text-muted">— 外向と内向のほぼ中間</span>
+                  </div>
+                  <p className="text-xs text-muted leading-relaxed">
+                    仕組みの全体像を把握してから手を動かしたい設計志向と、「決めたら即行動」の推進力が同居するタイプ。曖昧な仕様を放置できず、認識齟齬を潰してからコードを書く性格はエンジニアの適性そのものだと感じています。
+                  </p>
+                </div>
               </div>
-              <p className="text-xs text-muted leading-relaxed">
-                仕組みの全体像を把握してから手を動かしたい設計志向と、「決めたら即行動」の推進力が同居するタイプ。曖昧な仕様を放置できず、認識齟齬を潰してからコードを書く性格はエンジニアの適性そのものだと感じています。
-              </p>
             </div>
           </div>
         </div>
