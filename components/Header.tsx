@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 
 const NAV_ITEMS = [
   { href: '#about', label: 'About' },
-  { href: '#milestones', label: 'Milestones' },
   { href: '#personal', label: '個人開発' },
   { href: '#work', label: '実務' },
   { href: '#skills', label: 'Skills' },
   { href: '#services', label: 'Services' },
   { href: '#dev-style', label: 'Practices' },
+  { href: '#milestones', label: 'Milestones' },
   { href: '#vision', label: 'Vision' },
   { href: '#contact', label: 'Contact' },
 ];
