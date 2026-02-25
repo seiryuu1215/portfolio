@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — 及川 誠龍
+
+フルスタックエンジニアのポートフォリオサイトです。
+
+**https://portfolio-seiryuu.vercel.app**
+
+## Sections
+
+| セクション | 内容 |
+| --- | --- |
+| Hero | キャッチコピー・実績サマリー（経験年数 / TS行数 / テスト数） |
+| About | 自己紹介・経歴ストーリー・4つの強み・資格・MBTI |
+| Personal Projects | 個人開発プロダクト（darts Lab / MonkMode）のスクリーンショット付き詳細 |
+| Career | SES → フリーランスの職務経歴タイムライン |
+| Skills | 技術スタック一覧（A〜Dランク・業務/個人タグ付き） |
+| Services | 提供できるサービス（フルスタック開発 / インフラ / 品質 / AI駆動開発） |
+| Dev Style | 開発スタイル（CI/CD・テスト自動化・設計書・Sentry・Dependabot） |
+| Tools | 開発環境・ツール一覧 |
+| Milestones | キャリアのマイルストーン |
+| Vision | 成長ロードマップ・将来像 |
+| FAQ | よくある質問（稼働開始・リモート・契約形態など） |
+| Contact | 連絡先・稼働条件 |
+
+## Tech Stack
+
+- **Next.js 16** / React 19 / TypeScript
+- **Tailwind CSS v4**
+- Vercel (hosting)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000 で確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Vercel CLI でデプロイしています。
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+vercel --prod
+```
