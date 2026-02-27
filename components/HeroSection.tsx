@@ -1,7 +1,7 @@
 const STATS = [
   { value: '3年9ヶ月', label: '実務経験' },
-  { value: '44,000+', label: '行（TypeScript）' },
-  { value: '158', label: 'テスト' },
+  { value: '53,000+', label: '行（TypeScript）' },
+  { value: '164', label: 'テスト' },
   { value: '500万+', label: '担当サービス会員' },
 ];
 

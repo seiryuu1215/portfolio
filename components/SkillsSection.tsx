@@ -33,9 +33,10 @@ const DEVICON_MAP: Record<string, string> = {
   'AWS (Lambda / DynamoDB / CloudWatch)': 'amazonwebservices/amazonwebservices-original-wordmark',
   'Firebase (Auth / Firestore / Storage)': 'firebase/firebase-plain',
   Vercel: 'vercel/vercel-original',
-  'Vitest / Jest (125+ tests)': 'vitejs/vitejs-original',
+  'Vitest / Jest (164 tests)': 'vitejs/vitejs-original',
   'GitHub Actions': 'githubactions/githubactions-original',
   'ESLint / Prettier': 'eslint/eslint-original',
+  'Recharts 3': 'react/react-original',
   Figma: 'figma/figma-original',
 };
 
@@ -61,7 +62,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     items: [
       { name: 'MUI v7', level: 'B', source: 'both' },
       { name: 'Tailwind CSS', level: 'B', source: 'personal' },
-      { name: 'Recharts 3', level: 'C', source: 'personal', note: 'スタッツ分析で多用' },
+      { name: 'Recharts 3', level: 'B', source: 'personal', note: '統計グラフ・深掘り分析で多用' },
       { name: 'Handlebars', level: 'B', source: 'work' },
     ],
   },
@@ -94,8 +95,8 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'テスト / CI / 監視',
     items: [
-      { name: 'Vitest / Jest (125+ tests)', level: 'B', source: 'personal' },
-      { name: 'Storybook', level: 'C', source: 'both' },
+      { name: 'Vitest / Jest (164 tests)', level: 'B', source: 'personal' },
+      { name: 'Storybook', level: 'C', source: 'both', note: '16ストーリー' },
       { name: 'GitHub Actions', level: 'B', source: 'personal', note: 'lint→format→test→build' },
       { name: 'CircleCI', level: 'C', source: 'work' },
       { name: 'Sentry', level: 'C', source: 'personal', note: 'エラー監視' },

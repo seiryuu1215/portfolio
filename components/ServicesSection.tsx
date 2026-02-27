@@ -16,7 +16,7 @@ const SERVICES: Service[] = [
       'Firebase / Supabase によるバックエンド・認証・DB設計',
       'Stripe 決済基盤（Subscription / Webhook サーバーサイド完結）',
       'Puppeteer スクレイピング + Vercel Cron による自動データ収集',
-      'Recharts データ可視化・統計分析',
+      'Recharts データ可視化・統計分析（相関分析・回帰分析・ヒートマップ・シミュレーター）',
     ],
     strong: true,
   },
@@ -36,7 +36,8 @@ const SERVICES: Service[] = [
     items: [
       '要件定義〜詳細設計〜テスト — 全工程を一貫対応',
       'CI/CD パイプライン構築（GitHub Actions / CircleCI）',
-      'コードレビュー・Dependabot管理・セキュリティレビュー',
+      'コードレビュー・Dependabot管理',
+      'セキュリティレビュー（CRITICAL含む11件の脆弱性修正実績）',
     ],
   },
   {
