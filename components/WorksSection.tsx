@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import SectionHeading from './SectionHeading';
 
 interface ScaleItem {
@@ -27,6 +28,7 @@ interface Work {
   scale?: ScaleItem[];
   url?: string;
   github?: string;
+  blueprintUrl?: string;
   images?: Screenshot[];
   status?: 'released' | 'in-dev' | 'testing';
 }
@@ -97,6 +99,7 @@ const WORKS: Work[] = [
     ],
     url: 'https://darts-app-lime.vercel.app',
     github: 'https://github.com/seiryuu1215/darts-app',
+    blueprintUrl: '/projects/darts-lab',
     status: 'released',
   },
   {
@@ -293,6 +296,19 @@ export default function WorksSection() {
                           </svg>
                           GitHub
                         </a>
+                      )}
+                      {work.blueprintUrl && (
+                        <Link
+                          href={work.blueprintUrl}
+                          className="text-sm text-accent hover:text-accent-hover transition-colors flex items-center gap-1"
+                        >
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                          </svg>
+                          設計図を見る
+                        </Link>
                       )}
                     </div>
                   </div>
