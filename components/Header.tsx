@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const NAV_ITEMS = [
   { href: '#about', label: 'About' },
@@ -19,6 +20,8 @@ const NAV_ITEMS = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isSubpage = pathname !== '/';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,7 +36,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-lg font-bold tracking-tight">
+        <a href={isSubpage ? '/' : '#'} className="text-lg font-bold tracking-tight">
           Seiryuu <span className="text-muted font-normal text-sm">Portfolio</span>
         </a>
 
@@ -42,7 +45,7 @@ export default function Header() {
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={isSubpage ? `/${item.href}` : item.href}
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
               {item.label}
@@ -72,7 +75,7 @@ export default function Header() {
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={isSubpage ? `/${item.href}` : item.href}
               className="block py-3 text-sm text-muted hover:text-foreground transition-colors"
               onClick={() => setMobileOpen(false)}
             >
