@@ -49,7 +49,7 @@ export default function DartsLabDiagramsPage() {
 
       {/* Tabs */}
       <div className="max-w-[960px] mx-auto px-4 mb-8">
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
+        <div className="flex justify-center flex-wrap gap-2 pb-2">
           {TABS.map((tab) => (
             <button
               key={tab.key}
