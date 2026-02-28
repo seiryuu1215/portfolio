@@ -297,20 +297,31 @@ export default function WorksSection() {
                           GitHub
                         </a>
                       )}
-                      {work.blueprintUrl && (
-                        <Link
-                          href={work.blueprintUrl}
-                          className="text-sm text-accent hover:text-accent-hover transition-colors flex items-center gap-1"
-                        >
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                          </svg>
-                          設計図を見る
-                        </Link>
-                      )}
                     </div>
+
+                    {/* 設計図バナー */}
+                    {work.blueprintUrl && (
+                      <Link
+                        href={work.blueprintUrl}
+                        className="block mt-4 group/bp rounded-xl border border-accent/30 bg-accent/5 hover:bg-accent/10 transition-all p-3.5"
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-sm font-bold text-accent">
+                            インタラクティブ設計図
+                          </span>
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent group-hover/bp:translate-x-0.5 transition-transform">
+                            <polyline points="9 18 15 12 9 6" />
+                          </svg>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {['📐 アーキテクチャ', '🗄️ ER図', '🔐 認証・課金', '⏰ Cron', '📱 画面遷移', '🔄 API'].map((t) => (
+                            <span key={t} className="px-2 py-0.5 text-[10px] rounded-full bg-accent/10 text-accent/80 border border-accent/15">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </Link>
+                    )}
                   </div>
                 </div>
 
