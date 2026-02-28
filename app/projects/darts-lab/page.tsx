@@ -10,6 +10,7 @@ const AuthPaymentFlow = dynamic(() => import('@/components/diagrams/AuthPaymentF
 const CronFlow = dynamic(() => import('@/components/diagrams/CronFlow'), { ssr: false });
 const PageFlow = dynamic(() => import('@/components/diagrams/PageFlow'), { ssr: false });
 const ApiDataFlow = dynamic(() => import('@/components/diagrams/ApiDataFlow'), { ssr: false });
+const RequirementsViz = dynamic(() => import('@/components/diagrams/RequirementsViz'), { ssr: false });
 
 const TABS = [
   { key: 'architecture', label: '📐 アーキテクチャ', component: Architecture },
@@ -18,6 +19,7 @@ const TABS = [
   { key: 'cron', label: '⏰ Cronバッチ', component: CronFlow },
   { key: 'page', label: '📱 画面遷移', component: PageFlow },
   { key: 'api', label: '🔄 API・データフロー', component: ApiDataFlow },
+  { key: 'requirements', label: '📋 要件・ペルソナ', component: RequirementsViz },
 ] as const;
 
 type TabKey = (typeof TABS)[number]['key'];
