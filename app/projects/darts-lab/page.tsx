@@ -39,21 +39,8 @@ export default function DartsLabDiagramsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Back link */}
-      <div className="max-w-[960px] mx-auto px-4 pt-6">
-        <Link
-          href="/#personal"
-          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-          ポートフォリオに戻る
-        </Link>
-      </div>
-
       {/* Page header */}
-      <div className="text-center pt-8 pb-6 px-4">
+      <div className="text-center pt-24 pb-6 px-4">
         <h1 className="text-2xl font-bold">darts Lab — 設計図</h1>
         <p className="text-sm text-muted mt-2">
           インタラクティブ SVG で設計を可視化
