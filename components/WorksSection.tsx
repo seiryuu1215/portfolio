@@ -397,35 +397,47 @@ export default function WorksSection() {
             </div>
           ))}
 
-          {/* Zenn 技術発信 */}
+          {/* 技術発信 */}
           <div className="rounded-2xl border border-border bg-card overflow-hidden">
             <div className="p-5 pb-0 flex items-center gap-3 flex-wrap">
-              <h3 className="text-xl font-bold">技術発信</h3>
-              <span className="px-2 py-0.5 text-[10px] rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium">
-                Zenn
-              </span>
+              <h3 className="text-xl font-bold">AI駆動開発の知見を発信</h3>
+              <span className="text-xs text-muted ml-auto">Zenn</span>
             </div>
-            <div className="p-5 space-y-4">
-              <p className="text-sm text-muted leading-relaxed">
-                darts Lab の開発経験をもとに、AI駆動開発の実践記録と技術解説をZennで発信中。
-              </p>
 
-              {/* 本 */}
+            <div className="p-5 space-y-5">
+              {/* 本 — ヒーローカード */}
               <a
                 href="https://zenn.dev/seiryuuu_dev/books/claude-code-darts-lab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-4 rounded-xl border border-accent/30 bg-accent/5 hover:bg-accent/10 transition-all group"
+                className="block rounded-xl overflow-hidden border border-border hover:border-accent/40 transition-all group"
               >
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl shrink-0">📖</span>
-                  <div className="min-w-0">
-                    <p className="text-sm font-bold group-hover:text-accent transition-colors">
-                      Claude Codeで55,000行のWebアプリを3ヶ月で作った全記録
-                    </p>
-                    <p className="text-xs text-muted mt-1">全10章 — 企画・設計・実装・テスト・セキュリティの全工程を収録</p>
+                <div className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] p-6">
+                  <p className="text-[10px] tracking-widest text-blue-300/60 uppercase mb-3">Zenn Book — 全10章</p>
+                  <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
+                    AI × 個人開発で<br />
+                    55,000行のSaaSを作った方法
+                  </p>
+                  <p className="text-xs text-blue-200/50 mt-3">
+                    Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
+                  </p>
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    {[
+                      { value: '10', label: '章' },
+                      { value: '55,000+', label: '行' },
+                      { value: '164', label: 'テスト' },
+                      { value: 'A-', label: 'セキュリティ' },
+                    ].map((s) => (
+                      <div key={s.label} className="text-center">
+                        <div className="text-sm font-bold text-blue-300">{s.value}</div>
+                        <div className="text-[10px] text-blue-300/40">{s.label}</div>
+                      </div>
+                    ))}
                   </div>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-muted group-hover:text-accent shrink-0 mt-1 group-hover:translate-x-0.5 transition-all">
+                </div>
+                <div className="px-4 py-2.5 bg-card flex items-center justify-between">
+                  <span className="text-xs text-muted">読む</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all">
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </div>
@@ -433,14 +445,14 @@ export default function WorksSection() {
 
               {/* 記事シリーズ */}
               <div>
-                <p className="text-xs font-medium text-muted mb-2">IT初心者でもわかるシリーズ（全7本）</p>
+                <p className="text-xs font-medium text-muted mb-2">IT初心者でもわかるシリーズ</p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                   {[
-                    { emoji: '🏗️', title: 'Webアプリの全体像', slug: 'darts-lab-architecture' },
-                    { emoji: '🗄️', title: 'NoSQLデータベース', slug: 'darts-lab-firestore' },
-                    { emoji: '🔐', title: 'ログインの仕組み', slug: 'darts-lab-auth' },
-                    { emoji: '💳', title: 'サブスク決済', slug: 'darts-lab-stripe' },
-                    { emoji: '🤖', title: '自動処理とLINE Bot', slug: 'darts-lab-cron-line' },
+                    { emoji: '🏗️', title: 'アーキテクチャ', slug: 'darts-lab-architecture' },
+                    { emoji: '🗄️', title: 'NoSQL設計', slug: 'darts-lab-firestore' },
+                    { emoji: '🔐', title: '認証・JWT', slug: 'darts-lab-auth' },
+                    { emoji: '💳', title: 'Stripe決済', slug: 'darts-lab-stripe' },
+                    { emoji: '🤖', title: 'Cron・LINE Bot', slug: 'darts-lab-cron-line' },
                     { emoji: '🔄', title: 'API設計', slug: 'darts-lab-api' },
                     { emoji: '📋', title: '要件定義', slug: 'darts-lab-requirements' },
                   ].map((article) => (
@@ -457,21 +469,6 @@ export default function WorksSection() {
                   ))}
                 </div>
               </div>
-
-              {/* Zenn プロフィールリンク */}
-              <a
-                href="https://zenn.dev/seiryuuu_dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
-                Zenn プロフィール
-              </a>
             </div>
           </div>
 
