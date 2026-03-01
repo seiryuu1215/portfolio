@@ -396,7 +396,7 @@ export default function WorksSection() {
                 <h3 className="text-xl font-bold">{work.title}</h3>
                 {work.status === 'released' && (
                   <span className="px-2 py-0.5 text-[10px] rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-medium">
-                    運用中
+                    {work.url?.includes('npmjs.com') ? '公開中' : '運用中'}
                   </span>
                 )}
                 <span className="text-xs text-muted ml-auto">{work.period}</span>
