@@ -10,6 +10,7 @@ interface CareerItem {
   method?: string;
   scale?: string;
   icon: string;
+  minor?: boolean;
 }
 
 const CAREER: CareerItem[] = [
@@ -71,6 +72,7 @@ const CAREER: CareerItem[] = [
     scale: '2ヶ月',
     icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
     highlights: ['チームリーダーとして要件定義からテストまで推進'],
+    minor: true,
   },
 ];
 
@@ -95,7 +97,7 @@ export default function CareerSection() {
           <div className="absolute left-[18px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/60 via-border to-border" />
 
           <div className="space-y-6">
-            {CAREER.map((item, i) => (
+            {CAREER.filter((item) => !item.minor).map((item, i) => (
               <div key={i} className="relative group">
                 {/* アイコンドット */}
                 <div className="absolute -left-10 w-9 h-9 rounded-lg bg-card border border-border group-hover:border-accent/40 flex items-center justify-center transition-colors z-10">
@@ -160,6 +162,38 @@ export default function CareerSection() {
                       </li>
                     ))}
                   </ul>
+                </div>
+              </div>
+            ))}
+
+            {/* minor項目（コンパクト表示） */}
+            {CAREER.filter((item) => item.minor).map((item, i) => (
+              <div key={i} className="relative">
+                <div className="absolute -left-10 w-9 h-9 rounded-lg bg-card border border-border/60 flex items-center justify-center z-10">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    className="text-muted"
+                  >
+                    <path d={item.icon} />
+                  </svg>
+                </div>
+                <div className="py-3 px-4 rounded-lg border border-border/60 bg-card/50 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <span className="text-sm font-medium text-muted">{item.project}</span>
+                  <span className="text-xs text-accent/70 font-mono">{item.period}</span>
+                  <span className="text-[11px] text-muted">{item.role} / {item.scope}</span>
+                  {item.tech.split(' / ').map((t) => (
+                    <span
+                      key={t}
+                      className="px-2 py-0.5 text-[10px] rounded bg-background text-muted/70 border border-border/60"
+                    >
+                      {t}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}

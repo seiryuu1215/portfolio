@@ -1,11 +1,5 @@
 import SectionHeading from './SectionHeading';
 
-function getAvailabilityLabel(): string {
-  const now = new Date();
-  const month = now.getMonth() + 1;
-  return `${month}月〜 / 即日可`;
-}
-
 export default function ContactSection() {
   return (
     <section className="py-16 px-6">
@@ -18,7 +12,7 @@ export default function ContactSection() {
 
         <div className="flex justify-center gap-3 mb-4 text-xs flex-wrap">
           <span className="px-3 py-1.5 rounded-lg bg-card border border-border text-muted">
-            稼働開始: <strong className="text-foreground">{getAvailabilityLabel()}</strong>
+            稼働開始: <strong className="text-foreground">即日〜相談可能</strong>
           </span>
           <span className="px-3 py-1.5 rounded-lg bg-card border border-border text-muted">
             稼働形態: <strong className="text-foreground">フルリモート</strong>

@@ -1,7 +1,7 @@
 const STATS = [
-  { value: '55,000+', label: '行（TypeScript）' },
-  { value: '164', label: 'テスト' },
-  { value: '500万+', label: '担当サービス会員' },
+  { value: '実務4年目', label: 'Web開発' },
+  { value: '500万超', label: '会員サービス開発' },
+  { value: '全工程', label: '要件定義〜運用' },
 ];
 
 export default function HeroSection() {
@@ -17,9 +17,7 @@ export default function HeroSection() {
           <span className="text-accent">信頼がある。</span>
         </h1>
         <p className="text-muted text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-          フロントからインフラまで一人で作り切る25歳。
-          <br className="hidden sm:block" />
-          年数ではなく、出せるアウトプットで証明します。
+          企画から運用まで、一人で完遂する25歳のフルスタックエンジニア。
         </p>
 
         {/* At a Glance */}

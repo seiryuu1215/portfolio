@@ -357,29 +357,6 @@ export default function SkillsSection() {
           </div>
         </div>
 
-        {/* 開発プラクティス */}
-        <div className="mt-8">
-          <h3 className="text-lg font-bold mb-4">開発プラクティス</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {[
-              { title: 'CI/CD', badge: '4段階ゲート' },
-              { title: 'テスト自動化', badge: '164テスト' },
-              { title: '設計ドキュメント', badge: '10本整備' },
-              { title: 'セキュリティ', badge: '11件修正' },
-              { title: 'エラー監視', badge: 'Sentry' },
-              { title: '依存関係管理', badge: '週次15件' },
-              { title: 'コードレビュー', badge: '実務経験' },
-            ].map((p) => (
-              <div
-                key={p.title}
-                className="p-3 rounded-lg bg-card border border-border text-center"
-              >
-                <p className="text-xs font-bold mb-1">{p.title}</p>
-                <span className="text-[10px] text-accent font-bold">{p.badge}</span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
