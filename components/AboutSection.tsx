@@ -95,6 +95,22 @@ export default function AboutSection() {
                 </div>
               </div>
             </div>
+            {/* 稼働条件 */}
+            <div className="p-4 rounded-xl bg-card border border-border">
+              <p className="text-xs text-accent font-medium mb-2">稼働条件</p>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-0.5 text-xs rounded-md bg-accent/10 text-accent border border-accent/20 font-medium">
+                  即日〜相談可能
+                </span>
+                <span className="px-2 py-0.5 text-xs rounded-md bg-accent/10 text-accent border border-accent/20 font-medium">
+                  業務委託（準委任）
+                </span>
+              </div>
+              <p className="text-xs text-muted leading-relaxed">
+                プロダクトの面白さと自身の成長を重視。
+                技術で事業課題を解くチームに貢献したいと考えています。
+              </p>
+            </div>
           </div>
         </div>
       </div>

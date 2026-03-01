@@ -10,25 +10,18 @@ interface MilestoneItem {
 
 const MILESTONES: MilestoneItem[] = [
   {
-    year: '2021',
-    emoji: '🏃',
-    title: '食事管理で -15kg 減量',
-    description:
-      '自炊の練習から始め、徹底した食事管理と運動習慣で1年間で15kgの減量に成功。体重・食事・運動を記録して変数を絞り込む習慣がここで身についた。',
-  },
-  {
     year: '2022',
     emoji: '🏋️',
     title: 'ベンチプレス 100kg 達成',
     description:
-      "Gold's Gymで2週間かけて基礎を固めてから最寄りの24hジムに移籍し、週5で継続。調理が楽で飽きない筋肉レシピを開拓し、食事管理と両立できる仕組みを作ることで習慣化に成功。「続けられる形に落とし込む」という発想はここが原点。",
+      '週5のトレーニングを1年間継続し達成。「続けられる仕組みを作る」という発想の原点。',
   },
   {
     year: '2023',
     emoji: '🎯',
     title: 'ダーツ プロライセンス取得 & スポンサー獲得',
     description:
-      '最初は筋トレと両立しながら土日にダーツ。プロを意識してからは週5でダーツに切り替え、さまざまな店舗に足を運びプロ選手からアドバイスを受けながらトライ&エラーを繰り返した。開始1年未満でプロ試験合格・スポンサー獲得し、2年でフレンド1,000人突破（1日1人以上のペース）。SNS運用や幅広い層とのコミュニケーションも経験し、プレイヤーとして感じた既存アプリの不満が darts Lab の開発動機に。',
+      '開始1年未満でプロ試験合格・スポンサー獲得。プレイヤーとして感じた既存アプリの不満が darts Lab の開発動機に。',
   },
   {
     year: '2024',
@@ -51,12 +44,10 @@ export default function MilestonesSection() {
   return (
     <section className="py-16 px-6 bg-card/30">
       <div className="max-w-4xl mx-auto">
-        <SectionHeading id="milestones" label="Milestones" title="年次目標と達成実績" />
+        <SectionHeading id="milestones" label="Milestones" title="キャリアマイルストーン" />
 
         <p className="text-sm text-muted -mt-4 mb-6 leading-relaxed">
-          毎年ひとつテーマを決め、1年かけてやり抜く。
-          <br className="hidden sm:block" />
-          技術だけでなく、目標設定と継続力を大切にしています。
+          エンジニアとしての転換点。
         </p>
 
         <div className="relative pl-8">
@@ -98,9 +89,6 @@ export default function MilestonesSection() {
           </div>
         </div>
 
-        <p className="text-xs text-muted mt-6 text-center">
-          「決めたらやり切る」——この行動力がエンジニアとしての土台になっています。
-        </p>
       </div>
     </section>
   );

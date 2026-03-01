@@ -17,7 +17,7 @@ export default function HeroSection() {
           <span className="text-accent">信頼がある。</span>
         </h1>
         <p className="text-muted text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-          企画から運用まで、一人で完遂する25歳のフルスタックエンジニア。
+          大規模サービスから個人SaaSまで。企画→設計→実装→運用を一人で完遂。
         </p>
 
         {/* At a Glance */}
@@ -35,10 +35,10 @@ export default function HeroSection() {
 
         <div className="flex gap-4 justify-center flex-wrap">
           <a
-            href="#personal"
+            href="#work"
             className="px-8 py-3 bg-accent hover:bg-accent-hover text-white rounded-lg font-medium transition-colors"
           >
-            個人開発を見る
+            実績を見る
           </a>
           <a
             href="#contact"
