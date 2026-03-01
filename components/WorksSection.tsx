@@ -397,6 +397,84 @@ export default function WorksSection() {
             </div>
           ))}
 
+          {/* Zenn 技術発信 */}
+          <div className="rounded-2xl border border-border bg-card overflow-hidden">
+            <div className="p-5 pb-0 flex items-center gap-3 flex-wrap">
+              <h3 className="text-xl font-bold">技術発信</h3>
+              <span className="px-2 py-0.5 text-[10px] rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium">
+                Zenn
+              </span>
+            </div>
+            <div className="p-5 space-y-4">
+              <p className="text-sm text-muted leading-relaxed">
+                darts Lab の開発経験をもとに、AI駆動開発の実践記録と技術解説をZennで発信中。
+              </p>
+
+              {/* 本 */}
+              <a
+                href="https://zenn.dev/seiryuuu_dev/books/claude-code-darts-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-4 rounded-xl border border-accent/30 bg-accent/5 hover:bg-accent/10 transition-all group"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl shrink-0">📖</span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold group-hover:text-accent transition-colors">
+                      Claude Codeで55,000行のWebアプリを3ヶ月で作った全記録
+                    </p>
+                    <p className="text-xs text-muted mt-1">全10章 — 企画・設計・実装・テスト・セキュリティの全工程を収録</p>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-muted group-hover:text-accent shrink-0 mt-1 group-hover:translate-x-0.5 transition-all">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </div>
+              </a>
+
+              {/* 記事シリーズ */}
+              <div>
+                <p className="text-xs font-medium text-muted mb-2">IT初心者でもわかるシリーズ（全7本）</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                  {[
+                    { emoji: '🏗️', title: 'Webアプリの全体像', slug: 'darts-lab-architecture' },
+                    { emoji: '🗄️', title: 'NoSQLデータベース', slug: 'darts-lab-firestore' },
+                    { emoji: '🔐', title: 'ログインの仕組み', slug: 'darts-lab-auth' },
+                    { emoji: '💳', title: 'サブスク決済', slug: 'darts-lab-stripe' },
+                    { emoji: '🤖', title: '自動処理とLINE Bot', slug: 'darts-lab-cron-line' },
+                    { emoji: '🔄', title: 'API設計', slug: 'darts-lab-api' },
+                    { emoji: '📋', title: '要件定義', slug: 'darts-lab-requirements' },
+                  ].map((article) => (
+                    <a
+                      key={article.slug}
+                      href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
+                    >
+                      <span>{article.emoji}</span>
+                      <span className="truncate">{article.title}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Zenn プロフィールリンク */}
+              <a
+                href="https://zenn.dev/seiryuuu_dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+                Zenn プロフィール
+              </a>
+            </div>
+          </div>
+
           {/* 開発中プロジェクト（コンパクト表示） */}
           {WORKS.filter((w) => w.status === 'in-dev').map((work) => (
             <div key={work.title} className="p-5 rounded-xl border border-border/60 bg-card/50">
