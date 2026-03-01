@@ -55,32 +55,32 @@ interface Relation {
 
 const collections: Collection[] = [
   {
-    id: 'users', label: 'users', icon: '👤', x: 400, y: 30, w: 220, color: C.blue, glow: C.blueGlow,
+    id: 'users', label: 'users', icon: '👤', x: 390, y: 30, w: 250, color: C.blue, glow: C.blueGlow,
     fields: [
       { n: 'displayName', t: 'string' }, { n: 'email', t: 'string' },
-      { n: 'role', t: '"admin"|"pro"|"general"' }, { n: 'xp / level / rank', t: 'number / string' },
+      { n: 'role', t: 'enum(3)' }, { n: 'xp / level / rank', t: 'number' },
       { n: 'stripeCustomerId', t: 'string?' }, { n: 'subscriptionStatus', t: 'string?' },
-      { n: 'dlCredentialsEncrypted', t: 'AES-256-GCM' }, { n: 'lineUserId', t: 'string?' },
+      { n: 'dlCredentials (Enc)', t: 'AES-256' }, { n: 'lineUserId', t: 'string?' },
       { n: 'achievements[]', t: 'string[]' },
     ],
-    subs: ['dartsLiveStats/{date}', 'dartsliveCache/latest', 'goals/{goalId}', 'xpHistory/{xpId}', 'notifications/{id}', 'settingHistory/{id}', 'shopBookmarks/{id}', 'shopLists/{id}', 'dartLikes/{dartId}', 'dartBookmarks/{dartId}', 'barrelBookmarks/{id}'],
+    subs: ['dartsLiveStats/{date}', 'dartsliveCache/latest', 'goals/{goalId}', 'xpHistory/{xpId}', 'notifications/{id}', 'settingHistory/{id}', 'shopBookmarks/{id}', 'shopLists/{id}', 'dartLikes/{dartId}', 'dartBookmarks/{id}', 'barrelBookmarks/{id}'],
   },
   {
     id: 'darts', label: 'darts', icon: '🎯', x: 50, y: 30, w: 200, color: C.green, glow: C.greenGlow,
     fields: [
       { n: 'userId', t: 'string (FK→users)' }, { n: 'title', t: 'string' },
-      { n: 'barrel', t: '{name,brand,weight,…}' }, { n: 'tip', t: '{name,type,length,…}' },
-      { n: 'shaft', t: '{name,length,weight}' }, { n: 'flight', t: '{name,shape,weight}' },
+      { n: 'barrel', t: '{name,brand,…}' }, { n: 'tip', t: '{name,type,…}' },
+      { n: 'shaft', t: '{name,len,wt}' }, { n: 'flight', t: '{name,shape}' },
       { n: 'imageUrls[]', t: 'string[]' }, { n: 'likeCount', t: 'number' }, { n: 'isDraft', t: 'boolean' },
     ],
     subs: [],
   },
   {
-    id: 'barrels', label: 'barrels', icon: '🔍', x: 50, y: 340, w: 200, color: C.amber, glow: C.amberGlow,
+    id: 'barrels', label: 'barrels', icon: '🔍', x: 50, y: 340, w: 210, color: C.amber, glow: C.amberGlow,
     fields: [
       { n: 'name', t: 'string' }, { n: 'brand', t: 'string' },
-      { n: 'weight / diameter / length', t: 'number' }, { n: 'cut', t: 'string' },
-      { n: 'imageUrl / productUrl', t: 'string' }, { n: 'source', t: '"dartshive"' },
+      { n: 'weight/dia/length', t: 'number' }, { n: 'cut', t: 'string' },
+      { n: 'imageUrl/productUrl', t: 'string' }, { n: 'source', t: '"dartshive"' },
     ],
     subs: [],
   },
@@ -98,18 +98,18 @@ const collections: Collection[] = [
     subs: [],
   },
   {
-    id: 'discussions', label: 'discussions', icon: '📢', x: 400, y: 500, w: 220, color: C.purple, glow: C.purpleGlow,
+    id: 'discussions', label: 'discussions', icon: '📢', x: 390, y: 500, w: 240, color: C.purple, glow: C.purpleGlow,
     fields: [
       { n: 'title / content', t: 'string' }, { n: 'category', t: '6 categories' },
-      { n: 'userId / userName', t: 'string' }, { n: 'userRating / userBarrelName', t: '非正規化' },
-      { n: 'isPinned / isLocked', t: 'boolean' }, { n: 'replyCount', t: 'number' },
+      { n: 'userId/userName', t: 'string' }, { n: 'userRating/barrelName', t: '非正規化' },
+      { n: 'isPinned/isLocked', t: 'boolean' }, { n: 'replyCount', t: 'number' },
     ],
     subs: [],
   },
   {
-    id: 'replies', label: 'replies', icon: '↩️', x: 400, y: 720, w: 220, color: C.purple, glow: C.purpleGlow,
+    id: 'replies', label: 'replies', icon: '↩️', x: 390, y: 720, w: 240, color: C.purple, glow: C.purpleGlow,
     fields: [
-      { n: 'discussionId', t: 'string (FK)' }, { n: 'userId / userName', t: 'string' },
+      { n: 'discussionId', t: 'string (FK)' }, { n: 'userId/userName', t: 'string' },
       { n: 'userRating', t: 'number?' }, { n: 'body', t: 'string' },
     ],
     subs: [],
@@ -182,7 +182,7 @@ function CollectionBox({ col, isActive, onClick }: { col: Collection; isActive: 
       {col.fields.map((f, i) => (
         <g key={f.n}>
           <text x={col.x + 10} y={col.y + headerH + 14 + i * fieldH} fill={C.text} fontSize={9.5} fontFamily="'JetBrains Mono',monospace">{f.n}</text>
-          <text x={col.x + col.w - 8} y={col.y + headerH + 14 + i * fieldH} textAnchor="end" fill={C.textDim} fontSize={8} fontFamily="'JetBrains Mono',monospace">{f.t}</text>
+          <text x={col.x + col.w - 8} y={col.y + headerH + 14 + i * fieldH} textAnchor="end" fill={C.textDim} fontSize={7} fontFamily="'JetBrains Mono',monospace">{f.t}</text>
         </g>
       ))}
       {col.subs.length > 0 && (
@@ -259,14 +259,14 @@ export default function ERDiagramDiagram() {
         ))}
       </div>
 
-      <div style={{ width: '100%', maxWidth: 1000, margin: '0 auto', position: 'relative' }}>
-        <svg viewBox="0 0 1000 880" width="100%" style={{ overflow: 'visible' }}>
+      <div style={{ width: '100%', maxWidth: 1020, margin: '0 auto', position: 'relative' }}>
+        <svg viewBox="0 0 1020 880" width="100%" style={{ overflow: 'visible' }}>
           <defs>
             <pattern id="ergrid" width="16" height="16" patternUnits="userSpaceOnUse">
               <path d="M 16 0 L 0 0 0 16" fill="none" stroke={C.border} strokeWidth="0.2" opacity="0.3" />
             </pattern>
           </defs>
-          <rect width="1000" height="880" fill="url(#ergrid)" opacity="0.4" />
+          <rect width="1020" height="880" fill="url(#ergrid)" opacity="0.4" />
 
           <text x={150} y={20} textAnchor="middle" fill={C.green} fontSize={10} fontWeight={600} opacity={0.5} fontFamily="'JetBrains Mono',monospace">CONTENT</text>
           <text x={510} y={490} textAnchor="middle" fill={C.purple} fontSize={10} fontWeight={600} opacity={0.5} fontFamily="'JetBrains Mono',monospace">COMMUNITY</text>

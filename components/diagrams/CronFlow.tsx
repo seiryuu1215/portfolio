@@ -25,6 +25,7 @@ interface StepProps {
 }
 
 function Step({ x, y, w, h, label, sub, icon, color, num }: StepProps) {
+  const subLines = sub ? sub.split('\n') : [];
   return (
     <g>
       <rect x={x} y={y} width={w} height={h} rx={8} fill={C.surface} stroke={color} strokeWidth={1} />
@@ -35,14 +36,14 @@ function Step({ x, y, w, h, label, sub, icon, color, num }: StepProps) {
           <text x={x + 14} y={y + 15} textAnchor="middle" dominantBaseline="middle" fill={color} fontSize={9} fontWeight={700} fontFamily="'JetBrains Mono',monospace">{num}</text>
         </>
       )}
-      <text x={x + (num ? 30 : 10)} y={y + (sub ? h / 2 - 5 : h / 2 + 1)} fill={C.text} fontSize={10} fontWeight={600} fontFamily="'JetBrains Mono',monospace" dominantBaseline="middle">
+      <text x={x + (num ? 30 : 10)} y={y + (sub ? h / 2 - 5 * subLines.length : h / 2 + 1)} fill={C.text} fontSize={10} fontWeight={600} fontFamily="'JetBrains Mono',monospace" dominantBaseline="middle">
         {icon} {label}
       </text>
-      {sub && (
-        <text x={x + (num ? 30 : 10)} y={y + h / 2 + 9} fill={C.textDim} fontSize={8} fontFamily="'JetBrains Mono',monospace" dominantBaseline="middle">
-          {sub}
+      {subLines.map((line, i) => (
+        <text key={i} x={x + (num ? 30 : 10)} y={y + h / 2 + 5 + i * 11} fill={C.textDim} fontSize={8} fontFamily="'JetBrains Mono',monospace" dominantBaseline="middle">
+          {line}
         </text>
-      )}
+      ))}
     </g>
   );
 }

@@ -710,7 +710,6 @@ export default function RequirementsViz() {
     <div
       style={{
         background: COLORS.bg,
-        minHeight: '100vh',
         padding: '24px 16px',
         fontFamily: "'JetBrains Mono','SF Mono',monospace",
       }}

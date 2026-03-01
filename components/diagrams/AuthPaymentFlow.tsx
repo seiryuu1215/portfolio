@@ -25,6 +25,7 @@ interface FlowStepProps {
 }
 
 function FlowStep({ x, y, w, h, label, sublabel, icon, color, pulse }: FlowStepProps) {
+  const subLines = sublabel ? sublabel.split('\n') : [];
   return (
     <g>
       {pulse && (
@@ -34,14 +35,14 @@ function FlowStep({ x, y, w, h, label, sublabel, icon, color, pulse }: FlowStepP
       )}
       <rect x={x} y={y} width={w} height={h} rx={8} fill={C.surface} stroke={color} strokeWidth={1.2} />
       <rect x={x} y={y} width={w} height={h} rx={8} fill={color} opacity={0.06} />
-      <text x={x + w / 2} y={y + (sublabel ? h / 2 - 5 : h / 2 + 1)} textAnchor="middle" dominantBaseline="middle" fill={C.text} fontSize={11} fontWeight={600} fontFamily="'JetBrains Mono',monospace">
+      <text x={x + w / 2} y={y + (sublabel ? h / 2 - 5 * subLines.length : h / 2 + 1)} textAnchor="middle" dominantBaseline="middle" fill={C.text} fontSize={11} fontWeight={600} fontFamily="'JetBrains Mono',monospace">
         {icon} {label}
       </text>
-      {sublabel && (
-        <text x={x + w / 2} y={y + h / 2 + 10} textAnchor="middle" dominantBaseline="middle" fill={C.textDim} fontSize={8.5} fontFamily="'JetBrains Mono',monospace">
-          {sublabel}
+      {subLines.map((line, i) => (
+        <text key={i} x={x + w / 2} y={y + h / 2 + 6 + i * 12} textAnchor="middle" dominantBaseline="middle" fill={C.textDim} fontSize={8.5} fontFamily="'JetBrains Mono',monospace">
+          {line}
         </text>
-      )}
+      ))}
     </g>
   );
 }
@@ -128,7 +129,7 @@ function AuthFlow() {
       <FlowStep x={20} y={320} w={100} h={36} label="セッティング3件" icon="" color={C.textMuted} />
       <FlowStep x={140} y={320} w={100} h={36} label="無制限 + DL連携" icon="" color={C.pink} />
       <FlowStep x={260} y={320} w={100} h={36} label="全機能 + 管理" icon="" color={C.red} />
-      <FlowStep x={420} y={280} w={200} h={80} label="lib/permissions.ts" sublabel="canCreateDart(role)\ncanAccessPro(role)\nisAdmin(role)" icon="🛡️" color={C.purple} />
+      <FlowStep x={420} y={280} w={200} h={80} label="lib/permissions.ts" sublabel={"canCreateDart(role)\ncanAccessPro(role)\nisAdmin(role)"} icon="🛡️" color={C.purple} />
       <FlowStep x={660} y={290} w={100} h={60} label="Middleware" sublabel="api-middleware.ts" icon="🔒" color={C.purple} />
       <Arrow x1={620} y1={320} x2={660} y2={320} color={C.purple} label="check" />
     </svg>
@@ -194,7 +195,7 @@ function LineFlow() {
       <FlowStep x={20} y={175} w={130} h={36} label="LINEでコード送信" sublabel="" icon="📱" color={C.green} />
       <Arrow x1={150} y1={193} x2={500} y2={193} color={C.green} label="メッセージ" />
       <Arrow x1={500} y1={193} x2={400} y2={193} color={C.green} label="Webhook" />
-      <FlowStep x={240} y={175} w={160} h={50} label="Webhook処理" sublabel="HMAC署名検証\ntimingSafeEqual" icon="🔍" color={C.purple} />
+      <FlowStep x={240} y={175} w={160} h={50} label="Webhook処理" sublabel={"HMAC署名検証\ntimingSafeEqual"} icon="🔍" color={C.purple} />
       <Arrow x1={400} y1={200} x2={700} y2={230} color={C.amber} label="コード照合 + 紐付け" />
       <FlowStep x={665} y={230} w={100} h={50} label="lineConversations" sublabel="userId紐付け" icon="" color={C.amber} />
       <Arrow x1={400} y1={225} x2={500} y2={260} color={C.green} label="連携完了メッセージ" />

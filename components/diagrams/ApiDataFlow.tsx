@@ -39,12 +39,12 @@ function EndpointRow({ x, y, method, path, desc, auth }: EndpointRowProps) {
     <g>
       <rect x={x} y={y} width={methodWidth} height={14} rx={3} fill={methodColor} opacity={0.15} />
       <text x={x + methodCenter} y={y + 8} textAnchor="middle" dominantBaseline="middle" fill={methodColor} fontSize={7} fontWeight={700} fontFamily="'JetBrains Mono',monospace">{method}</text>
-      <text x={x + textOffset} y={y + 8} dominantBaseline="middle" fill={C.text} fontSize={8} fontWeight={500} fontFamily="'JetBrains Mono',monospace">{path}</text>
-      <text x={x + 300} y={y + 8} dominantBaseline="middle" fill={C.textDim} fontSize={7.5} fontFamily="'JetBrains Mono',monospace">{desc}</text>
+      <text x={x + textOffset} y={y + 8} dominantBaseline="middle" fill={C.text} fontSize={7.5} fontWeight={500} fontFamily="'JetBrains Mono',monospace">{path}</text>
+      <text x={x + 280} y={y + 8} dominantBaseline="middle" fill={C.textDim} fontSize={7} fontFamily="'JetBrains Mono',monospace">{desc}</text>
       {auth && (
         <>
-          <rect x={x + 470} y={y} width={auth.length * 5 + 8} height={14} rx={3} fill={auth === 'admin' ? C.red : auth === 'PRO' ? C.pink : auth === 'cron' ? C.purple : C.blue} opacity={0.12} />
-          <text x={x + 474} y={y + 8} dominantBaseline="middle" fill={auth === 'admin' ? C.red : auth === 'PRO' ? C.pink : auth === 'cron' ? C.purple : C.blue} fontSize={7} fontWeight={600} fontFamily="'JetBrains Mono',monospace">{auth}</text>
+          <rect x={x + 450} y={y} width={auth.length * 5 + 8} height={14} rx={3} fill={auth === 'admin' ? C.red : auth === 'PRO' ? C.pink : auth === 'cron' ? C.purple : C.blue} opacity={0.12} />
+          <text x={x + 454} y={y + 8} dominantBaseline="middle" fill={auth === 'admin' ? C.red : auth === 'PRO' ? C.pink : auth === 'cron' ? C.purple : C.blue} fontSize={7} fontWeight={600} fontFamily="'JetBrains Mono',monospace">{auth}</text>
         </>
       )}
     </g>

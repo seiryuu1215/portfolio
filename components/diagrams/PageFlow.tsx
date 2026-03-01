@@ -243,17 +243,17 @@ export default function PageFlowDiagram() {
 
           {/* Stats summary */}
           <rect x={15} y={555} width={530} height={130} rx={10} fill={C.surface} stroke={C.blue} strokeWidth={0.8} />
-          <text x={30} y={575} fill={C.blue} fontSize={10} fontWeight={700} fontFamily="'JetBrains Mono',monospace">📊 スタッツダッシュボード 内訳 (53 コンポーネント)</text>
+          <text x={30} y={575} fill={C.blue} fontSize={10} fontWeight={700} fontFamily="'JetBrains Mono',monospace">📊 スタッツ 内訳 (53 コンポーネント)</text>
           {[
-            ['Rating分析', 'RatingHeroCard / TargetCard / SimulatorCard / MomentumCard / BenchmarkCard / TrendCard'],
-            ['ゲーム統計', 'GameStatsCards / DetailedGameStats / BullStats / CountUp分析 / 01分析 / Consistency'],
-            ['可視化', 'MonthlyTrend / DailyHistory / CalendarGrid / DartboardHeatmap / SkillRadar / PlayerDNA'],
-            ['インサイト', 'PerformanceInsights / PracticeRecommendations / SessionFatigue / SpeedAccuracy'],
-            ['その他', 'AwardsTable / AwardPace / GameMix / ConditionCorrelation / StreakPattern / Percentile'],
+            ['Rating', 'HeroCard / Target / Simulator / Momentum / Benchmark / Trend'],
+            ['ゲーム', 'GameStats / BullStats / CountUp / 01分析 / Cricket / Consistency'],
+            ['可視化', 'MonthlyTrend / Calendar / Heatmap / SkillRadar / PlayerDNA'],
+            ['分析', 'Insights / PracticeRec / Fatigue / SpeedAccuracy / Percentile'],
+            ['その他', 'Awards / GameMix / ConditionCorrelation / Streak / DailyHistory'],
           ].map((row, i) => (
             <g key={row[0]}>
               <text x={30} y={597 + i * 17} fill={C.cyan} fontSize={8} fontWeight={600} fontFamily="'JetBrains Mono',monospace">{row[0]}</text>
-              <text x={110} y={597 + i * 17} fill={C.textDim} fontSize={7.5} fontFamily="'JetBrains Mono',monospace">{row[1]}</text>
+              <text x={90} y={597 + i * 17} fill={C.textDim} fontSize={7} fontFamily="'JetBrains Mono',monospace">{row[1]}</text>
             </g>
           ))}
         </svg>

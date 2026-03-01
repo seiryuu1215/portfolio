@@ -209,14 +209,14 @@ const nodes: NodeDef[] = [
   { id: 'ios', x: 410, y: 70, w: 130, h: 52, icon: '🍎', label: 'iOS App', sublabel: 'Capacitor 8', color: COLORS.accent, glow: COLORS.accentGlow, detail: 'Capacitor 8 で Web アプリを iOS ネイティブラップ。WebView ベースで同一コードベースから App Store 配布可能な iOS アプリを生成。' },
   { id: 'edge', x: 70, y: 220, w: 145, h: 52, icon: '🌐', label: 'Edge Network', sublabel: 'CDN + Routing', color: COLORS.vercel, glow: COLORS.vercelGlow, detail: 'Vercel Edge Network による世界規模の CDN 配信。静的アセットのキャッシュ、エッジルーティング、自動 HTTPS。OGP 画像は Edge Runtime で動的生成。' },
   { id: 'serverless', x: 245, y: 220, w: 160, h: 52, icon: '⚙️', label: 'Serverless Fn', sublabel: 'API Routes + Cron', color: COLORS.vercel, glow: COLORS.vercelGlow, detail: 'Vercel Serverless Functions で API Routes を実行。Puppeteer による DARTSLIVE スクレイピング、Stripe Webhook 処理、日次 Cron バッチ (JST 10:00) でスタッツ取得→XP付与→レポート配信を自動実行。' },
-  { id: 'ogp', x: 435, y: 220, w: 130, h: 52, icon: '🖼️', label: 'OGP Generator', sublabel: 'Edge Runtime', color: COLORS.vercel, glow: COLORS.vercelGlow, detail: 'セッティング共有時の OGP 画像を Edge Runtime で動的生成。ドメインホワイトリストで SSRF を防止。SNS シェア時にバレル画像付きカードを自動生成。' },
+  { id: 'ogp', x: 435, y: 220, w: 150, h: 52, icon: '🖼️', label: 'OGP Gen', sublabel: 'Edge Runtime', color: COLORS.vercel, glow: COLORS.vercelGlow, detail: 'セッティング共有時の OGP 画像を Edge Runtime で動的生成。ドメインホワイトリストで SSRF を防止。SNS シェア時にバレル画像付きカードを自動生成。' },
   { id: 'auth', x: 70, y: 380, w: 130, h: 52, icon: '🔐', label: 'Auth', sublabel: 'NextAuth + Firebase', color: COLORS.firebase, glow: COLORS.firebaseGlow, detail: 'NextAuth.js 4 + Firebase Authentication のハイブリッド認証。JWT ベースのセッション管理、ロールベースアクセス制御 (admin/pro/general)。Stripe 連携でプラン自動反映。' },
   { id: 'firestore', x: 225, y: 380, w: 145, h: 52, icon: '🗄️', label: 'Firestore', sublabel: '7,000+ barrels DB', color: COLORS.firebase, glow: COLORS.firebaseGlow, detail: 'Cloud Firestore にユーザー・セッティング・バレル (7,000種超)・スタッツ・ディスカッションを格納。セキュリティルールでフィールドレベルアクセス制御。複合インデックスで高速クエリ。' },
   { id: 'storage', x: 400, y: 380, w: 130, h: 52, icon: '📦', label: 'Storage', sublabel: 'Images + Assets', color: COLORS.firebase, glow: COLORS.firebaseGlow, detail: 'Firebase Storage でユーザーアバター、バレル画像、セッティング画像を管理。Storage セキュリティルールで認証済みユーザーのみアップロード可。SVG ブロック、画像プロキシで安全性確保。' },
   { id: 'dartslive', x: 50, y: 530, w: 120, h: 52, icon: '🎯', label: 'DARTSLIVE', sublabel: 'Puppeteer Scraping', color: COLORS.external, glow: COLORS.externalGlow, detail: 'Puppeteer 24 で DARTSLIVE サイトからスタッツを自動スクレイピング。Rating, 01, Cricket, COUNT-UP の成績データを取得し、月間推移グラフ、パーセンタイル、ブル統計を可視化。' },
   { id: 'stripe', x: 190, y: 530, w: 120, h: 52, icon: '💳', label: 'Stripe', sublabel: 'Subscription', color: COLORS.pink, glow: COLORS.pinkGlow, detail: 'Stripe Subscription で PRO プラン課金。Checkout Session → Webhook → Firestore ロール更新のサーバーサイド完結フロー。署名検証 + イベント重複排除で安全な決済処理。' },
   { id: 'line', x: 330, y: 530, w: 120, h: 52, icon: '💬', label: 'LINE', sublabel: 'Messaging API', color: COLORS.green, glow: COLORS.greenGlow, detail: 'LINE Messaging API で週次/月次レポートを Flex Message で自動配信。前期間との比較データ付き。タイミングセーフ署名検証で Webhook を保護。' },
-  { id: 'sentry', x: 470, y: 530, w: 120, h: 52, icon: '🔍', label: 'Sentry', sublabel: 'Error Monitoring', color: COLORS.external, glow: COLORS.externalGlow, detail: 'Sentry でフロントエンド・サーバーサイド両方のエラーを監視。スタックトレース、パフォーマンスメトリクス、ユーザーコンテキストを自動収集。' },
+  { id: 'sentry', x: 470, y: 530, w: 130, h: 52, icon: '🔍', label: 'Sentry', sublabel: 'Error Monitoring', color: COLORS.external, glow: COLORS.externalGlow, detail: 'Sentry でフロントエンド・サーバーサイド両方のエラーを監視。スタックトレース、パフォーマンスメトリクス、ユーザーコンテキストを自動収集。' },
 ];
 
 const arrows: ArrowProps[] = [
@@ -226,7 +226,6 @@ const arrows: ArrowProps[] = [
   { x1: 140, y1: 272, x2: 135, y2: 380, color: COLORS.firebase, label: 'JWT' },
   { x1: 325, y1: 272, x2: 297, y2: 380, color: COLORS.firebase, label: 'CRUD', bidirectional: true },
   { x1: 500, y1: 272, x2: 465, y2: 380, color: COLORS.firebase, label: 'Upload' },
-  { x1: 540, y1: 96, x2: 580, y2: 96, color: COLORS.firebase, dashed: true },
   { x1: 100, y1: 272, x2: 110, y2: 530, color: COLORS.external, label: 'Puppeteer', dashed: true },
   { x1: 295, y1: 272, x2: 250, y2: 530, color: COLORS.pink, label: 'Webhook' },
   { x1: 355, y1: 272, x2: 390, y2: 530, color: COLORS.green, label: 'Push' },
@@ -261,19 +260,19 @@ export default function ArchitectureDiagram() {
         ))}
       </div>
 
-      <div style={{ position: 'relative', width: '100%', maxWidth: 640, margin: '0 auto' }}>
-        <svg viewBox="0 0 640 610" width="100%" style={{ overflow: 'visible' }}>
+      <div style={{ position: 'relative', width: '100%', maxWidth: 660, margin: '0 auto' }}>
+        <svg viewBox="0 0 660 610" width="100%" style={{ overflow: 'visible' }}>
           <defs>
             <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
               <path d="M 20 0 L 0 0 0 20" fill="none" stroke={COLORS.border} strokeWidth="0.3" opacity="0.3" />
             </pattern>
           </defs>
-          <rect width="640" height="610" fill="url(#grid)" opacity="0.5" />
+          <rect width="660" height="610" fill="url(#grid)" opacity="0.5" />
 
           <GroupBox x={30} y={42} width={530} height={98} label="CLIENT LAYER" color={COLORS.accent} icon="💻" />
-          <GroupBox x={40} y={192} width={540} height={98} label="VERCEL PLATFORM" color={COLORS.vercel} icon="▲" />
+          <GroupBox x={40} y={192} width={560} height={98} label="VERCEL PLATFORM" color={COLORS.vercel} icon="▲" />
           <GroupBox x={40} y={350} width={520} height={100} label="FIREBASE" color={COLORS.firebase} icon="🔥" />
-          <GroupBox x={30} y={502} width={580} height={98} label="EXTERNAL SERVICES" color={COLORS.external} icon="🔗" />
+          <GroupBox x={30} y={502} width={600} height={98} label="EXTERNAL SERVICES" color={COLORS.external} icon="🔗" />
 
           {arrows.map((a, i) => (
             <Arrow key={i} {...a} />
