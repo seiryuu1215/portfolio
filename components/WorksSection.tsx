@@ -234,6 +234,13 @@ const WORKS: Work[] = [
       { value: '0', label: '外部依存' },
       { value: '3', label: '認証アダプタ' },
     ],
+    images: [
+      {
+        src: '/images/next-api-composer/compose-example.svg',
+        caption: 'compose() API — ミドルウェア合成の使用例',
+        fit: 'contain',
+      },
+    ],
     url: 'https://www.npmjs.com/package/next-api-composer',
     github: 'https://github.com/seiryuu1215/next-api-composer',
     status: 'released',
