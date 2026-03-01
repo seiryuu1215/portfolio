@@ -70,7 +70,7 @@ export default function AboutSection() {
                     alt="ENTJ Commander"
                     width={80}
                     height={80}
-                    className="rounded-xl bg-[#88619a]/10 w-16 h-16 sm:w-20 sm:h-20"
+                    className="rounded-xl bg-[#88619a]/10 w-16 h-16 sm:w-20 sm:h-20 brightness-[.85]"
                     loading="lazy"
                   />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -79,7 +79,7 @@ export default function AboutSection() {
                     alt="INTJ Architect"
                     width={80}
                     height={80}
-                    className="rounded-xl bg-[#88619a]/10 w-16 h-16 sm:w-20 sm:h-20"
+                    className="rounded-xl bg-[#88619a]/10 w-16 h-16 sm:w-20 sm:h-20 brightness-[.85]"
                     loading="lazy"
                   />
                 </div>

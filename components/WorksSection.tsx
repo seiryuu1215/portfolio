@@ -14,6 +14,7 @@ interface Screenshot {
   src: string;
   caption: string;
   fit?: 'contain' | 'cover';
+  lightBg?: boolean;
 }
 
 interface Work {
@@ -166,10 +167,30 @@ const WORKS: Work[] = [
       { value: '164KB', label: 'ZIP配布' },
     ],
     images: [
-      { src: '/images/saas-launcher/lp.png', caption: 'ランディングページ', fit: 'cover' },
-      { src: '/images/saas-launcher/pricing.png', caption: '料金プラン比較', fit: 'contain' },
-      { src: '/images/saas-launcher/login.png', caption: 'ログイン画面', fit: 'contain' },
-      { src: '/images/saas-launcher/dashboard.png', caption: 'ダッシュボード', fit: 'contain' },
+      {
+        src: '/images/saas-launcher/lp.png',
+        caption: 'ランディングページ',
+        fit: 'cover',
+        lightBg: true,
+      },
+      {
+        src: '/images/saas-launcher/pricing.png',
+        caption: '料金プラン比較',
+        fit: 'contain',
+        lightBg: true,
+      },
+      {
+        src: '/images/saas-launcher/login.png',
+        caption: 'ログイン画面',
+        fit: 'contain',
+        lightBg: true,
+      },
+      {
+        src: '/images/saas-launcher/dashboard.png',
+        caption: 'ダッシュボード',
+        fit: 'contain',
+        lightBg: true,
+      },
     ],
     url: 'https://saas-launcher.vercel.app',
     github: 'https://github.com/seiryuu1215/saas-launcher',
@@ -250,7 +271,7 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
             images[current].fit === 'contain'
               ? 'h-auto object-contain mx-auto'
               : 'h-[280px] sm:h-[420px] object-cover object-top'
-          }`}
+          } ${images[current].lightBg ? 'brightness-[.85] contrast-[.95]' : ''}`}
         />
         {images.length > 1 && (
           <>
@@ -315,7 +336,7 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
                 alt={img.caption}
                 width={64}
                 height={40}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover ${img.lightBg ? 'brightness-[.85]' : ''}`}
               />
             </button>
           ))}
