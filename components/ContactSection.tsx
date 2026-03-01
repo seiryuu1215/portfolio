@@ -15,7 +15,7 @@ export default function ContactSection() {
             稼働開始: <strong className="text-foreground">即日〜相談可能</strong>
           </span>
           <span className="px-3 py-1.5 rounded-lg bg-card border border-border text-muted">
-            稼働形態: <strong className="text-foreground">フルリモート</strong>
+            稼働形態: <strong className="text-foreground">原則フルリモート</strong>
           </span>
         </div>
 
@@ -25,7 +25,7 @@ export default function ContactSection() {
             'Slack / Teams 非同期コミュニケーション',
             'PR駆動開発・日次進捗共有',
             'スクラム（週次スプリント）',
-            'フルリモートを中心に参画',
+            '原則フルリモート（週1出社OK）',
           ].map((tag) => (
             <span key={tag} className="px-2 py-0.5 rounded-full bg-card border border-border">
               {tag}

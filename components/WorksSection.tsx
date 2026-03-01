@@ -71,10 +71,16 @@ const WORKS: Work[] = [
       'Storybook 16ストーリー + Vitest 164テストでUIカタログと品質を担保',
     ],
     features: [
-      'DARTSLIVEスタッツ自動取得 — 相関分析・回帰分析・スピード分析・ブル率シミュレーター',
-      '7,000種バレルDB — SVGシミュレーター・100点スコアリング・レコメンドエンジン',
+      'DARTSLIVEスタッツ自動取得 — ピアソン相関・線形回帰・スピード分析・ブル率シミュレーター',
+      '53コンポーネントの統計ダッシュボード — Rating推移・スキルレーダー・ヒートマップ・疲労分析',
+      '7,000種バレルDB — 実寸SVGシミュレーター・100点スコアリング・診断クイズ・レコメンドエンジン',
+      'セッティング管理 — 登録・比較（差分カラー）・履歴・いいね/コメント・OGP付きシェア',
       'XP/ランクシステム（14種ルール・30段階）・12種アワード・ゴールトラッキング',
-      'LINE自動レポート配信・OGP画像生成・PWA・Capacitor iOS対応',
+      'マイショップ管理 — Leafletマップ・路線フィルター・DARTSLIVE URL自動取得',
+      'ディスカッション掲示板（6カテゴリ）・記事投稿（Markdown）',
+      'LINE連携 — 週次/月次レポート自動配信（Flex Message）・スタッツ変動通知',
+      'アフィリエイト6ショップ連携 — バレル検索から購入導線を統合',
+      'PWA（オフラインキャッシュ）・Capacitor iOS対応・ダークモード',
     ],
     scale: [
       { value: '230+', label: 'コミット' },
@@ -342,39 +348,39 @@ export default function WorksSection() {
                     </div>
                   )}
 
-                  {/* ハイライト + 機能 2カラム */}
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-sm font-medium mb-2">設計・技術のポイント</p>
-                      <ul className="space-y-1">
-                        {work.highlights.map((h) => (
-                          <li key={h} className="text-xs text-muted flex items-start gap-1.5">
-                            <span className="text-accent mt-0.5 shrink-0">&#9656;</span>
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {work.features && (
-                      <div>
-                        <p className="text-sm font-medium mb-2">主な機能</p>
-                        <ul className="space-y-1">
-                          {work.features.map((f) => (
-                            <li key={f} className="text-xs text-muted flex items-start gap-1.5">
-                              <span className="text-muted mt-0.5 shrink-0">-</span>
-                              {f}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                  {/* 設計・技術のポイント */}
+                  <div>
+                    <p className="text-sm font-medium mb-2">設計・技術のポイント</p>
+                    <ul className="space-y-1">
+                      {work.highlights.map((h) => (
+                        <li key={h} className="text-xs text-muted flex items-start gap-1.5">
+                          <span className="text-accent mt-0.5 shrink-0">&#9656;</span>
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+
+                  {/* 主な機能 */}
+                  {work.features && (
+                    <div>
+                      <p className="text-sm font-medium mb-2">主な機能</p>
+                      <div className="grid sm:grid-cols-2 gap-x-4 gap-y-1">
+                        {work.features.map((f) => (
+                          <div key={f} className="text-xs text-muted flex items-start gap-1.5">
+                            <span className="text-accent/60 mt-0.5 shrink-0">&#9656;</span>
+                            {f}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* 規模 + タグ */}
                   {work.scale && (
-                    <div className="flex flex-wrap gap-2">
+                    <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
                       {work.scale.map((s) => (
-                        <div key={s.label} className="text-center px-3 py-1.5 rounded-lg bg-background border border-border min-w-[60px]">
+                        <div key={s.label} className="text-center px-2 py-1.5 rounded-lg bg-background border border-border">
                           <div className="text-xs font-bold text-accent">{s.value}</div>
                           <div className="text-[10px] text-muted">{s.label}</div>
                         </div>
@@ -443,55 +449,56 @@ export default function WorksSection() {
                 </div>
               </a>
 
-              {/* 記事シリーズ */}
-              <div>
-                <p className="text-xs font-medium text-muted mb-2">設計図×コードで読み解くサービス連携</p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                  {[
-                    { emoji: '🔐', title: 'デュアル認証', slug: 'darts-lab-dual-auth' },
-                    { emoji: '💳', title: 'Stripe課金フロー', slug: 'darts-lab-stripe-flow' },
-                    { emoji: '⏰', title: 'Cronバッチ', slug: 'darts-lab-cron-pipeline' },
-                    { emoji: '🤖', title: 'LINE Bot状態遷移', slug: 'darts-lab-line-statemachine' },
-                    { emoji: '🛡️', title: '多層防御', slug: 'darts-lab-defense-layers' },
-                  ].map((article) => (
-                    <a
-                      key={article.slug}
-                      href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
-                    >
-                      <span>{article.emoji}</span>
-                      <span className="truncate">{article.title}</span>
-                    </a>
-                  ))}
+              {/* 記事一覧（2シリーズ横並び） */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-xs font-medium text-muted mb-2">設計図×コードで読み解くサービス連携</p>
+                  <div className="space-y-1.5">
+                    {[
+                      { emoji: '🔐', title: 'デュアル認証', slug: 'darts-lab-dual-auth' },
+                      { emoji: '💳', title: 'Stripe課金フロー', slug: 'darts-lab-stripe-flow' },
+                      { emoji: '⏰', title: 'Cronバッチ', slug: 'darts-lab-cron-pipeline' },
+                      { emoji: '🤖', title: 'LINE Bot状態遷移', slug: 'darts-lab-line-statemachine' },
+                      { emoji: '🛡️', title: '多層防御', slug: 'darts-lab-defense-layers' },
+                    ].map((article) => (
+                      <a
+                        key={article.slug}
+                        href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
+                      >
+                        <span>{article.emoji}</span>
+                        <span>{article.title}</span>
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* IT初心者でもわかるシリーズ */}
-              <div>
-                <p className="text-xs font-medium text-muted mb-2">IT初心者でもわかるシリーズ</p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                  {[
-                    { emoji: '🏗️', title: 'アーキテクチャ', slug: 'darts-lab-architecture' },
-                    { emoji: '🗄️', title: 'NoSQL設計', slug: 'darts-lab-firestore' },
-                    { emoji: '🔐', title: '認証・JWT', slug: 'darts-lab-auth' },
-                    { emoji: '💳', title: 'Stripe決済', slug: 'darts-lab-stripe' },
-                    { emoji: '🤖', title: 'Cron・LINE Bot', slug: 'darts-lab-cron-line' },
-                    { emoji: '🔄', title: 'API設計', slug: 'darts-lab-api' },
-                    { emoji: '📋', title: '要件定義', slug: 'darts-lab-requirements' },
-                  ].map((article) => (
-                    <a
-                      key={article.slug}
-                      href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
-                    >
-                      <span>{article.emoji}</span>
-                      <span className="truncate">{article.title}</span>
-                    </a>
-                  ))}
+                <div>
+                  <p className="text-xs font-medium text-muted mb-2">IT初心者でもわかるシリーズ</p>
+                  <div className="space-y-1.5">
+                    {[
+                      { emoji: '🏗️', title: 'アーキテクチャ', slug: 'darts-lab-architecture' },
+                      { emoji: '🗄️', title: 'NoSQL設計', slug: 'darts-lab-firestore' },
+                      { emoji: '🔐', title: '認証・JWT', slug: 'darts-lab-auth' },
+                      { emoji: '💳', title: 'Stripe決済', slug: 'darts-lab-stripe' },
+                      { emoji: '🤖', title: 'Cron・LINE Bot', slug: 'darts-lab-cron-line' },
+                      { emoji: '🔄', title: 'API設計', slug: 'darts-lab-api' },
+                      { emoji: '📋', title: '要件定義', slug: 'darts-lab-requirements' },
+                    ].map((article) => (
+                      <a
+                        key={article.slug}
+                        href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
+                      >
+                        <span>{article.emoji}</span>
+                        <span>{article.title}</span>
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
