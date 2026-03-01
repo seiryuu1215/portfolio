@@ -445,6 +445,31 @@ export default function WorksSection() {
 
               {/* 記事シリーズ */}
               <div>
+                <p className="text-xs font-medium text-muted mb-2">設計図×コードで読み解くサービス連携</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                  {[
+                    { emoji: '🔐', title: 'デュアル認証', slug: 'darts-lab-dual-auth' },
+                    { emoji: '💳', title: 'Stripe課金フロー', slug: 'darts-lab-stripe-flow' },
+                    { emoji: '⏰', title: 'Cronバッチ', slug: 'darts-lab-cron-pipeline' },
+                    { emoji: '🤖', title: 'LINE Bot状態遷移', slug: 'darts-lab-line-statemachine' },
+                    { emoji: '🛡️', title: '多層防御', slug: 'darts-lab-defense-layers' },
+                  ].map((article) => (
+                    <a
+                      key={article.slug}
+                      href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
+                    >
+                      <span>{article.emoji}</span>
+                      <span className="truncate">{article.title}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* IT初心者でもわかるシリーズ */}
+              <div>
                 <p className="text-xs font-medium text-muted mb-2">IT初心者でもわかるシリーズ</p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                   {[
