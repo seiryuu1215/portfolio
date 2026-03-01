@@ -29,6 +29,7 @@ interface Work {
   url?: string;
   github?: string;
   blueprintUrl?: string;
+  blueprintTabs?: string[];
   images?: Screenshot[];
   status?: 'released' | 'in-dev' | 'testing';
 }
@@ -103,6 +104,14 @@ const WORKS: Work[] = [
     url: 'https://darts-app-lime.vercel.app',
     github: 'https://github.com/seiryuu1215/darts-app',
     blueprintUrl: '/projects/darts-lab',
+    blueprintTabs: [
+      '📐 アーキテクチャ',
+      '🗄️ ER図',
+      '🔐 認証・課金',
+      '⏰ Cron',
+      '📱 画面遷移',
+      '🔄 API',
+    ],
     status: 'released',
   },
   {
@@ -148,8 +157,30 @@ const WORKS: Work[] = [
       'テスト: Vitest 22テスト即実行可能',
       '自動化: setup-stripe.mjs で Stripe 商品・価格を一発作成',
     ],
+    scale: [
+      { value: '22', label: 'テスト' },
+      { value: '89', label: 'ファイル' },
+      { value: '4段階', label: 'CI/CD' },
+      { value: '10+', label: '連携サービス' },
+      { value: '¥2,980', label: '販売価格' },
+      { value: '164KB', label: 'ZIP配布' },
+    ],
+    images: [
+      { src: '/images/saas-launcher/lp.png', caption: 'ランディングページ', fit: 'cover' },
+      { src: '/images/saas-launcher/pricing.png', caption: '料金プラン比較', fit: 'contain' },
+      { src: '/images/saas-launcher/login.png', caption: 'ログイン画面', fit: 'contain' },
+      { src: '/images/saas-launcher/dashboard.png', caption: 'ダッシュボード', fit: 'contain' },
+    ],
     url: 'https://saas-launcher.vercel.app',
     github: 'https://github.com/seiryuu1215/saas-launcher',
+    blueprintUrl: '/projects/saas-launcher',
+    blueprintTabs: [
+      '📐 アーキテクチャ',
+      '🔐 認証フロー',
+      '💳 決済フロー',
+      '🛡️ RBAC',
+      '🔧 ミドルウェア',
+    ],
     status: 'released',
   },
   {
@@ -391,14 +422,7 @@ export default function WorksSection() {
                           </svg>
                         </div>
                         <div className="flex flex-wrap gap-1.5">
-                          {[
-                            '📐 アーキテクチャ',
-                            '🗄️ ER図',
-                            '🔐 認証・課金',
-                            '⏰ Cron',
-                            '📱 画面遷移',
-                            '🔄 API',
-                          ].map((t) => (
+                          {(work.blueprintTabs || []).map((t) => (
                             <span
                               key={t}
                               className="px-2 py-0.5 text-[10px] rounded-full bg-accent/10 text-accent/80 border border-accent/15"
@@ -555,7 +579,7 @@ export default function WorksSection() {
               </a>
 
               {/* 記事一覧（2シリーズ横並び） */}
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-3 gap-4">
                 <div>
                   <p className="text-xs font-medium text-muted mb-2">
                     設計図×コードで読み解くサービス連携
@@ -609,6 +633,26 @@ export default function WorksSection() {
                         <span>{article.title}</span>
                       </a>
                     ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs font-medium text-muted mb-2">SaaS スターターキット</p>
+                  <div className="space-y-1.5">
+                    {[{ emoji: '🚀', title: 'SaaS Launcher 公開', slug: 'saas-launcher' }].map(
+                      (article) => (
+                        <a
+                          key={article.slug}
+                          href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
+                        >
+                          <span>{article.emoji}</span>
+                          <span>{article.title}</span>
+                        </a>
+                      ),
+                    )}
                   </div>
                 </div>
               </div>
