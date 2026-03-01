@@ -199,6 +199,46 @@ const WORKS: Work[] = [
     status: 'released',
   },
   {
+    title: 'next-api-composer — OSS npm パッケージ',
+    period: '2026/3 〜 公開中',
+    description:
+      'Next.js App Router の Route Handler 向けミドルウェア合成ライブラリ。darts Lab（74,000行）で実証済みの API ミドルウェアパターンを汎用 npm パッケージとして抽出・公開。compose() で withAuth / withRateLimit / withValidation 等を関数合成し、型安全にAPIルートを構築できる。',
+    motivation:
+      'Next.js App Router の Route Handler にはミドルウェア合成の仕組みがなく、認証・レートリミット・バリデーションのボイラープレートを毎回書く必要がある。next-connect は3年放置、next-safe-action は Server Actions 専用で、Route Handler 向けの合成ライブラリが市場に存在しなかったため開発・公開。',
+    differentiation: [
+      'next-connect は3年メンテ放置＆Pages Router 時代の設計 → App Router Route Handler にネイティブ対応',
+      'next-safe-action は Server Actions 専用 → Route Handler（GET/POST/PUT/DELETE）に特化',
+      'ミドルウェアごとにコンテキスト型が積み上がる型安全な compose() を提供 → TypeScript の型推論でコンテキストが自動伝播',
+    ],
+    techStack: ['TypeScript', 'Next.js', 'Vitest', 'tsup', 'GitHub Actions', 'npm'],
+    highlights: [
+      'darts Lab の withErrorHandler / withAuth / withAdmin / withPermission を AuthAdapter パターンで抽象化 — NextAuth・Clerk・Supabase の3プロバイダ対応',
+      'reduceRight ベースの compose() でミドルウェアを関数合成 — 左が外側（先に実行）の直感的な順序',
+      'Zod スキーマで body / query を検証する withValidation — validated コンテキストを型安全に注入',
+      'in-memory レートリミットで外部依存ゼロ — Upstash Redis 等への依存を排除しポータビリティを確保',
+      'ESM + CJS デュアルビルド（tsup）— パッケージサイズ 13.6KB、ゼロランタイム依存',
+    ],
+    features: [
+      'compose() — 複数ミドルウェアの型安全な合成',
+      'withErrorHandler — try/catch + onError コールバック',
+      'withAuth — AuthAdapter による認証抽象化',
+      'withRateLimit — in-memory レートリミッタ',
+      'withValidation — Zod body/query バリデーション',
+      'withPermission — ロールベースのアクセス制御',
+      'NextAuth / Clerk / Supabase アダプタ',
+      'ESM + CJS デュアルビルド対応',
+    ],
+    scale: [
+      { value: '33', label: 'テスト' },
+      { value: '13.6KB', label: 'パッケージ' },
+      { value: '0', label: '外部依存' },
+      { value: '3', label: '認証アダプタ' },
+    ],
+    url: 'https://www.npmjs.com/package/next-api-composer',
+    github: 'https://github.com/seiryuu1215/next-api-composer',
+    status: 'released',
+  },
+  {
     title: 'MonkMode — 筋トレ・食事管理',
     period: '2026/2 〜 開発中',
     description:
