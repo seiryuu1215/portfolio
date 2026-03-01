@@ -171,7 +171,7 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
           className={`w-full max-h-[480px] ${
             images[current].fit === 'contain'
               ? 'h-auto object-contain mx-auto'
-              : 'h-[420px] object-cover object-top'
+              : 'h-[280px] sm:h-[420px] object-cover object-top'
           }`}
         />
         {images.length > 1 && (
@@ -422,11 +422,11 @@ export default function WorksSection() {
 
                   {/* 規模 + タグ */}
                   {work.scale && (
-                    <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
+                    <div className="grid grid-cols-4 sm:grid-cols-8 gap-1.5 sm:gap-2">
                       {work.scale.map((s) => (
                         <div
                           key={s.label}
-                          className="text-center px-2 py-1.5 rounded-lg bg-background border border-border"
+                          className="text-center px-1 py-1.5 sm:px-2 rounded-lg bg-background border border-border"
                         >
                           <div className="text-xs font-bold text-accent">{s.value}</div>
                           <div className="text-[10px] text-muted">{s.label}</div>

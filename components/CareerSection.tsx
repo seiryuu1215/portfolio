@@ -96,7 +96,7 @@ export default function CareerSection() {
           </span>
         </div>
 
-        <div className="relative pl-10">
+        <div className="relative pl-8 sm:pl-10">
           {/* タイムライン */}
           <div className="absolute left-[18px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/60 via-border to-border" />
 
@@ -104,7 +104,7 @@ export default function CareerSection() {
             {CAREER.filter((item) => !item.minor).map((item, i) => (
               <div key={i} className="relative group">
                 {/* アイコンドット */}
-                <div className="absolute -left-10 w-9 h-9 rounded-lg bg-card border border-border group-hover:border-accent/40 flex items-center justify-center transition-colors z-10">
+                <div className="absolute -left-8 sm:-left-10 w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-card border border-border group-hover:border-accent/40 flex items-center justify-center transition-colors z-10">
                   <svg
                     width="16"
                     height="16"
@@ -118,7 +118,7 @@ export default function CareerSection() {
                   </svg>
                 </div>
 
-                <div className="p-5 rounded-xl bg-card border border-border hover:border-accent/30 transition-colors">
+                <div className="p-4 sm:p-5 rounded-xl bg-card border border-border hover:border-accent/30 transition-colors">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3">
                     <h4 className="font-bold text-sm">{item.project}</h4>
                     <span className="text-xs text-accent font-mono bg-accent/5 px-2 py-0.5 rounded">
@@ -173,7 +173,7 @@ export default function CareerSection() {
             {/* minor項目（コンパクト表示） */}
             {CAREER.filter((item) => item.minor).map((item, i) => (
               <div key={i} className="relative">
-                <div className="absolute -left-10 w-9 h-9 rounded-lg bg-card border border-border/60 flex items-center justify-center z-10">
+                <div className="absolute -left-8 sm:-left-10 w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-card border border-border/60 flex items-center justify-center z-10">
                   <svg
                     width="14"
                     height="14"

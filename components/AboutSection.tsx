@@ -61,7 +61,7 @@ export default function AboutSection() {
             {/* パーソナリティ */}
             <div className="p-4 rounded-xl bg-card border border-border">
               <p className="text-xs text-accent font-medium mb-2">パーソナリティ</p>
-              <div className="flex items-start gap-4">
+              <div className="flex flex-col sm:flex-row items-start gap-4">
                 {/* アバター */}
                 <div className="shrink-0 flex gap-2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -70,7 +70,7 @@ export default function AboutSection() {
                     alt="ENTJ Commander"
                     width={80}
                     height={80}
-                    className="rounded-xl bg-[#88619a]/10"
+                    className="rounded-xl bg-[#88619a]/10 w-16 h-16 sm:w-20 sm:h-20"
                     loading="lazy"
                   />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -79,7 +79,7 @@ export default function AboutSection() {
                     alt="INTJ Architect"
                     width={80}
                     height={80}
-                    className="rounded-xl bg-[#88619a]/10"
+                    className="rounded-xl bg-[#88619a]/10 w-16 h-16 sm:w-20 sm:h-20"
                     loading="lazy"
                   />
                 </div>

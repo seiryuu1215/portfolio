@@ -229,14 +229,14 @@ export default function SkillsSection() {
         </div>
 
         {/* Featured Skills (A+B) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 mb-8">
           {featuredItems.map((item) => {
             const style = LEVEL_STYLES[item.level];
             const slug = DEVICON_MAP[item.name];
             return (
               <div
                 key={item.name}
-                className="flex items-center gap-3 p-3 rounded-lg bg-card border border-border"
+                className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg bg-card border border-border"
               >
                 {slug ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
@@ -245,17 +245,17 @@ export default function SkillsSection() {
                     alt={item.name}
                     width={40}
                     height={40}
-                    className="shrink-0"
+                    className="shrink-0 w-8 h-8 sm:w-10 sm:h-10"
                     loading="lazy"
                   />
                 ) : (
-                  <span className="shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-accent/20 text-accent text-base font-bold">
+                  <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-md bg-accent/20 text-accent text-sm sm:text-base font-bold">
                     {item.name[0]}
                   </span>
                 )}
-                <div className="min-w-0">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-sm font-bold truncate">{item.name}</span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs sm:text-sm font-bold truncate">{item.name}</span>
                     <span
                       className={`shrink-0 w-5 h-5 flex items-center justify-center text-[10px] font-bold rounded border ${style.color}`}
                     >
