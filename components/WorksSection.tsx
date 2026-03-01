@@ -185,12 +185,6 @@ const WORKS: Work[] = [
         fit: 'contain',
         lightBg: true,
       },
-      {
-        src: '/images/saas-launcher/dashboard.png',
-        caption: 'ダッシュボード',
-        fit: 'contain',
-        lightBg: true,
-      },
     ],
     url: 'https://saas-launcher.vercel.app',
     github: 'https://github.com/seiryuu1215/saas-launcher',
