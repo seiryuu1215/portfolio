@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
-export default function FadeIn({ children, className = '' }: { children: ReactNode; className?: string }) {
+export default function FadeIn({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 

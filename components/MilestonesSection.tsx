@@ -13,8 +13,7 @@ const MILESTONES: MilestoneItem[] = [
     year: '2022',
     emoji: '🏋️',
     title: 'ベンチプレス 100kg 達成',
-    description:
-      '週5のトレーニングを1年間継続し達成。「続けられる仕組みを作る」という発想の原点。',
+    description: '週5のトレーニングを1年間継続し達成。「続けられる仕組みを作る」という発想の原点。',
   },
   {
     year: '2023',
@@ -46,9 +45,7 @@ export default function MilestonesSection() {
       <div className="max-w-4xl mx-auto">
         <SectionHeading id="milestones" label="Milestones" title="キャリアマイルストーン" />
 
-        <p className="text-sm text-muted -mt-4 mb-6 leading-relaxed">
-          エンジニアとしての転換点。
-        </p>
+        <p className="text-sm text-muted -mt-4 mb-6 leading-relaxed">エンジニアとしての転換点。</p>
 
         <div className="relative pl-8">
           {/* タイムライン */}
@@ -66,9 +63,7 @@ export default function MilestonesSection() {
 
                 <div
                   className={`p-4 rounded-xl border ${
-                    item.current
-                      ? 'bg-accent/5 border-accent/30'
-                      : 'bg-card border-border'
+                    item.current ? 'bg-accent/5 border-accent/30' : 'bg-card border-border'
                   }`}
                 >
                   <div className="flex items-center gap-2">
@@ -88,7 +83,6 @@ export default function MilestonesSection() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

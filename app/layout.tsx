@@ -29,8 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Seiryuu | フリーランスエンジニア',
-    description:
-      'Next.js / React / Firebase を軸にWebアプリを企画から運用まで一人で構築。',
+    description: 'Next.js / React / Firebase を軸にWebアプリを企画から運用まで一人で構築。',
   },
   metadataBase: new URL('https://portfolio-seiryuu.vercel.app'),
 };

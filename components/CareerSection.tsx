@@ -189,7 +189,9 @@ export default function CareerSection() {
                 <div className="py-3 px-4 rounded-lg border border-border/60 bg-card/50 flex flex-wrap items-center gap-x-3 gap-y-1">
                   <span className="text-sm font-medium text-muted">{item.project}</span>
                   <span className="text-xs text-accent/70 font-mono">{item.period}</span>
-                  <span className="text-[11px] text-muted">{item.role} / {item.scope}</span>
+                  <span className="text-[11px] text-muted">
+                    {item.role} / {item.scope}
+                  </span>
                   {item.tech.split(' / ').map((t) => (
                     <span
                       key={t}

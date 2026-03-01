@@ -54,6 +54,30 @@ export default function ContactSection() {
           </a>
         </div>
 
+        {/* スキルシート */}
+        <div className="mt-6">
+          <a
+            href="/スキルシート_及川.xlsx"
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border hover:bg-muted rounded-xl font-medium transition-colors text-foreground"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            スキルシートをダウンロード
+          </a>
+          <p className="text-xs text-muted mt-2">更新日: 2026/2/25</p>
+        </div>
+
         {/* SNS リンク */}
         <div className="flex justify-center gap-6 mt-8">
           <a
@@ -68,7 +92,7 @@ export default function ContactSection() {
             </svg>
           </a>
           <a
-            href="https://x.com/seiryuu_1215"
+            href="https://x.com/seiryuu_darts"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted hover:text-foreground transition-colors"

@@ -22,10 +22,11 @@ export default function AboutSection() {
           {/* 自己紹介テキスト */}
           <div className="space-y-4">
             <p className="text-lg leading-relaxed">
-              25歳のフルスタックエンジニア。
-              TypeScript / React / Next.js を軸に、型安全性・保守性・可読性を意識した設計・実装を強みとしています。
+              25歳のフルスタックエンジニア。 TypeScript / React / Next.js
+              を軸に、型安全性・保守性・可読性を意識した設計・実装を強みとしています。
               認証・決済・DB設計・インフラまで
-              <strong>企画から運用を一人で完遂</strong>でき、ウォーターフォール・アジャイル双方の開発経験があります。
+              <strong>企画から運用を一人で完遂</strong>
+              でき、ウォーターフォール・アジャイル双方の開発経験があります。
               実務は大半をフルリモートで参画しており、非同期コミュニケーションとPR駆動の開発に慣れています。
             </p>
 

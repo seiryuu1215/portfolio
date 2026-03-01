@@ -68,7 +68,7 @@ const WORKS: Work[] = [
       '統計分析エンジン — ピアソン相関・線形回帰・スピード分析(アダプティブ刻み幅+ミス方向検出)・ブル率改善シミュレーター',
       'Puppeteer + Vercel Cron（毎日JST 10:00）でDARTSLIVEスタッツを自動収集。フル同期+差分同期の2モード対応',
       'セキュリティレビュー実施 — CRITICAL 2件・HIGH 5件・MEDIUM 4件を修正。Firestoreフィールド制限・レートリミット(60req/min)・SSRF対策・CSV Injection対策',
-      'Storybook 16ストーリー + Vitest 164テストでUIカタログと品質を担保',
+      'Storybook 16ストーリー + Vitest 379テストでUIカタログと品質を担保',
     ],
     features: [
       'DARTSLIVEスタッツ自動取得 — ピアソン相関・線形回帰・スピード分析・ブル率シミュレーター',
@@ -88,7 +88,7 @@ const WORKS: Work[] = [
       { value: '106', label: 'コンポーネント' },
       { value: '55,000+', label: '行（TS）' },
       { value: '7,000+', label: 'バレルDB' },
-      { value: '164', label: 'テスト' },
+      { value: '379', label: 'テスト' },
       { value: '16', label: 'Storybook' },
       { value: '10', label: '設計書' },
     ],
@@ -181,7 +181,14 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
               aria-label="前の画像"
               className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-muted hover:text-foreground opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
@@ -190,7 +197,14 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
               aria-label="次の画像"
               className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-muted hover:text-foreground opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <polyline points="9 18 15 12 9 6" />
               </svg>
             </button>
@@ -241,7 +255,10 @@ export default function WorksSection() {
 
         <div className="space-y-16">
           {WORKS.filter((w) => w.status !== 'in-dev').map((work) => (
-            <div key={work.title} className="rounded-2xl border border-border bg-card overflow-hidden">
+            <div
+              key={work.title}
+              className="rounded-2xl border border-border bg-card overflow-hidden"
+            >
               {/* ヘッダー */}
               <div className="p-5 pb-0 flex items-center gap-3 flex-wrap">
                 <h3 className="text-xl font-bold">{work.title}</h3>
@@ -274,7 +291,14 @@ export default function WorksSection() {
                           rel="noopener noreferrer"
                           className="text-sm text-accent hover:text-accent-hover transition-colors flex items-center gap-1"
                         >
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
                             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
                             <polyline points="15 3 21 3 21 9" />
                             <line x1="10" y1="14" x2="21" y2="3" />
@@ -307,13 +331,31 @@ export default function WorksSection() {
                           <span className="text-sm font-bold text-accent">
                             インタラクティブ設計図
                           </span>
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent group-hover/bp:translate-x-0.5 transition-transform">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            className="text-accent group-hover/bp:translate-x-0.5 transition-transform"
+                          >
                             <polyline points="9 18 15 12 9 6" />
                           </svg>
                         </div>
                         <div className="flex flex-wrap gap-1.5">
-                          {['📐 アーキテクチャ', '🗄️ ER図', '🔐 認証・課金', '⏰ Cron', '📱 画面遷移', '🔄 API'].map((t) => (
-                            <span key={t} className="px-2 py-0.5 text-[10px] rounded-full bg-accent/10 text-accent/80 border border-accent/15">
+                          {[
+                            '📐 アーキテクチャ',
+                            '🗄️ ER図',
+                            '🔐 認証・課金',
+                            '⏰ Cron',
+                            '📱 画面遷移',
+                            '🔄 API',
+                          ].map((t) => (
+                            <span
+                              key={t}
+                              className="px-2 py-0.5 text-[10px] rounded-full bg-accent/10 text-accent/80 border border-accent/15"
+                            >
                               {t}
                             </span>
                           ))}
@@ -336,7 +378,9 @@ export default function WorksSection() {
                   {/* 差別化 */}
                   {work.differentiation && (
                     <div className="p-3 rounded-lg bg-background border border-border">
-                      <p className="text-xs text-accent font-medium mb-1.5">既存サービスとの差別化</p>
+                      <p className="text-xs text-accent font-medium mb-1.5">
+                        既存サービスとの差別化
+                      </p>
                       <ul className="space-y-1">
                         {work.differentiation.map((d) => (
                           <li key={d} className="text-xs text-muted flex items-start gap-1.5">
@@ -380,7 +424,10 @@ export default function WorksSection() {
                   {work.scale && (
                     <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
                       {work.scale.map((s) => (
-                        <div key={s.label} className="text-center px-2 py-1.5 rounded-lg bg-background border border-border">
+                        <div
+                          key={s.label}
+                          className="text-center px-2 py-1.5 rounded-lg bg-background border border-border"
+                        >
                           <div className="text-xs font-bold text-accent">{s.value}</div>
                           <div className="text-[10px] text-muted">{s.label}</div>
                         </div>
@@ -419,9 +466,12 @@ export default function WorksSection() {
                 className="block rounded-xl overflow-hidden border border-border hover:border-accent/40 transition-all group"
               >
                 <div className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] p-6">
-                  <p className="text-[10px] tracking-widest text-blue-300/60 uppercase mb-3">Zenn Book — 全10章</p>
+                  <p className="text-[10px] tracking-widest text-blue-300/60 uppercase mb-3">
+                    Zenn Book — 全10章
+                  </p>
                   <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
-                    AI × 個人開発で<br />
+                    AI × 個人開発で
+                    <br />
                     55,000行のSaaSを作った方法
                   </p>
                   <p className="text-xs text-blue-200/50 mt-3">
@@ -431,7 +481,7 @@ export default function WorksSection() {
                     {[
                       { value: '10', label: '章' },
                       { value: '55,000+', label: '行' },
-                      { value: '164', label: 'テスト' },
+                      { value: '379', label: 'テスト' },
                       { value: 'A-', label: 'セキュリティ' },
                     ].map((s) => (
                       <div key={s.label} className="text-center">
@@ -443,7 +493,15 @@ export default function WorksSection() {
                 </div>
                 <div className="px-4 py-2.5 bg-card flex items-center justify-between">
                   <span className="text-xs text-muted">読む</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all"
+                  >
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </div>
@@ -452,13 +510,19 @@ export default function WorksSection() {
               {/* 記事一覧（2シリーズ横並び） */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-xs font-medium text-muted mb-2">設計図×コードで読み解くサービス連携</p>
+                  <p className="text-xs font-medium text-muted mb-2">
+                    設計図×コードで読み解くサービス連携
+                  </p>
                   <div className="space-y-1.5">
                     {[
                       { emoji: '🔐', title: 'デュアル認証', slug: 'darts-lab-dual-auth' },
                       { emoji: '💳', title: 'Stripe課金フロー', slug: 'darts-lab-stripe-flow' },
                       { emoji: '⏰', title: 'Cronバッチ', slug: 'darts-lab-cron-pipeline' },
-                      { emoji: '🤖', title: 'LINE Bot状態遷移', slug: 'darts-lab-line-statemachine' },
+                      {
+                        emoji: '🤖',
+                        title: 'LINE Bot状態遷移',
+                        slug: 'darts-lab-line-statemachine',
+                      },
                       { emoji: '🛡️', title: '多層防御', slug: 'darts-lab-defense-layers' },
                     ].map((article) => (
                       <a

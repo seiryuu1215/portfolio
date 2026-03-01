@@ -6,11 +6,15 @@ import Link from 'next/link';
 
 const Architecture = dynamic(() => import('@/components/diagrams/Architecture'), { ssr: false });
 const ERDiagram = dynamic(() => import('@/components/diagrams/ERDiagram'), { ssr: false });
-const AuthPaymentFlow = dynamic(() => import('@/components/diagrams/AuthPaymentFlow'), { ssr: false });
+const AuthPaymentFlow = dynamic(() => import('@/components/diagrams/AuthPaymentFlow'), {
+  ssr: false,
+});
 const CronFlow = dynamic(() => import('@/components/diagrams/CronFlow'), { ssr: false });
 const PageFlow = dynamic(() => import('@/components/diagrams/PageFlow'), { ssr: false });
 const ApiDataFlow = dynamic(() => import('@/components/diagrams/ApiDataFlow'), { ssr: false });
-const RequirementsViz = dynamic(() => import('@/components/diagrams/RequirementsViz'), { ssr: false });
+const RequirementsViz = dynamic(() => import('@/components/diagrams/RequirementsViz'), {
+  ssr: false,
+});
 
 const TABS = [
   { key: 'architecture', label: '📐 アーキテクチャ', component: Architecture },
@@ -54,9 +58,7 @@ export default function DartsLabDiagramsPage() {
       {/* Page header */}
       <div className="text-center pt-6 pb-6 px-4">
         <h1 className="text-2xl font-bold">darts Lab — 設計図</h1>
-        <p className="text-sm text-muted mt-2">
-          インタラクティブ SVG で設計を可視化
-        </p>
+        <p className="text-sm text-muted mt-2">インタラクティブ SVG で設計を可視化</p>
       </div>
 
       {/* Tabs */}

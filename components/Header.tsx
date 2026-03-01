@@ -41,7 +41,14 @@ export default function Header() {
             href="/"
             className="text-sm text-muted hover:text-foreground transition-colors flex items-center gap-1.5"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <polyline points="15 18 9 12 15 6" />
             </svg>
             ポートフォリオに戻る
@@ -67,7 +74,14 @@ export default function Header() {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="メニュー"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 {mobileOpen ? (
                   <path d="M6 6l12 12M6 18L18 6" />
                 ) : (

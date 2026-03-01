@@ -33,7 +33,7 @@ const DEVICON_MAP: Record<string, string> = {
   'AWS (Lambda / DynamoDB / CloudWatch)': 'amazonwebservices/amazonwebservices-original-wordmark',
   'Firebase (Auth / Firestore / Storage)': 'firebase/firebase-plain',
   Vercel: 'vercel/vercel-original',
-  'Vitest / Jest (164 tests)': 'vitejs/vitejs-original',
+  'Vitest / Jest (379 tests)': 'vitejs/vitejs-original',
   'GitHub Actions': 'githubactions/githubactions-original',
   'ESLint / Prettier': 'eslint/eslint-original',
   'Recharts 3': 'react/react-original',
@@ -69,8 +69,18 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: '認証 / 決済',
     items: [
-      { name: 'NextAuth.js + Firebase Auth', level: 'B', source: 'personal', note: 'ロールベース制御' },
-      { name: 'Stripe (Subscription / Webhook)', level: 'C', source: 'personal', note: 'サーバーサイド完結' },
+      {
+        name: 'NextAuth.js + Firebase Auth',
+        level: 'B',
+        source: 'personal',
+        note: 'ロールベース制御',
+      },
+      {
+        name: 'Stripe (Subscription / Webhook)',
+        level: 'C',
+        source: 'personal',
+        note: 'サーバーサイド完結',
+      },
     ],
   },
   {
@@ -95,7 +105,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'テスト / CI / 監視',
     items: [
-      { name: 'Vitest / Jest (164 tests)', level: 'B', source: 'personal' },
+      { name: 'Vitest / Jest (379 tests)', level: 'B', source: 'personal' },
       { name: 'Storybook', level: 'C', source: 'both', note: '16ストーリー' },
       { name: 'GitHub Actions', level: 'B', source: 'personal', note: 'lint→format→test→build' },
       { name: 'CircleCI', level: 'C', source: 'work' },
@@ -178,13 +188,25 @@ export default function SkillsSection() {
 
         {/* 凡例 */}
         <div className="flex flex-wrap gap-x-4 gap-y-1.5 mb-4 text-xs text-muted">
-          <span><strong className="text-blue-400">A</strong> = 独力遂行・後進教育</span>
-          <span><strong className="text-green-400">B</strong> = 独力遂行</span>
-          <span><strong className="text-yellow-400">C</strong> = 指導下で遂行</span>
-          <span><strong className="text-neutral-400">D</strong> = 学習・経験あり</span>
+          <span>
+            <strong className="text-blue-400">A</strong> = 独力遂行・後進教育
+          </span>
+          <span>
+            <strong className="text-green-400">B</strong> = 独力遂行
+          </span>
+          <span>
+            <strong className="text-yellow-400">C</strong> = 指導下で遂行
+          </span>
+          <span>
+            <strong className="text-neutral-400">D</strong> = 学習・経験あり
+          </span>
           <span className="flex items-center gap-1">
-            <span className="px-1.5 py-px text-[10px] rounded border text-sky-400 bg-sky-400/10 border-sky-400/20">実務</span>
-            <span className="px-1.5 py-px text-[10px] rounded border text-purple-400 bg-purple-400/10 border-purple-400/20">個人開発</span>
+            <span className="px-1.5 py-px text-[10px] rounded border text-sky-400 bg-sky-400/10 border-sky-400/20">
+              実務
+            </span>
+            <span className="px-1.5 py-px text-[10px] rounded border text-purple-400 bg-purple-400/10 border-purple-400/20">
+              個人開発
+            </span>
             = 経験ソース
           </span>
         </div>
@@ -292,9 +314,7 @@ export default function SkillsSection() {
                                 {s.label}
                               </span>
                             ))}
-                          {item.note && (
-                            <span className="text-[10px] text-muted">{item.note}</span>
-                          )}
+                          {item.note && <span className="text-[10px] text-muted">{item.note}</span>}
                         </div>
                       </div>
                     );
@@ -311,29 +331,54 @@ export default function SkillsSection() {
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               {
-                title: 'フルスタック開発（フロントエンド軸）',
-                items: ['React / Next.js / TypeScript', 'Firebase / Supabase バックエンド・認証・DB設計', 'Stripe 決済基盤', 'Recharts データ可視化・統計分析'],
+                title: 'フルスタック開発',
+                items: [
+                  'React / Next.js / TypeScript — 3年以上の実務経験',
+                  'MUI / Tailwind CSS / Storybook — コンポーネント駆動開発',
+                  'Node.js / Python / Java — サーバーサイド対応',
+                  'Firebase / Supabase — 認証・DB設計・ホスティング',
+                  'Stripe 決済 / LINE Bot / Puppeteer OGP自動生成',
+                  'Recharts データ可視化・統計ダッシュボード構築',
+                ],
                 strong: true,
               },
               {
                 title: 'インフラ / クラウド',
-                items: ['AWS（Lambda / DynamoDB / CloudWatch）', 'Vercel / Firebase / PWA・モバイル対応'],
+                items: [
+                  'AWS（Lambda / DynamoDB / DocumentDB / CloudWatch）',
+                  'Amazon Kinesis Firehose — ストリーミング移行設計',
+                  'Fastly CDN — 500万会員規模の大規模配信最適化',
+                  'Vercel / Firebase Hosting / PWA モバイル対応',
+                  'Sentry エラー監視 / Vercel Cron ジョブ管理',
+                ],
               },
               {
                 title: '設計 / 品質管理',
-                items: ['要件定義〜詳細設計〜テスト — 全工程一貫対応', 'CI/CD（GitHub Actions / CircleCI）', 'セキュリティレビュー（11件の脆弱性修正実績）'],
+                items: [
+                  '要件定義〜詳細設計〜テスト — 全工程一貫対応',
+                  'Figma → Storybook → 実装の UI 開発フロー',
+                  'CI/CD（GitHub Actions / CircleCI）',
+                  '負荷テスト計画策定・クライアントとのデータ量調整',
+                  'Dependabot PR 精査・ライブラリ更新管理（週次約15件）',
+                  'セキュリティレビュー（11件の脆弱性修正実績）',
+                ],
               },
               {
-                title: 'AI駆動開発',
-                items: ['Claude Code — 設計〜実装〜テストをAIと協働', 'アジャイル（スクラム）・REST API設計'],
+                title: '運用 / AI駆動開発',
+                items: [
+                  'CloudWatch ログ分析・障害原因特定・対応フロー改善',
+                  'バッチ処理性能改善（cronjob → ストリーミング移行設計）',
+                  '新規参画者オンボーディング・環境構築支援・マニュアル整備',
+                  'Claude Code — 設計〜実装〜テストを AI と協働',
+                  'AI駆動の設計書自動生成（要件定義書・ER図・フロー図）',
+                  'Zenn 技術書・記事で開発知見を発信',
+                ],
               },
             ].map((service) => (
               <div
                 key={service.title}
                 className={`p-4 rounded-xl bg-card border transition-colors ${
-                  service.strong
-                    ? 'border-accent/40 ring-1 ring-accent/10'
-                    : 'border-border'
+                  service.strong ? 'border-accent/40 ring-1 ring-accent/10' : 'border-border'
                 }`}
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -356,7 +401,6 @@ export default function SkillsSection() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
