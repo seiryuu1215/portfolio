@@ -304,6 +304,82 @@ export default function SkillsSection() {
             ))}
           </div>
         </details>
+
+        {/* 対応可能な業務 */}
+        <div className="mt-10">
+          <h3 className="text-lg font-bold mb-4">対応可能な業務</h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              {
+                title: 'フルスタック開発（フロントエンド軸）',
+                items: ['React / Next.js / TypeScript', 'Firebase / Supabase バックエンド・認証・DB設計', 'Stripe 決済基盤', 'Recharts データ可視化・統計分析'],
+                strong: true,
+              },
+              {
+                title: 'インフラ / クラウド',
+                items: ['AWS（Lambda / DynamoDB / CloudWatch）', 'Vercel / Firebase / PWA・モバイル対応'],
+              },
+              {
+                title: '設計 / 品質管理',
+                items: ['要件定義〜詳細設計〜テスト — 全工程一貫対応', 'CI/CD（GitHub Actions / CircleCI）', 'セキュリティレビュー（11件の脆弱性修正実績）'],
+              },
+              {
+                title: 'AI駆動開発',
+                items: ['Claude Code — 設計〜実装〜テストをAIと協働', 'アジャイル（スクラム）・REST API設計'],
+              },
+            ].map((service) => (
+              <div
+                key={service.title}
+                className={`p-4 rounded-xl bg-card border transition-colors ${
+                  service.strong
+                    ? 'border-accent/40 ring-1 ring-accent/10'
+                    : 'border-border'
+                }`}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <h4 className="font-bold text-sm">{service.title}</h4>
+                  {service.strong && (
+                    <span className="px-2 py-0.5 text-[10px] rounded-full bg-accent/10 text-accent border border-accent/20 font-medium">
+                      得意領域
+                    </span>
+                  )}
+                </div>
+                <ul className="space-y-1">
+                  {service.items.map((item) => (
+                    <li key={item} className="text-xs text-muted flex items-start gap-1.5">
+                      <span className="text-accent mt-0.5 shrink-0">&#9656;</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 開発プラクティス */}
+        <div className="mt-8">
+          <h3 className="text-lg font-bold mb-4">開発プラクティス</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { title: 'CI/CD', badge: '4段階ゲート' },
+              { title: 'テスト自動化', badge: '164テスト' },
+              { title: '設計ドキュメント', badge: '10本整備' },
+              { title: 'セキュリティ', badge: '11件修正' },
+              { title: 'エラー監視', badge: 'Sentry' },
+              { title: '依存関係管理', badge: '週次15件' },
+              { title: 'コードレビュー', badge: '実務経験' },
+            ].map((p) => (
+              <div
+                key={p.title}
+                className="p-3 rounded-lg bg-card border border-border text-center"
+              >
+                <p className="text-xs font-bold mb-1">{p.title}</p>
+                <span className="text-[10px] text-accent font-bold">{p.badge}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

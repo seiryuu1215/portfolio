@@ -10,35 +10,35 @@ interface MilestoneItem {
 
 const MILESTONES: MilestoneItem[] = [
   {
-    year: '1年目',
+    year: '2021',
     emoji: '🏃',
     title: 'ダイエット -15kg',
     description: '食事管理と運動習慣を徹底し、1年間で15kgの減量に成功。',
   },
   {
-    year: '2年目',
+    year: '2022',
     emoji: '🏋️',
     title: 'ベンチプレス 100kg × 3回',
     description: 'トレーニング理論を学び、段階的に重量を伸ばして目標を達成。',
   },
   {
-    year: '3年目',
+    year: '2023',
     emoji: '🎯',
     title: 'ダーツ プロライセンス取得',
     description: 'データ分析と反復練習でスキルを磨き、プロ試験に合格。',
   },
   {
-    year: '4年目',
+    year: '2024',
     emoji: '🚀',
     title: 'SESから独立（フリーランス）',
     description: '実務経験を積みながら準備を進め、フリーランスとして独立。',
   },
   {
-    year: '5年目',
+    year: '2025',
     emoji: '💰',
     title: '本業以外で継続収益を生む',
     description:
-      'AIで誰でもサービスを作れる時代だからこそ、アイデアと実行力で差をつける。個人開発プロダクトから1円でも継続的な収益を生み出す。',
+      'AIで誰でもサービスを作れる時代だからこそ、アイデアと実行力で差をつける。個人開発プロダクトから継続的な収益を生み出す。',
     current: true,
   },
 ];

@@ -1,6 +1,5 @@
 const STATS = [
-  { value: '3年9ヶ月', label: '実務経験' },
-  { value: '53,000+', label: '行（TypeScript）' },
+  { value: '55,000+', label: '行（TypeScript）' },
   { value: '164', label: 'テスト' },
   { value: '500万+', label: '担当サービス会員' },
 ];
@@ -10,7 +9,7 @@ export default function HeroSection() {
     <section className="min-h-[85vh] flex items-center justify-center px-6">
       <div className="max-w-3xl text-center">
         <p className="text-accent text-sm font-mono mb-3 tracking-widest uppercase">
-          Fullstack Engineer — Remote
+          フルスタックエンジニア — リモート
         </p>
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
           コードの先に、
@@ -24,7 +23,7 @@ export default function HeroSection() {
         </p>
 
         {/* At a Glance */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 max-w-xl mx-auto">
+        <div className="grid grid-cols-3 gap-3 mb-8 max-w-xl mx-auto">
           {STATS.map((s) => (
             <div
               key={s.label}

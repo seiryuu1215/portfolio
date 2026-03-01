@@ -5,9 +5,11 @@ import { usePathname } from 'next/navigation';
 
 const NAV_ITEMS = [
   { href: '#about', label: 'About' },
-  { href: '#personal', label: '個人開発' },
-  { href: '#work', label: '実務' },
+  { href: '#personal', label: 'Projects' },
+  { href: '#work', label: 'Work' },
   { href: '#skills', label: 'Skills' },
+  { href: '#milestones', label: 'Milestones' },
+  { href: '#faq', label: 'FAQ' },
   { href: '#contact', label: 'Contact' },
 ];
 

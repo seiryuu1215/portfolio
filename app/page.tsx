@@ -4,9 +4,6 @@ import MilestonesSection from '@/components/MilestonesSection';
 import WorksSection from '@/components/WorksSection';
 import CareerSection from '@/components/CareerSection';
 import SkillsSection from '@/components/SkillsSection';
-import ServicesSection from '@/components/ServicesSection';
-import DevStyleSection from '@/components/DevStyleSection';
-import ToolsSection from '@/components/ToolsSection';
 import VisionSection from '@/components/VisionSection';
 import FAQSection from '@/components/FAQSection';
 import ContactSection from '@/components/ContactSection';
@@ -28,15 +25,6 @@ export default function Home() {
       </FadeIn>
       <FadeIn>
         <SkillsSection />
-      </FadeIn>
-      <FadeIn>
-        <ServicesSection />
-      </FadeIn>
-      <FadeIn>
-        <DevStyleSection />
-      </FadeIn>
-      <FadeIn>
-        <ToolsSection />
       </FadeIn>
       <FadeIn>
         <MilestonesSection />
