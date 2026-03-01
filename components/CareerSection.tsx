@@ -48,10 +48,10 @@ const CAREER: CareerItem[] = [
     period: '2022/7 〜 2025/3',
     project: '国内最大手電子新聞サイト エンハンス開発',
     role: 'メンバー',
-    scope: '詳細設計〜保守運用（約2年9ヶ月）',
+    scope: '詳細設計〜保守運用',
     tech: 'Next.js / React / TypeScript / AWS / DynamoDB / Fastly',
     method: 'スクラム（アジャイル）/ フルリモート',
-    scale: '会員500万人超',
+    scale: '2年9ヶ月 / 会員500万人超',
     icon: 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z',
     highlights: [
       '登録会員500万人超の大規模サービスでフロントエンド開発',
