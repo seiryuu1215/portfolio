@@ -168,11 +168,6 @@ const WORKS: Work[] = [
     ],
     images: [
       {
-        src: '/images/saas-launcher/lp.png',
-        caption: 'ランディングページ',
-        fit: 'cover',
-      },
-      {
         src: '/images/saas-launcher/pricing.png',
         caption: '料金プラン比較',
         fit: 'contain',
