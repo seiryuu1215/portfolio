@@ -70,7 +70,7 @@ const WORKS: Work[] = [
       '統計分析エンジン — ピアソン相関・線形回帰・スピード分析(アダプティブ刻み幅+ミス方向検出)・ブル率改善シミュレーター',
       'Puppeteer + Vercel Cron（毎日JST 10:00）でDARTSLIVEスタッツを自動収集。フル同期+差分同期の2モード対応',
       'セキュリティレビュー実施 — CRITICAL 2件・HIGH 5件・MEDIUM 4件を修正。Firestoreフィールド制限・レートリミット(60req/min)・SSRF対策・CSV Injection対策',
-      'Storybook 16ストーリー + Vitest 379テストでUIカタログと品質を担保',
+      'Storybook 16ストーリー + Vitest 424テストでUIカタログと品質を担保',
     ],
     features: [
       'DARTSLIVEスタッツ自動取得 — ピアソン相関・線形回帰・スピード分析・ブル率シミュレーター',
@@ -85,12 +85,12 @@ const WORKS: Work[] = [
       'PWA（オフラインキャッシュ）・Capacitor iOS対応・ダークモード',
     ],
     scale: [
-      { value: '230+', label: 'コミット' },
+      { value: '231', label: 'コミット' },
       { value: '40', label: 'ページ' },
       { value: '106', label: 'コンポーネント' },
-      { value: '55,000+', label: '行（TS）' },
+      { value: '74,000+', label: '行（TS）' },
       { value: '7,000+', label: 'バレルDB' },
-      { value: '379', label: 'テスト' },
+      { value: '424', label: 'テスト' },
       { value: '16', label: 'Storybook' },
       { value: '10', label: '設計書' },
     ],
@@ -119,7 +119,7 @@ const WORKS: Work[] = [
     title: 'SaaS Launcher — スターターキット販売',
     period: '2026/3 〜 販売中',
     description:
-      'darts Lab（55,000行）から認証・決済・セキュリティの共通基盤を抽出し、日本語圏初の Next.js + Firebase + Stripe SaaS スターターキットとして商品化。¥2,980で販売中。',
+      'darts Lab（74,000行）から認証・決済・セキュリティの共通基盤を抽出し、日本語圏初の Next.js + Firebase + Stripe SaaS スターターキットとして商品化。¥2,980で販売中。',
     motivation:
       'SaaS開発のたびに認証・決済・セキュリティで同じ実装を繰り返す課題を解決。英語圏にはShipFast ($199)、Makerkit ($299) 等があるが日本語対応は皆無だったため、自身の運用実績あるコードを汎用化して販売。',
     differentiation: [
@@ -558,7 +558,7 @@ export default function WorksSection() {
                   <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
                     AI × 個人開発で
                     <br />
-                    55,000行のSaaSを作った方法
+                    74,000行のSaaSを作った方法
                   </p>
                   <p className="text-xs text-blue-200/50 mt-3">
                     Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
@@ -566,8 +566,8 @@ export default function WorksSection() {
                   <div className="flex flex-wrap gap-3 mt-4">
                     {[
                       { value: '10', label: '章' },
-                      { value: '55,000+', label: '行' },
-                      { value: '379', label: 'テスト' },
+                      { value: '74,000+', label: '行' },
+                      { value: '424', label: 'テスト' },
                       { value: 'A-', label: 'セキュリティ' },
                     ].map((s) => (
                       <div key={s.label} className="text-center">
