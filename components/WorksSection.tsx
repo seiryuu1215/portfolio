@@ -106,6 +106,53 @@ const WORKS: Work[] = [
     status: 'released',
   },
   {
+    title: 'SaaS Launcher — スターターキット販売',
+    period: '2026/3 〜 販売中',
+    description:
+      'darts Lab（55,000行）から認証・決済・セキュリティの共通基盤を抽出し、日本語圏初の Next.js + Firebase + Stripe SaaS スターターキットとして商品化。¥2,980で販売中。',
+    motivation:
+      'SaaS開発のたびに認証・決済・セキュリティで同じ実装を繰り返す課題を解決。英語圏にはShipFast ($199)、Makerkit ($299) 等があるが日本語対応は皆無だったため、自身の運用実績あるコードを汎用化して販売。',
+    differentiation: [
+      '英語圏のみの市場（ShipFast $199, Makerkit $299）→ 日本語コード・日本語ドキュメントで唯一の選択肢',
+      'テンプレートは「動くだけ」→ 本番運用1年で踏んだ地雷を全て回避済みのコード',
+      'Stripe連携の手動セットアップが面倒 → setup-stripe.mjs で商品・価格を自動作成',
+    ],
+    techStack: [
+      'Next.js 16',
+      'TypeScript',
+      'shadcn/ui',
+      'Tailwind CSS v4',
+      'Firebase',
+      'Stripe',
+      'NextAuth',
+      'Vitest',
+      'Serwist (PWA)',
+      'Sentry',
+      'Vercel',
+      'Lemon Squeezy',
+    ],
+    highlights: [
+      'darts Lab から認証（NextAuth + Firebase Auth REST API）・決済（Stripe Checkout/Portal/Webhook）・RBAC（3段階ロール）を抽出・汎用化',
+      'API ミドルウェアを関数合成パターンで設計 — withErrorHandler / withAuth / withAdmin / withPermission の4デコレータ',
+      'Stripe Webhook の冪等性チェック（stripeEvents コレクション）・プロモ価格・トライアル対応',
+      '実運用で発見した5つの地雷を回避済み — Firebase SDK の Node.js 互換性、Vercel 環境変数の改行問題、Next.js patched fetch 等',
+      'Lemon Squeezy で販売フロー構築 — ZIP配布・決済・デリバリーを自動化',
+    ],
+    features: [
+      '認証: NextAuth + Firebase Auth（JWT・ロール同期）',
+      '決済: Stripe サブスクリプション（Checkout・Portal・Webhook 4イベント）',
+      'RBAC: admin / pro / general の3段階権限管理',
+      'セキュリティ: CSP・レートリミット（Upstash Redis）・Firestore保護フィールド',
+      'PWA: Serwist Service Worker（オフライン・プッシュ通知）',
+      'CI/CD: GitHub Actions 4段階ゲート（Lint→Format→Test→Build）',
+      'テスト: Vitest 22テスト即実行可能',
+      '自動化: setup-stripe.mjs で Stripe 商品・価格を一発作成',
+    ],
+    url: 'https://saas-launcher.vercel.app',
+    github: 'https://github.com/seiryuu1215/saas-launcher',
+    status: 'released',
+  },
+  {
     title: 'MonkMode — 筋トレ・食事管理',
     period: '2026/2 〜 開発中',
     description:
