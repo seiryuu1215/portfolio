@@ -116,8 +116,18 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'スクレイピング / API',
     items: [
-      { name: 'Puppeteer 24', level: 'C', source: 'personal', note: 'DARTSLIVE自動取得' },
-      { name: 'LINE Messaging API', level: 'C', source: 'personal', note: 'レポート自動配信' },
+      {
+        name: 'Puppeteer 24',
+        level: 'C',
+        source: 'personal',
+        note: 'DARTSLIVE スクレイピング + API統合',
+      },
+      {
+        name: 'LINE Messaging API',
+        level: 'B',
+        source: 'personal',
+        note: 'ロール別Flex通知・リッチメニュー・Webhook状態管理',
+      },
       { name: 'Swagger', level: 'C', source: 'work' },
     ],
   },

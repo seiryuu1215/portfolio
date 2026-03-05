@@ -32,7 +32,6 @@ interface StepProps {
 }
 
 function Step({ x, y, w, h, label, sub, icon, color, num }: StepProps) {
-  const subLines = sub ? sub.split('\n') : [];
   return (
     <g>
       <rect
@@ -65,7 +64,7 @@ function Step({ x, y, w, h, label, sub, icon, color, num }: StepProps) {
       )}
       <text
         x={x + (num ? 30 : 10)}
-        y={y + (sub ? h / 2 - 5 * subLines.length : h / 2 + 1)}
+        y={y + (sub ? h / 2 - 5 : h / 2 + 1)}
         fill={C.text}
         fontSize={10}
         fontWeight={600}
@@ -74,19 +73,18 @@ function Step({ x, y, w, h, label, sub, icon, color, num }: StepProps) {
       >
         {icon} {label}
       </text>
-      {subLines.map((line, i) => (
+      {sub && (
         <text
-          key={i}
           x={x + (num ? 30 : 10)}
-          y={y + h / 2 + 5 + i * 11}
+          y={y + h / 2 + 9}
           fill={C.textDim}
           fontSize={8}
           fontFamily="'JetBrains Mono',monospace"
           dominantBaseline="middle"
         >
-          {line}
+          {sub}
         </text>
-      ))}
+      )}
     </g>
   );
 }

@@ -421,10 +421,10 @@ const nodes: NodeDef[] = [
     id: 'ogp',
     x: 435,
     y: 220,
-    w: 150,
+    w: 130,
     h: 52,
     icon: '🖼️',
-    label: 'OGP Gen',
+    label: 'OGP Generator',
     sublabel: 'Edge Runtime',
     color: COLORS.vercel,
     glow: COLORS.vercelGlow,
@@ -519,7 +519,7 @@ const nodes: NodeDef[] = [
     id: 'sentry',
     x: 470,
     y: 530,
-    w: 130,
+    w: 120,
     h: 52,
     icon: '🔍',
     label: 'Sentry',
@@ -554,6 +554,7 @@ const arrows: ArrowProps[] = [
     bidirectional: true,
   },
   { x1: 500, y1: 272, x2: 465, y2: 380, color: COLORS.firebase, label: 'Upload' },
+  { x1: 540, y1: 96, x2: 580, y2: 96, color: COLORS.firebase, dashed: true },
   { x1: 100, y1: 272, x2: 110, y2: 530, color: COLORS.external, label: 'Puppeteer', dashed: true },
   { x1: 295, y1: 272, x2: 250, y2: 530, color: COLORS.pink, label: 'Webhook' },
   { x1: 355, y1: 272, x2: 390, y2: 530, color: COLORS.green, label: 'Push' },
@@ -635,8 +636,8 @@ export default function ArchitectureDiagram() {
         )}
       </div>
 
-      <div style={{ position: 'relative', width: '100%', maxWidth: 660, margin: '0 auto' }}>
-        <svg viewBox="0 0 660 610" width="100%" style={{ overflow: 'visible' }}>
+      <div style={{ position: 'relative', width: '100%', maxWidth: 640, margin: '0 auto' }}>
+        <svg viewBox="0 0 640 610" width="100%" style={{ overflow: 'visible' }}>
           <defs>
             <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
               <path
@@ -648,7 +649,7 @@ export default function ArchitectureDiagram() {
               />
             </pattern>
           </defs>
-          <rect width="660" height="610" fill="url(#grid)" opacity="0.5" />
+          <rect width="640" height="610" fill="url(#grid)" opacity="0.5" />
 
           <GroupBox
             x={30}
@@ -662,7 +663,7 @@ export default function ArchitectureDiagram() {
           <GroupBox
             x={40}
             y={192}
-            width={560}
+            width={540}
             height={98}
             label="VERCEL PLATFORM"
             color={COLORS.vercel}
@@ -680,7 +681,7 @@ export default function ArchitectureDiagram() {
           <GroupBox
             x={30}
             y={502}
-            width={600}
+            width={580}
             height={98}
             label="EXTERNAL SERVICES"
             color={COLORS.external}

@@ -32,7 +32,6 @@ interface FlowStepProps {
 }
 
 function FlowStep({ x, y, w, h, label, sublabel, icon, color, pulse }: FlowStepProps) {
-  const subLines = sublabel ? sublabel.split('\n') : [];
   return (
     <g>
       {pulse && (
@@ -63,7 +62,7 @@ function FlowStep({ x, y, w, h, label, sublabel, icon, color, pulse }: FlowStepP
       <rect x={x} y={y} width={w} height={h} rx={8} fill={color} opacity={0.06} />
       <text
         x={x + w / 2}
-        y={y + (sublabel ? h / 2 - 5 * subLines.length : h / 2 + 1)}
+        y={y + (sublabel ? h / 2 - 5 : h / 2 + 1)}
         textAnchor="middle"
         dominantBaseline="middle"
         fill={C.text}
@@ -73,20 +72,19 @@ function FlowStep({ x, y, w, h, label, sublabel, icon, color, pulse }: FlowStepP
       >
         {icon} {label}
       </text>
-      {subLines.map((line, i) => (
+      {sublabel && (
         <text
-          key={i}
           x={x + w / 2}
-          y={y + h / 2 + 6 + i * 12}
+          y={y + h / 2 + 10}
           textAnchor="middle"
           dominantBaseline="middle"
           fill={C.textDim}
           fontSize={8.5}
           fontFamily="'JetBrains Mono',monospace"
         >
-          {line}
+          {sublabel}
         </text>
-      ))}
+      )}
     </g>
   );
 }
@@ -345,7 +343,7 @@ function AuthFlow() {
         w={200}
         h={80}
         label="lib/permissions.ts"
-        sublabel={'canCreateDart(role)\ncanAccessPro(role)\nisAdmin(role)'}
+        sublabel="canCreateDart(role)\ncanAccessPro(role)\nisAdmin(role)"
         icon="🛡️"
         color={C.purple}
       />
@@ -592,7 +590,7 @@ function LineFlow() {
         w={160}
         h={50}
         label="Webhook処理"
-        sublabel={'HMAC署名検証\ntimingSafeEqual'}
+        sublabel="HMAC署名検証\ntimingSafeEqual"
         icon="🔍"
         color={C.purple}
       />
