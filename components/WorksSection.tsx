@@ -88,14 +88,14 @@ const WORKS: Work[] = [
       'PWA（オフラインキャッシュ）・Capacitor iOS対応・ダークモード',
     ],
     scale: [
-      { value: '241', label: 'コミット' },
-      { value: '36', label: 'API routes' },
+      { value: '251', label: 'コミット' },
+      { value: '37', label: 'API routes' },
       { value: '40', label: 'ページ' },
-      { value: '113', label: 'コンポーネント' },
-      { value: '74,000+', label: '行（TS）' },
+      { value: '117', label: 'コンポーネント' },
+      { value: '67,000+', label: '行（TS）' },
       { value: '7,000+', label: 'バレルDB' },
-      { value: '436', label: 'テスト' },
-      { value: '21', label: 'Storybook' },
+      { value: '429', label: 'テスト' },
+      { value: '23', label: 'Storybook' },
       { value: '10', label: '設計書' },
     ],
     images: [
@@ -608,7 +608,7 @@ export default function WorksSection() {
                   <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
                     AI × 個人開発で
                     <br />
-                    74,000行のSaaSを作った方法
+                    67,000行のSaaSを作った方法
                   </p>
                   <p className="text-xs text-blue-200/50 mt-3">
                     Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
@@ -616,8 +616,8 @@ export default function WorksSection() {
                   <div className="flex flex-wrap gap-3 mt-4">
                     {[
                       { value: '10', label: '章' },
-                      { value: '74,000+', label: '行' },
-                      { value: '424', label: 'テスト' },
+                      { value: '67,000+', label: '行' },
+                      { value: '429', label: 'テスト' },
                       { value: 'A-', label: 'セキュリティ' },
                     ].map((s) => (
                       <div key={s.label} className="text-center">
