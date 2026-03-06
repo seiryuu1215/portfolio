@@ -68,16 +68,17 @@ const WORKS: Work[] = [
       'フルサーバーレス構成 — フロント〜認証・課金〜インフラまで全工程を一人で完遂',
       'AI駆動開発 — Claude Codeで設計〜実装〜テストを協働。設計ドキュメント10本もAIと整備',
       '3段階SaaSモデル（一般/Pro/管理者）— Stripe Subscription + NextAuth + Firebase Auth のロールベース制御',
-      '統計分析エンジン — ピアソン相関・線形回帰・スピード分析(アダプティブ刻み幅+ミス方向検出)・ブル率改善シミュレーター',
+      '統計分析エンジン — ピアソン相関・線形回帰・スピード分析(アダプティブ刻み幅+ミス方向検出)・ブル率改善シミュレーター・DL3レンジ推移分析',
       'DARTSLIVE API + Puppeteer + Vercel Cron（毎日JST 10:00）でスタッツを自動収集。スクレイピング→API移行でフル同期+差分同期の2モード対応',
+      'DL3フルビットセンサーデータ活用 — レンジ(グルーピング半径)推移・レーティング別ベンチマーク比較・LINE通知での前回比較値表示',
       'LINE Bot高度化 — ロール別カルーセル通知（7種Flex Bubble）・リッチメニュー2×3・オンデマンド分析/トレンドコマンド。月200プッシュの無料枠内で最大限の価値を提供',
       'セキュリティレビュー実施 — CRITICAL 2件・HIGH 5件・MEDIUM 4件を修正。Firestoreフィールド制限・レートリミット(60req/min)・SSRF対策・CSV Injection対策',
-      'Storybook 21ストーリー + Vitest 436テスト + Playwright E2Eで品質を担保',
+      'Storybook 23ストーリー + Vitest 446テスト + Playwright E2Eで品質を担保',
       'スタッツカード31枚にErrorBoundary適用 — 1カードのエラーが他に波及しない堅牢設計',
     ],
     features: [
-      'DARTSLIVEスタッツ自動取得 — ピアソン相関・線形回帰・スピード分析・ブル率シミュレーター',
-      '53コンポーネントの統計ダッシュボード — Rating推移・スキルレーダー・ヒートマップ・疲労分析',
+      'DARTSLIVEスタッツ自動取得 — ピアソン相関・線形回帰・スピード分析・ブル率シミュレーター・レンジ推移分析',
+      '63コンポーネントの統計ダッシュボード — Rating推移・スキルレーダー・ヒートマップ・レンジ推移・プレイヤーDNA',
       '7,000種バレルDB — 実寸SVGシミュレーター・100点スコアリング・診断クイズ・レコメンドエンジン',
       'セッティング管理 — 登録・比較（差分カラー）・履歴・いいね/コメント・OGP付きシェア',
       'XP/ランクシステム（14種ルール・30段階）・12種アワード・ゴールトラッキング',
@@ -88,13 +89,13 @@ const WORKS: Work[] = [
       'PWA（オフラインキャッシュ）・Capacitor iOS対応・ダークモード',
     ],
     scale: [
-      { value: '251', label: 'コミット' },
-      { value: '37', label: 'API routes' },
+      { value: '275', label: 'コミット' },
+      { value: '36', label: 'API routes' },
       { value: '40', label: 'ページ' },
-      { value: '117', label: 'コンポーネント' },
-      { value: '67,000+', label: '行（TS）' },
+      { value: '118', label: 'コンポーネント' },
+      { value: '69,000+', label: '行（TS）' },
       { value: '7,000+', label: 'バレルDB' },
-      { value: '429', label: 'テスト' },
+      { value: '446', label: 'テスト' },
       { value: '23', label: 'Storybook' },
       { value: '10', label: '設計書' },
     ],
@@ -608,7 +609,7 @@ export default function WorksSection() {
                   <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
                     AI × 個人開発で
                     <br />
-                    67,000行のSaaSを作った方法
+                    69,000行のSaaSを作った方法
                   </p>
                   <p className="text-xs text-blue-200/50 mt-3">
                     Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
@@ -616,8 +617,8 @@ export default function WorksSection() {
                   <div className="flex flex-wrap gap-3 mt-4">
                     {[
                       { value: '10', label: '章' },
-                      { value: '67,000+', label: '行' },
-                      { value: '429', label: 'テスト' },
+                      { value: '69,000+', label: '行' },
+                      { value: '446', label: 'テスト' },
                       { value: 'A-', label: 'セキュリティ' },
                     ].map((s) => (
                       <div key={s.label} className="text-center">
