@@ -58,19 +58,19 @@ const collections: Collection[] = [
     id: 'users',
     label: 'users',
     icon: '👤',
-    x: 390,
+    x: 400,
     y: 30,
-    w: 250,
+    w: 220,
     color: C.blue,
     glow: C.blueGlow,
     fields: [
       { n: 'displayName', t: 'string' },
       { n: 'email', t: 'string' },
-      { n: 'role', t: 'enum(3)' },
-      { n: 'xp / level / rank', t: 'number' },
+      { n: 'role', t: '"admin"|"pro"|"general"' },
+      { n: 'xp / level / rank', t: 'number / string' },
       { n: 'stripeCustomerId', t: 'string?' },
       { n: 'subscriptionStatus', t: 'string?' },
-      { n: 'dlCredentials (Enc)', t: 'AES-256' },
+      { n: 'dlCredentialsEncrypted', t: 'AES-256-GCM' },
       { n: 'lineUserId', t: 'string?' },
       { n: 'achievements[]', t: 'string[]' },
     ],
@@ -84,8 +84,9 @@ const collections: Collection[] = [
       'shopBookmarks/{id}',
       'shopLists/{id}',
       'dartLikes/{dartId}',
-      'dartBookmarks/{id}',
+      'dartBookmarks/{dartId}',
       'barrelBookmarks/{id}',
+      'healthMetrics/{date}',
     ],
   },
   {
@@ -100,10 +101,10 @@ const collections: Collection[] = [
     fields: [
       { n: 'userId', t: 'string (FK→users)' },
       { n: 'title', t: 'string' },
-      { n: 'barrel', t: '{name,brand,…}' },
-      { n: 'tip', t: '{name,type,…}' },
-      { n: 'shaft', t: '{name,len,wt}' },
-      { n: 'flight', t: '{name,shape}' },
+      { n: 'barrel', t: '{name,brand,weight,…}' },
+      { n: 'tip', t: '{name,type,length,…}' },
+      { n: 'shaft', t: '{name,length,weight}' },
+      { n: 'flight', t: '{name,shape,weight}' },
       { n: 'imageUrls[]', t: 'string[]' },
       { n: 'likeCount', t: 'number' },
       { n: 'isDraft', t: 'boolean' },
@@ -116,15 +117,15 @@ const collections: Collection[] = [
     icon: '🔍',
     x: 50,
     y: 340,
-    w: 210,
+    w: 200,
     color: C.amber,
     glow: C.amberGlow,
     fields: [
       { n: 'name', t: 'string' },
       { n: 'brand', t: 'string' },
-      { n: 'weight/dia/length', t: 'number' },
+      { n: 'weight / diameter / length', t: 'number' },
       { n: 'cut', t: 'string' },
-      { n: 'imageUrl/productUrl', t: 'string' },
+      { n: 'imageUrl / productUrl', t: 'string' },
       { n: 'source', t: '"dartshive"' },
     ],
     subs: [],
@@ -166,17 +167,17 @@ const collections: Collection[] = [
     id: 'discussions',
     label: 'discussions',
     icon: '📢',
-    x: 390,
+    x: 400,
     y: 500,
-    w: 240,
+    w: 220,
     color: C.purple,
     glow: C.purpleGlow,
     fields: [
       { n: 'title / content', t: 'string' },
       { n: 'category', t: '6 categories' },
-      { n: 'userId/userName', t: 'string' },
-      { n: 'userRating/barrelName', t: '非正規化' },
-      { n: 'isPinned/isLocked', t: 'boolean' },
+      { n: 'userId / userName', t: 'string' },
+      { n: 'userRating / userBarrelName', t: '非正規化' },
+      { n: 'isPinned / isLocked', t: 'boolean' },
       { n: 'replyCount', t: 'number' },
     ],
     subs: [],
@@ -185,14 +186,14 @@ const collections: Collection[] = [
     id: 'replies',
     label: 'replies',
     icon: '↩️',
-    x: 390,
+    x: 400,
     y: 720,
-    w: 240,
+    w: 220,
     color: C.purple,
     glow: C.purpleGlow,
     fields: [
       { n: 'discussionId', t: 'string (FK)' },
-      { n: 'userId/userName', t: 'string' },
+      { n: 'userId / userName', t: 'string' },
       { n: 'userRating', t: 'number?' },
       { n: 'body', t: 'string' },
     ],
@@ -396,7 +397,7 @@ function CollectionBox({
             y={col.y + headerH + 14 + i * fieldH}
             textAnchor="end"
             fill={C.textDim}
-            fontSize={7}
+            fontSize={8}
             fontFamily="'JetBrains Mono',monospace"
           >
             {f.t}
@@ -543,8 +544,8 @@ export default function ERDiagramDiagram() {
         ))}
       </div>
 
-      <div style={{ width: '100%', maxWidth: 1020, margin: '0 auto', position: 'relative' }}>
-        <svg viewBox="0 0 1020 880" width="100%" style={{ overflow: 'visible' }}>
+      <div style={{ width: '100%', maxWidth: 1000, margin: '0 auto', position: 'relative' }}>
+        <svg viewBox="0 0 1000 880" width="100%" style={{ overflow: 'visible' }}>
           <defs>
             <pattern id="ergrid" width="16" height="16" patternUnits="userSpaceOnUse">
               <path
@@ -556,7 +557,7 @@ export default function ERDiagramDiagram() {
               />
             </pattern>
           </defs>
-          <rect width="1020" height="880" fill="url(#ergrid)" opacity="0.4" />
+          <rect width="1000" height="880" fill="url(#ergrid)" opacity="0.4" />
 
           <text
             x={150}
@@ -689,7 +690,7 @@ export default function ERDiagramDiagram() {
         ))}
       </div>
       <p style={{ color: C.textDim, fontSize: 9, textAlign: 'center', marginTop: 8, opacity: 0.5 }}>
-        ※ 各コレクションをクリックすると詳細が表示されます｜7,000+ barrels DB / 12 collections / 11
+        ※ 各コレクションをクリックすると詳細が表示されます｜7,000+ barrels DB / 12 collections / 12
         subcollections
       </p>
     </div>

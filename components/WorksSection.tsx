@@ -40,7 +40,7 @@ const WORKS: Work[] = [
     title: 'darts Lab',
     period: '2025/12 〜 運用継続中',
     description:
-      'ダーツプレイヤー向けのセッティング管理・スタッツ連携・バレル探索・コミュニティWebアプリ。DARTSLIVEアカウント連携でスタッツを自動取得し、ピアソン相関・線形回帰・スピード分析・ブル率シミュレーターなど多彩な統計分析で成長を可視化。',
+      'ダーツプレイヤー向けのセッティング管理・スタッツ連携・バレル探索・コミュニティWebアプリ。DARTSLIVEアカウント連携でスタッツを自動取得し、ピアソン相関・線形回帰・スピード分析・ブル率シミュレーターなど多彩な統計分析で成長を可視化。iOS HealthKit連携で心拍・HRV・睡眠等のヘルスデータとダーツパフォーマンスの相関を分析。',
     motivation:
       '自身がダーツのプロ選手として活動してきた経験から、セッティング管理の煩雑さ・スタッツの可視化不足・バレル選びの情報分散といった課題を解決するために企画・開発。',
     differentiation: [
@@ -63,6 +63,7 @@ const WORKS: Work[] = [
       'GitHub Actions',
       'Sentry',
       'LINE Messaging API',
+      'HealthKit (Swift)',
     ],
     highlights: [
       'フルサーバーレス構成 — フロント〜認証・課金〜インフラまで全工程を一人で完遂',
@@ -73,6 +74,7 @@ const WORKS: Work[] = [
       'DL3フルビットセンサーデータ活用 — レンジ(グルーピング半径)推移・レーティング別ベンチマーク比較・LINE通知での前回比較値表示',
       'LINE Bot高度化 — ロール別カルーセル通知（7種Flex Bubble）・リッチメニュー2×3・オンデマンド分析/トレンドコマンド。月200プッシュの無料枠内で最大限の価値を提供',
       'セキュリティレビュー実施 — CRITICAL 2件・HIGH 5件・MEDIUM 4件を修正。Firestoreフィールド制限・レートリミット(60req/min)・SSRF対策・CSV Injection対策',
+      'iOS HealthKit 連携 — Swift Capacitor プラグインで心拍/HRV/睡眠/歩数等10種のメトリクスを取得。ピアソン相関でダーツ成績との関連を分析し「HRV高い日はPPD+2.3」等のインサイトを自動生成。HealthKit → Capacitor Bridge → Firestore → Next.js API → Recharts のフルスタックデータパイプライン',
       'Storybook 23ストーリー + Vitest 446テスト + Playwright E2Eで品質を担保',
       'スタッツカード31枚にErrorBoundary適用 — 1カードのエラーが他に波及しない堅牢設計',
     ],
@@ -86,11 +88,12 @@ const WORKS: Work[] = [
       'ディスカッション掲示板（6カテゴリ）・記事投稿（Markdown）',
       'LINE Bot — ロール別カルーセル通知（7種Flex Bubble）・リッチメニュー6ボタン・オンデマンド分析/トレンドコマンド・週次/月次レポート',
       'アフィリエイト連携（ダーツハイブ・楽天・Amazon）— 商品直リンク+検索で購入導線を提供',
+      'HealthKit連携 — Apple Watch/iPhoneヘルスデータ取得・ヘルスダッシュボード・ダーツ×ヘルス相関分析',
       'PWA（オフラインキャッシュ）・Capacitor iOS対応・ダークモード',
     ],
     scale: [
       { value: '275', label: 'コミット' },
-      { value: '36', label: 'API routes' },
+      { value: '38', label: 'API routes' },
       { value: '40', label: 'ページ' },
       { value: '118', label: 'コンポーネント' },
       { value: '69,000+', label: '行（TS）' },
