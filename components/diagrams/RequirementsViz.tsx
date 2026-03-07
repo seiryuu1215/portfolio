@@ -159,6 +159,7 @@ const featureGroups: FeatureGroup[] = [
       { name: '30段階ランク', role: 'auth' },
       { name: '12種の実績', role: 'auth' },
       { name: '目標トラッキング', role: 'pro' },
+      { name: '意識ポイント', role: 'auth' },
       { name: '紙吹雪演出', role: 'auth' },
     ],
   },
