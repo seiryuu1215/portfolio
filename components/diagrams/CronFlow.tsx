@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 const C: Record<string, string> = {
   bg: '#0a0e1a',
   surface: '#111827',
@@ -391,7 +389,7 @@ export default function CronFlowDiagram() {
             w={200}
             h={50}
             label="DARTSLIVE スクレイピング"
-            sub="Puppeteer (共有Chromium)\nRating/PPD/MPR/CU/Awards"
+            sub="Puppeteer · Rt/PPD/MPR/CU/Awards"
             icon="🎯"
             color={C.blue}
             num="3"
@@ -607,7 +605,7 @@ export default function CronFlowDiagram() {
             { op: 'UPDATE', col: 'users/{uid} (XP,level)', c: C.blue },
             { op: 'CREATE', col: 'xpHistory/{id}', c: C.green },
             { op: 'CREATE', col: 'notifications/{id}', c: C.green },
-            { op: 'DELETE', col: 'goals/{id} (達成時)', c: C.red },
+            { op: 'DELETE', col: 'goals/{id} (達成/期限切れ)', c: C.red },
             { op: 'UPDATE', col: 'lineConversations', c: C.blue },
           ].map((item, i) => (
             <g key={item.col}>

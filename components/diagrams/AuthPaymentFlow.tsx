@@ -343,7 +343,7 @@ function AuthFlow() {
         w={200}
         h={80}
         label="lib/permissions.ts"
-        sublabel="canCreateDart(role)\ncanAccessPro(role)\nisAdmin(role)"
+        sublabel="canCreateDart / canAccessPro / isAdmin"
         icon="🛡️"
         color={C.purple}
       />
@@ -582,15 +582,15 @@ function LineFlow() {
         icon="📱"
         color={C.green}
       />
-      <Arrow x1={150} y1={193} x2={500} y2={193} color={C.green} label="メッセージ" />
-      <Arrow x1={500} y1={193} x2={400} y2={193} color={C.green} label="Webhook" />
+      <Arrow x1={150} y1={188} x2={500} y2={188} color={C.green} label="メッセージ" />
+      <Arrow x1={500} y1={205} x2={400} y2={205} color={C.purple} label="Webhook" />
       <FlowStep
         x={240}
         y={175}
         w={160}
         h={50}
         label="Webhook処理"
-        sublabel="HMAC署名検証\ntimingSafeEqual"
+        sublabel="HMAC署名検証 (timingSafeEqual)"
         icon="🔍"
         color={C.purple}
       />

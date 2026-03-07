@@ -762,7 +762,7 @@ function DataFlowDiagram() {
 
 function SecurityLayer() {
   return (
-    <svg viewBox="0 0 700 300" width="100%">
+    <svg viewBox="0 0 700 320" width="100%">
       <defs>
         <pattern id="secgrid" width="16" height="16" patternUnits="userSpaceOnUse">
           <path

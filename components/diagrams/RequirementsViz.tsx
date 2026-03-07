@@ -802,7 +802,8 @@ export default function RequirementsViz() {
         <p
           style={{ color: COLORS.textDim, fontSize: 11, margin: '6px 0 0', letterSpacing: '0.1em' }}
         >
-          23 FEATURES · 3 USER ROLES · 9 CATEGORIES · FULL-STACK SERVERLESS
+          {featureGroups.reduce((a, g) => a + g.features.length, 0)} FEATURES · 3 USER ROLES ·{' '}
+          {featureGroups.length} CATEGORIES · FULL-STACK SERVERLESS
         </p>
       </div>
 
