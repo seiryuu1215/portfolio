@@ -2,7 +2,6 @@
 
 import { useState, Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 
 const SLArchitecture = dynamic(() => import('@/components/diagrams/saas-launcher/SLArchitecture'), {
   ssr: false,
@@ -47,18 +46,8 @@ export default function SaasLauncherDiagramsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Back link */}
-      <div className="pt-16 px-4 max-w-[960px] mx-auto">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1 text-xs text-muted hover:text-accent transition-colors"
-        >
-          &larr; ポートフォリオに戻る
-        </Link>
-      </div>
-
       {/* Page header */}
-      <div className="text-center pt-6 pb-6 px-4">
+      <div className="text-center pt-24 pb-6 px-4">
         <h1 className="text-2xl font-bold">SaaS Launcher — 設計図</h1>
         <p className="text-sm text-muted mt-2">インタラクティブ SVG で設計を可視化</p>
       </div>
