@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const NAV_ITEMS = [
   { href: '#about', label: 'About' },
@@ -9,6 +10,7 @@ const NAV_ITEMS = [
   { href: '#work', label: 'Work' },
   { href: '#skills', label: 'Skills' },
   { href: '#milestones', label: 'Milestones' },
+  { href: '#next-step', label: 'Next' },
   { href: '#faq', label: 'FAQ' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -32,12 +34,12 @@ export default function Header() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href={isSubpage ? '/' : '#'} className="text-lg font-bold tracking-tight">
+        <Link href={isSubpage ? '/' : '#'} className="text-lg font-bold tracking-tight">
           Seiryuu <span className="text-muted font-normal text-sm">Portfolio</span>
-        </a>
+        </Link>
 
         {isSubpage ? (
-          <a
+          <Link
             href="/"
             className="text-sm text-muted hover:text-foreground transition-colors flex items-center gap-1.5"
           >
@@ -52,7 +54,7 @@ export default function Header() {
               <polyline points="15 18 9 12 15 6" />
             </svg>
             ポートフォリオに戻る
-          </a>
+          </Link>
         ) : (
           <>
             {/* Desktop nav */}
