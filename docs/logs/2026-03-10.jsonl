@@ -1,0 +1,2 @@
+{"ts":"2026-03-09T20:29:58.398Z","session_id":"667d5f34-10f9-47d3-8e13-66eb21f0ca8a","agent":"main","phase":"pre","tool":"Test","target":""}
+{"ts":"2026-03-09T20:30:02.827Z","session_id":"667d5f34-10f9-47d3-8e13-66eb21f0ca8a","agent":"main","phase":"post","tool":"Test","target":"","elapsed_ms":4421}

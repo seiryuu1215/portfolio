@@ -85,3 +85,19 @@ darts-app の数値変更時にこちらも更新が必要。
 
 darts-app の `docs/metrics.json` を正とする。手動でハードコードしない。
 `npm run metrics`（darts-app 側）で最新値を生成し、portfolio 側で参照する。
+
+## Compact Instructions
+
+このセッションを要約するとき：
+
+- 全コンポーネントの変更内容と選択理由を保持する
+- エラーとその解決策を保持する
+- 変更したファイル一覧を保持する
+- 試みたが失敗したアプローチは簡潔に要約する
+- darts-app との同期状態を保持する
+- docs/decisions/の意思決定サマリーを保持する
+
+## ログ・分析
+
+- ログ確認: `npm run logs:analyze`
+- ログ保存先: docs/logs/YYYY-MM-DD.jsonl

@@ -558,7 +558,7 @@ const nfrCategories: NfrCategory[] = [
     icon: '🧪',
     color: COLORS.purple,
     items: [
-      { metric: 'ユニットテスト', value: '636 tests', status: '✅', detail: 'Vitest' },
+      { metric: 'ユニットテスト', value: '632 tests', status: '✅', detail: 'Vitest' },
       { metric: 'UIカタログ', value: 'Storybook', status: '✅', detail: 'コンポーネントカタログ' },
       { metric: '型安全', value: 'strict mode', status: '✅', detail: 'TypeScript 5' },
       { metric: 'フォーマット', value: 'Prettier', status: '✅', detail: 'CI/CD統合' },
@@ -571,8 +571,8 @@ const nfrCategories: NfrCategory[] = [
     items: [
       { metric: 'バレルDB', value: '7,000+', status: '📊', detail: 'スクリプトインポート' },
       { metric: 'スタッツコンポ', value: '53', status: '📊', detail: 'モジュラー設計' },
-      { metric: 'API Routes', value: '40', status: '📊', detail: 'Serverless Functions' },
-      { metric: 'ページ数', value: '41', status: '📊', detail: 'App Router' },
+      { metric: 'API Routes', value: '42', status: '📊', detail: 'Serverless Functions' },
+      { metric: 'ページ数', value: '40', status: '📊', detail: 'App Router' },
     ],
   },
 ];

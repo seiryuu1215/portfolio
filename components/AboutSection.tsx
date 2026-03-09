@@ -58,6 +58,47 @@ export default function AboutSection() {
               ))}
             </div>
 
+            {/* アウトプット実績 */}
+            <div className="p-4 rounded-xl bg-card border border-border">
+              <p className="text-xs text-accent font-medium mb-2">アウトプット習慣</p>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex items-start gap-2">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="shrink-0 mt-0.5 text-muted"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                  <div>
+                    <span className="text-sm font-bold">1,700+ フォロワー</span>
+                    <p className="text-[11px] text-muted leading-snug mt-0.5">
+                      プロ活動・ダーツの疑問発信・スポンサー店舗の宣伝を2年間継続
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 88 88"
+                    fill="currentColor"
+                    className="shrink-0 mt-0.5 text-muted"
+                  >
+                    <path d="M2.8 83.5h17.6c1 0 1.9-.5 2.5-1.3L69.6 5.2c.5-.8-.1-1.7-1-1.7H52.5c-.7 0-1.4.4-1.8 1L3.3 81.8c-.4.7.1 1.7 1 1.7h-1.5zM61 83.5h15.3c.7 0 1.3-.4 1.7-1L88 66.2c.5-.8-.1-1.8-1-1.8H71.8c-.7 0-1.3.4-1.7 1L60 82.1c-.4.7.1 1.4 1 1.4z" />
+                  </svg>
+                  <div>
+                    <span className="text-sm font-bold">技術記事 14本 + Book 1冊</span>
+                    <p className="text-[11px] text-muted leading-snug mt-0.5">
+                      Zennで開発知見を体系的に発信
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* パーソナリティ */}
             <div className="p-4 rounded-xl bg-card border border-border">
               <p className="text-xs text-accent font-medium mb-2">パーソナリティ</p>

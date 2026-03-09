@@ -102,6 +102,17 @@ export default function ContactSection() {
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </a>
+          <a
+            href="https://zenn.dev/seiryuuu_dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted hover:text-foreground transition-colors"
+            aria-label="Zenn"
+          >
+            <svg width="24" height="24" viewBox="0 0 88 88" fill="currentColor">
+              <path d="M2.8 83.5h17.6c1 0 1.9-.5 2.5-1.3L69.6 5.2c.5-.8-.1-1.7-1-1.7H52.5c-.7 0-1.4.4-1.8 1L3.3 81.8c-.4.7.1 1.7 1 1.7h-1.5zM61 83.5h15.3c.7 0 1.3-.4 1.7-1L88 66.2c.5-.8-.1-1.8-1-1.8H71.8c-.7 0-1.3.4-1.7 1L60 82.1c-.4.7.1 1.4 1 1.4z" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

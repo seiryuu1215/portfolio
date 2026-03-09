@@ -33,7 +33,7 @@ const DEVICON_MAP: Record<string, string> = {
   'AWS (Lambda / DynamoDB / CloudWatch)': 'amazonwebservices/amazonwebservices-original-wordmark',
   'Firebase (Auth / Firestore / Storage)': 'firebase/firebase-plain',
   Vercel: 'vercel/vercel-original',
-  'Vitest / Jest (636 tests)': 'vitejs/vitejs-original',
+  'Vitest / Jest (632 tests)': 'vitejs/vitejs-original',
   'GitHub Actions': 'githubactions/githubactions-original',
   'ESLint / Prettier': 'eslint/eslint-original',
   'Recharts 3': 'react/react-original',
@@ -105,8 +105,8 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'テスト / CI / 監視',
     items: [
-      { name: 'Vitest / Jest (636 tests)', level: 'B', source: 'personal' },
-      { name: 'Storybook', level: 'B', source: 'both', note: '240ストーリー' },
+      { name: 'Vitest / Jest (632 tests)', level: 'B', source: 'personal' },
+      { name: 'Storybook', level: 'B', source: 'both', note: '190+ストーリー' },
       { name: 'GitHub Actions', level: 'B', source: 'personal', note: 'lint→format→test→build' },
       { name: 'CircleCI', level: 'C', source: 'work' },
       { name: 'Sentry', level: 'C', source: 'personal', note: 'エラー監視' },
@@ -195,6 +195,40 @@ export default function SkillsSection() {
     <section className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionHeading id="skills" label="Skills" title="技術スタック" />
+
+        {/* スキル数サマリー */}
+        <div className="flex flex-wrap gap-3 mb-4 text-xs">
+          {(
+            [
+              [
+                'A',
+                'text-blue-400',
+                SKILL_CATEGORIES.flatMap((c) => c.items).filter((i) => i.level === 'A').length,
+              ],
+              [
+                'B',
+                'text-green-400',
+                SKILL_CATEGORIES.flatMap((c) => c.items).filter((i) => i.level === 'B').length,
+              ],
+              [
+                'C',
+                'text-yellow-400',
+                SKILL_CATEGORIES.flatMap((c) => c.items).filter((i) => i.level === 'C').length,
+              ],
+            ] as const
+          ).map(([level, color, count]) => (
+            <span key={level} className="text-muted">
+              <strong className={color}>{level}</strong>: {count}
+            </span>
+          ))}
+          <span className="text-muted">
+            / 計{' '}
+            <strong className="text-foreground">
+              {SKILL_CATEGORIES.flatMap((c) => c.items).length}
+            </strong>{' '}
+            スキル
+          </span>
+        </div>
 
         {/* 凡例 */}
         <div className="flex flex-wrap gap-x-4 gap-y-1.5 mb-4 text-xs text-muted">

@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code 一時ファイル
+.claude/current-session-id
+.claude/tool-start-ts
+docs/logs/env-debug.json
