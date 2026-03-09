@@ -155,8 +155,8 @@ const featureGroups: FeatureGroup[] = [
     icon: '⭐',
     color: COLORS.pink,
     features: [
-      { name: 'XP / 14種ルール', role: 'auth' },
-      { name: '30段階ランク', role: 'auth' },
+      { name: 'XP / 21種ルール', role: 'auth' },
+      { name: '50段階ランク', role: 'auth' },
       { name: '12種の実績', role: 'auth' },
       { name: '目標トラッキング', role: 'pro' },
       { name: '意識ポイント', role: 'auth' },
@@ -558,7 +558,7 @@ const nfrCategories: NfrCategory[] = [
     icon: '🧪',
     color: COLORS.purple,
     items: [
-      { metric: 'ユニットテスト', value: '158+ tests', status: '✅', detail: 'Vitest' },
+      { metric: 'ユニットテスト', value: '636 tests', status: '✅', detail: 'Vitest' },
       { metric: 'UIカタログ', value: 'Storybook', status: '✅', detail: 'コンポーネントカタログ' },
       { metric: '型安全', value: 'strict mode', status: '✅', detail: 'TypeScript 5' },
       { metric: 'フォーマット', value: 'Prettier', status: '✅', detail: 'CI/CD統合' },
@@ -571,8 +571,8 @@ const nfrCategories: NfrCategory[] = [
     items: [
       { metric: 'バレルDB', value: '7,000+', status: '📊', detail: 'スクリプトインポート' },
       { metric: 'スタッツコンポ', value: '53', status: '📊', detail: 'モジュラー設計' },
-      { metric: 'API Routes', value: '25+', status: '📊', detail: 'Serverless Functions' },
-      { metric: 'ページ数', value: '30+', status: '📊', detail: 'App Router' },
+      { metric: 'API Routes', value: '40', status: '📊', detail: 'Serverless Functions' },
+      { metric: 'ページ数', value: '41', status: '📊', detail: 'App Router' },
     ],
   },
 ];

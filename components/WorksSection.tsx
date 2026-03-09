@@ -67,7 +67,7 @@ const WORKS: Work[] = [
     ],
     highlights: [
       'フルサーバーレス構成 — フロント〜認証・課金〜インフラまで全工程を一人で完遂',
-      'AI駆動開発 — Claude Codeで設計〜実装〜テストを協働。設計ドキュメント10本もAIと整備',
+      'AI駆動開発 — Claude Codeで設計〜実装〜テストを協働。設計ドキュメント12本もAIと整備',
       '3段階SaaSモデル（一般/Pro/管理者）— Stripe Subscription + NextAuth + Firebase Auth のロールベース制御',
       '統計分析エンジン — ピアソン相関・線形回帰・スピード分析(アダプティブ刻み幅+ミス方向検出)・ブル率改善シミュレーター・DL3レンジ推移分析',
       'DARTSLIVE API + Puppeteer + Vercel Cron（毎日JST 10:00）でスタッツを自動収集。スクレイピング→API移行でフル同期+差分同期の2モード対応',
@@ -75,7 +75,7 @@ const WORKS: Work[] = [
       'LINE Bot高度化 — ロール別カルーセル通知（7種Flex Bubble）・リッチメニュー2×3・オンデマンド分析/トレンドコマンド。月200プッシュの無料枠内で最大限の価値を提供',
       'セキュリティレビュー実施 — CRITICAL 2件・HIGH 5件・MEDIUM 4件を修正。Firestoreフィールド制限・レートリミット(60req/min)・SSRF対策・CSV Injection対策',
       'iOS HealthKit 連携 — Swift Capacitor プラグインで心拍/HRV/睡眠/歩数等10種のメトリクスを取得。ピアソン相関でカウントアップ平均スコアとの関連を分析し「HRV高い日はCU平均+15」等のインサイトを自動生成。HealthKit → Capacitor Bridge → Firestore → Next.js API → Recharts のフルスタックデータパイプライン',
-      'Storybook 177ストーリー（全41ページ対応）+ Vitest 636テスト + Playwright E2Eで品質を担保',
+      'Storybook 240ストーリー（全41ページ対応）+ Vitest 636テスト + Playwright E2Eで品質を担保',
       'スタッツカード31枚にErrorBoundary適用 — 1カードのエラーが他に波及しない堅牢設計',
     ],
     features: [
@@ -96,10 +96,10 @@ const WORKS: Work[] = [
       { value: '40', label: 'API routes' },
       { value: '41', label: 'ページ' },
       { value: '144', label: 'コンポーネント' },
-      { value: '62,000+', label: '行（TS）' },
+      { value: '82,000+', label: '行（TS）' },
       { value: '7,000+', label: 'バレルDB' },
       { value: '636', label: 'テスト' },
-      { value: '177', label: 'Storybook' },
+      { value: '240', label: 'Storybook' },
       { value: '12', label: '設計書' },
     ],
     images: [
@@ -135,7 +135,7 @@ const WORKS: Work[] = [
     title: 'SaaS Launcher — スターターキット販売',
     period: '2026/3 〜 販売中',
     description:
-      'darts Lab（62,000行）から認証・決済・セキュリティの共通基盤を抽出し、日本語圏初の Next.js + Firebase + Stripe SaaS スターターキットとして商品化。¥2,980で販売中。',
+      'darts Lab（82,000行）から認証・決済・セキュリティの共通基盤を抽出し、日本語圏初の Next.js + Firebase + Stripe SaaS スターターキットとして商品化。¥2,980で販売中。',
     motivation:
       'SaaS開発のたびに認証・決済・セキュリティで同じ実装を繰り返す課題を解決。英語圏にはShipFast ($199)、Makerkit ($299) 等があるが日本語対応は皆無だったため、自身の運用実績あるコードを汎用化して販売。',
     differentiation: [
@@ -210,7 +210,7 @@ const WORKS: Work[] = [
     title: 'next-api-composer — OSS npm パッケージ',
     period: '2026/3 〜 公開中',
     description:
-      'Next.js App Router の Route Handler 向けミドルウェア合成ライブラリ。darts Lab（62,000行）で実証済みの API ミドルウェアパターンを汎用 npm パッケージとして抽出・公開。compose() で withAuth / withRateLimit / withValidation 等を関数合成し、型安全にAPIルートを構築できる。',
+      'Next.js App Router の Route Handler 向けミドルウェア合成ライブラリ。darts Lab（82,000行）で実証済みの API ミドルウェアパターンを汎用 npm パッケージとして抽出・公開。compose() で withAuth / withRateLimit / withValidation 等を関数合成し、型安全にAPIルートを構築できる。',
     motivation:
       'Next.js App Router の Route Handler にはミドルウェア合成の仕組みがなく、認証・レートリミット・バリデーションのボイラープレートを毎回書く必要がある。next-connect は3年放置、next-safe-action は Server Actions 専用で、Route Handler 向けの合成ライブラリが市場に存在しなかったため開発・公開。',
     differentiation: [
@@ -613,7 +613,7 @@ export default function WorksSection() {
                   <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
                     AI × 個人開発で
                     <br />
-                    62,000行のSaaSを作った方法
+                    82,000行のSaaSを作った方法
                   </p>
                   <p className="text-xs text-blue-200/50 mt-3">
                     Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
@@ -621,7 +621,7 @@ export default function WorksSection() {
                   <div className="flex flex-wrap gap-3 mt-4">
                     {[
                       { value: '10', label: '章' },
-                      { value: '62,000+', label: '行' },
+                      { value: '82,000+', label: '行' },
                       { value: '636', label: 'テスト' },
                       { value: 'A-', label: 'セキュリティ' },
                     ].map((s) => (

@@ -106,7 +106,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'テスト / CI / 監視',
     items: [
       { name: 'Vitest / Jest (636 tests)', level: 'B', source: 'personal' },
-      { name: 'Storybook', level: 'B', source: 'both', note: '177ストーリー' },
+      { name: 'Storybook', level: 'B', source: 'both', note: '240ストーリー' },
       { name: 'GitHub Actions', level: 'B', source: 'personal', note: 'lint→format→test→build' },
       { name: 'CircleCI', level: 'C', source: 'work' },
       { name: 'Sentry', level: 'C', source: 'personal', note: 'エラー監視' },

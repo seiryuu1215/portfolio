@@ -45,7 +45,7 @@ const AI_VISION_ITEMS = [
 const CURRENT_PRACTICE = [
   {
     label: '設計〜テスト協働',
-    detail: '62,000行・636テストの個人SaaSをClaude Codeと構築',
+    detail: '82,000行・636テストの個人SaaSをClaude Codeと構築',
   },
   {
     label: '設計ドキュメント生成',
@@ -133,7 +133,7 @@ export default function NextStepSection() {
             <p className="text-xs text-muted leading-relaxed">
               Darts
               Labの初期開発（55,000行・164テスト時点）で「完成後に課題・判断・試行錯誤が振り返れない」という問題に直面した。コードは残るが、なぜその実装を選んだのか・どんな課題があったのかが記録されていなかった。
-              その後CLAUDE.mdとメモリシステムを導入し、現在は62,000行・636テストまで成長。この経験から
+              その後CLAUDE.mdとメモリシステムを導入し、現在は82,000行・636テストまで成長。この経験から
               <strong className="text-foreground">開発プロセス自体を設計する重要性</strong>
               を実感し、「AIとの協働を仕組み化する」というビジョンに至った。
             </p>

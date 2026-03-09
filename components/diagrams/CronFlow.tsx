@@ -214,7 +214,7 @@ function XpTable() {
         fontWeight={700}
         fontFamily="'JetBrains Mono',monospace"
       >
-        ⭐ XP ルール (14種)
+        ⭐ XP ルール (21種)
       </text>
       {[
         ['スタッツ記録', '+5 XP'],

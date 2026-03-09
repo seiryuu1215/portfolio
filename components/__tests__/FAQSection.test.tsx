@@ -11,7 +11,7 @@ describe('FAQSection', () => {
   it('renders all FAQ questions', () => {
     render(<FAQSection />);
     expect(screen.getByText('稼働開始はいつから可能ですか？')).toBeInTheDocument();
-    expect(screen.getByText('フルリモートでの参画は可能ですか？')).toBeInTheDocument();
+    expect(screen.getByText('リモート・出社の希望はありますか？')).toBeInTheDocument();
     expect(screen.getByText('得意な技術領域は何ですか？')).toBeInTheDocument();
   });
 
