@@ -35,7 +35,7 @@ export default function AboutSection() {
               <p>
                 どんな領域でも「ボトルネックを見つけ、基礎を固め、仕組みにして、続けられる形に落とす」ことで成果を出してきました。
                 ダーツでは既存アプリの限界をプレイヤーとして特定し、エンジニアとして自ら解決策を構築。
-                開始1年未満でプロライセンスを取得する過程で培った「課題発見→データ分析→改善サイクル」は、そのままプロダクト開発のアプローチに直結しています。
+                開始1年未満でプロライセンスを取得した過程で培った「課題発見→データ分析→改善サイクル」は、そのままプロダクト開発のアプローチに直結しています。
               </p>
               <p>
                 実務でもこの動き方は一貫しています。
@@ -107,7 +107,7 @@ export default function AboutSection() {
                   業務委託（準委任）
                 </span>
                 <span className="px-2 py-0.5 text-xs rounded-md bg-accent/10 text-accent border border-accent/20 font-medium">
-                  リモート / 週2出社可
+                  リモート / 週2出社可（関東圏）
                 </span>
               </div>
               <p className="text-xs text-muted leading-relaxed">

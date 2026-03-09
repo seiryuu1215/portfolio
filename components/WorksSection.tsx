@@ -135,7 +135,7 @@ const WORKS: Work[] = [
     title: 'SaaS Launcher — スターターキット販売',
     period: '2026/3 〜 販売中',
     description:
-      'darts Lab（82,000行）から認証・決済・セキュリティの共通基盤を抽出し、日本語圏初の Next.js + Firebase + Stripe SaaS スターターキットとして商品化。¥2,980で販売中。',
+      'darts Labから認証・決済・セキュリティ基盤を抽出した日本語圏初のNext.js SaaSスターターキット。¥2,980で販売中。',
     motivation:
       'SaaS開発のたびに認証・決済・セキュリティで同じ実装を繰り返す課題を解決。英語圏にはShipFast ($199)、Makerkit ($299) 等があるが日本語対応は皆無だったため、自身の運用実績あるコードを汎用化して販売。',
     differentiation: [
@@ -210,7 +210,7 @@ const WORKS: Work[] = [
     title: 'next-api-composer — OSS npm パッケージ',
     period: '2026/3 〜 公開中',
     description:
-      'Next.js App Router の Route Handler 向けミドルウェア合成ライブラリ。darts Lab（82,000行）で実証済みの API ミドルウェアパターンを汎用 npm パッケージとして抽出・公開。compose() で withAuth / withRateLimit / withValidation 等を関数合成し、型安全にAPIルートを構築できる。',
+      'Next.js App Router Route Handler向けのミドルウェア合成ライブラリ。compose()で認証・レートリミット・バリデーションを型安全に合成。ESM+CJS対応、ゼロ外部依存。',
     motivation:
       'Next.js App Router の Route Handler にはミドルウェア合成の仕組みがなく、認証・レートリミット・バリデーションのボイラープレートを毎回書く必要がある。next-connect は3年放置、next-safe-action は Server Actions 専用で、Route Handler 向けの合成ライブラリが市場に存在しなかったため開発・公開。',
     differentiation: [
@@ -257,7 +257,7 @@ const WORKS: Work[] = [
     title: 'MonkMode — 筋トレ・食事管理',
     period: '2026/2 〜 開発中',
     description:
-      '「修行僧のようにストイックに鍛える」をコンセプトにした筋トレ・食事管理アプリ。あえて機能を絞り、ストイックなユーザー向けに特化することで差別化。ダーツ練習日を保護する適応型スケジューラーで、ダーツと筋トレの両立を実現。',
+      '筋トレ・食事管理アプリ。Supabase + Dexie.jsでオフラインファースト設計。ダーツ練習日を保護する適応型スケジューラーで両立を実現。',
     motivation:
       'ダーツの練習日と筋肉痛の管理を両立したいという自身の課題が起点。既存アプリは機能過多で続かないため、あえて機能を絞った「修行僧」テーマで差別化し、ストイックに続けられる仕組みを追求。',
     differentiation: [

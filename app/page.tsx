@@ -19,10 +19,10 @@ export default function Home() {
         <AboutSection />
       </FadeIn>
       <FadeIn>
-        <WorksSection />
+        <CareerSection />
       </FadeIn>
       <FadeIn>
-        <CareerSection />
+        <WorksSection />
       </FadeIn>
       <FadeIn>
         <SkillsSection />
