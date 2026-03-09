@@ -92,8 +92,8 @@ const WORKS: Work[] = [
       'PWA（オフラインキャッシュ）・Capacitor iOS対応・ダークモード',
     ],
     scale: [
-      { value: '307', label: 'コミット' },
-      { value: '40', label: 'API routes' },
+      { value: '309', label: 'コミット' },
+      { value: '41', label: 'API routes' },
       { value: '41', label: 'ページ' },
       { value: '144', label: 'コンポーネント' },
       { value: '82,000+', label: '行（TS）' },

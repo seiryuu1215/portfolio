@@ -11,7 +11,9 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "diary": "ts-node scripts/generate-diary.ts",
+    "diary:weekly": "ts-node scripts/generate-weekly-diary.ts"
   },
   "dependencies": {
     "next": "16.1.6",
