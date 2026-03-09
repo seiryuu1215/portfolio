@@ -1,0 +1,104 @@
+name: Weekly Development Diary
+
+on:
+  schedule:
+    # 毎週月曜 0:00 UTC = 9:00 JST
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+jobs:
+  generate-diary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout portfolio
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install ts-node
+        run: npm install -g ts-node typescript @types/node
+
+      - name: Calculate date range (previous week Mon–Sun)
+        id: dates
+        run: |
+          # 前週の月曜〜日曜を算出
+          LAST_MONDAY=$(date -u -d "last monday -7 days" +%Y-%m-%d 2>/dev/null || date -u -v-1w -v-mon +%Y-%m-%d)
+          LAST_SUNDAY=$(date -u -d "last sunday" +%Y-%m-%d 2>/dev/null || date -u -v-sun +%Y-%m-%d)
+          YEAR=$(date -u -d "$LAST_MONDAY" +%Y 2>/dev/null || date -u -j -f "%Y-%m-%d" "$LAST_MONDAY" +%Y)
+          WEEK=$(date -u -d "$LAST_MONDAY" +%V 2>/dev/null || date -u -j -f "%Y-%m-%d" "$LAST_MONDAY" +%V)
+          echo "since=${LAST_MONDAY}T00:00:00Z" >> "$GITHUB_OUTPUT"
+          echo "until=${LAST_SUNDAY}T23:59:59Z" >> "$GITHUB_OUTPUT"
+          echo "year=${YEAR}" >> "$GITHUB_OUTPUT"
+          echo "week=${WEEK}" >> "$GITHUB_OUTPUT"
+          echo "last_monday=${LAST_MONDAY}" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch darts-app commits
+        id: darts
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          COMMITS=$(gh api "repos/seiryuu1215/darts-app/commits?since=${{ steps.dates.outputs.since }}&until=${{ steps.dates.outputs.until }}&per_page=100" \
+            --jq '.[].commit.message' 2>/dev/null | head -c 8000 || echo "")
+          # 複数行をファイル経由で渡す
+          echo "$COMMITS" > /tmp/darts-commits.txt
+          LINES=$(echo "$COMMITS" | grep -c '.' || echo "0")
+          echo "count=${LINES}" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch portfolio commits
+        id: portfolio
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          COMMITS=$(gh api "repos/seiryuu1215/portfolio/commits?since=${{ steps.dates.outputs.since }}&until=${{ steps.dates.outputs.until }}&per_page=100" \
+            --jq '.[].commit.message' 2>/dev/null | head -c 8000 || echo "")
+          echo "$COMMITS" > /tmp/portfolio-commits.txt
+          LINES=$(echo "$COMMITS" | grep -c '.' || echo "0")
+          echo "count=${LINES}" >> "$GITHUB_OUTPUT"
+
+      - name: Check if any commits exist
+        id: check
+        run: |
+          TOTAL=$(( ${{ steps.darts.outputs.count }} + ${{ steps.portfolio.outputs.count }} ))
+          echo "total=${TOTAL}" >> "$GITHUB_OUTPUT"
+          if [ "$TOTAL" -eq 0 ]; then
+            echo "No commits found for the previous week. Skipping."
+          fi
+
+      - name: Generate weekly diary article
+        if: steps.check.outputs.total != '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DIARY_YEAR: ${{ steps.dates.outputs.year }}
+          DIARY_WEEK: ${{ steps.dates.outputs.week }}
+          DIARY_SINCE: ${{ steps.dates.outputs.last_monday }}
+        run: |
+          ts-node scripts/generate-weekly-diary.ts \
+            --darts-file /tmp/darts-commits.txt \
+            --portfolio-file /tmp/portfolio-commits.txt
+
+      - name: Push to zenn-content
+        if: steps.check.outputs.total != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          YEAR="${{ steps.dates.outputs.year }}"
+          WEEK="${{ steps.dates.outputs.week }}"
+          FILENAME="diary-${YEAR}-w${WEEK}.md"
+
+          # zenn-content リポジトリをクローン
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/seiryuu1215/zenn-content.git" /tmp/zenn-content
+
+          # 記事をコピー
+          cp "articles/${FILENAME}" /tmp/zenn-content/articles/
+
+          # コミット & プッシュ
+          cd /tmp/zenn-content
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "articles/${FILENAME}"
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "docs: 開発日記 ${YEAR}年W${WEEK} を自動生成"
+          git push origin main
