@@ -14,9 +14,9 @@ const FAQS: FAQ[] = [
     answer: '即日〜相談可能です。案件の開始時期に合わせて柔軟に調整できます。',
   },
   {
-    question: 'フルリモートでの参画は可能ですか？',
+    question: 'リモート・出社の希望はありますか？',
     answer:
-      'はい。実務の大半をフルリモートで遂行しており、非同期コミュニケーション・PR駆動開発に慣れています。週1-2日の出社も対応可能です。',
+      'フルリモートを基本としていますが、週2日までの出社にも対応可能です。実務の大半をフルリモートで遂行しており、非同期コミュニケーション・PR駆動開発に慣れています。',
   },
   {
     question: '契約形態はどのようになりますか？',
@@ -25,17 +25,22 @@ const FAQS: FAQ[] = [
   {
     question: 'チーム開発の経験はありますか？',
     answer:
-      'はい。電子新聞サイトで約2年9ヶ月間、スクラム開発・コードレビュー・新規参画者サポートを担当しました。',
+      'はい。500万人会員規模の電子新聞サイトで約2年9ヶ月間、5〜7名のスクラムチームでフロントエンド開発・コードレビュー・新規参画者サポートを担当しました。別案件ではPM含む7名体制でウォーターフォール開発も経験しています。',
   },
   {
     question: 'バックエンドやインフラの対応は可能ですか？',
     answer:
-      'はい。Firebase / Supabase / AWS の構築経験があり、Stripe決済やスクレイピングも一人で完結できます。',
+      'はい。Firebase / Supabase / AWS（Lambda / DynamoDB / CloudWatch）の構築経験があり、Stripe決済・LINE Bot・スクレイピングも一人で完結できます。個人開発では認証・DB設計・インフラ・CI/CDまで全て一人で構築・運用しています。',
   },
   {
     question: '得意な技術領域は何ですか？',
     answer:
-      'React / Next.js / TypeScript のフロントエンドが軸です。バックエンド・CI/CD・テスト自動化まで一気通貫で対応できます。',
+      'React / Next.js / TypeScript のフロントエンドが軸です。MUI / Tailwind CSS によるコンポーネント駆動開発、Recharts によるデータ可視化を得意としています。バックエンド・CI/CD・テスト自動化まで一気通貫で対応できます。',
+  },
+  {
+    question: '個人開発の経験は実務にどう活きますか？',
+    answer:
+      '62,000行・636テストの個人SaaS開発を通じて、認証・決済・セキュリティ・CI/CD・テスト設計・DB設計を全て自分で判断・実装してきました。「動くだけ」ではなく運用を見据えた設計ができる点、要件の背景を理解して代替案を提案できる点が実務にも直結しています。',
   },
 ];
 
@@ -63,7 +68,7 @@ function FAQItem({ faq }: { faq: FAQ }) {
         </svg>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-200 ${open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+        className={`overflow-hidden transition-all duration-200 ${open ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <p className="px-5 pb-5 text-sm text-muted leading-relaxed">{faq.answer}</p>
       </div>

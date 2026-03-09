@@ -152,7 +152,6 @@ export default function SLMiddleware() {
   const [activeNode, setActiveNode] = useState<ActiveNode | null>(null);
   const [hoveredLayer, setHoveredLayer] = useState<string | null>(null);
 
-  const centerX = 330;
   const startY = 80;
   const layerPadding = 20;
   const innerBoxH = 52;

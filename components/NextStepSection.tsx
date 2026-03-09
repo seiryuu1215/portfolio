@@ -22,22 +22,42 @@ const LEARNING_TECHS = [
 const AI_VISION_ITEMS = [
   {
     title: 'Multi-agent設計',
-    description: 'PM・実装・レビュー・テストの役割を複数AIに分担させ、開発プロセス全体を構造化',
+    description:
+      'PM・実装・レビュー・テストの役割を複数AIに分担させ、開発プロセス全体を構造化。Claude Code の subagent 機能を活用し、並列タスク実行と品質チェックを自動化',
   },
   {
     title: '意思決定ログの体系化',
     description:
-      'プロンプト履歴を日付・目的別に管理し「なぜその実装を選んだか」を追跡可能な形で蓄積',
+      'プロンプト履歴を日付・目的別に管理し「なぜその実装を選んだか」を追跡可能な形で蓄積。CLAUDE.md とメモリシステムで文脈を永続化',
   },
   {
     title: '振り返りサイクルの構築',
     description:
-      'セッション単位で課題・成果・判断を記録し、次の開発に活かせる継続的改善ループを実現',
+      'セッション単位で課題・成果・判断を記録し、次の開発に活かせる継続的改善ループを実現。設計書の自動更新・数値の自動検証も組み込む',
   },
   {
-    title: 'Claude API の活用',
+    title: 'Claude API / Agent SDK の活用',
     description:
-      'Projects / Extended thinking / Batch API による、長期開発・複雑設計・大量処理への対応',
+      'Extended thinking による複雑設計の推論強化、Batch API による大量処理、Agent SDK でカスタムワークフローを構築',
+  },
+];
+
+const CURRENT_PRACTICE = [
+  {
+    label: '設計〜テスト協働',
+    detail: '62,000行・636テストの個人SaaSをClaude Codeと構築',
+  },
+  {
+    label: '設計ドキュメント生成',
+    detail: '要件定義書・ER図・フロー図など12本をAIと整備',
+  },
+  {
+    label: '技術記事・書籍執筆',
+    detail: 'Zenn Book（全10章）+ 記事14本をAIと協働で執筆・公開',
+  },
+  {
+    label: 'CI/CD自動化',
+    detail: 'Lint→Format→Test→Build の4段階ゲートをAI主導で構築',
   },
 ];
 
@@ -91,20 +111,36 @@ export default function NextStepSection() {
             </p>
           </div>
 
+          {/* 現在の実践 */}
+          <div className="mb-6">
+            <p className="text-xs text-accent font-medium mb-3">現在の実践</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {CURRENT_PRACTICE.map((item) => (
+                <div
+                  key={item.label}
+                  className="p-2.5 rounded-lg bg-card border border-border text-center"
+                >
+                  <div className="text-xs font-bold text-accent mb-0.5">{item.label}</div>
+                  <div className="text-[10px] text-muted leading-snug">{item.detail}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* 原体験 */}
           <div className="p-4 rounded-xl border border-accent/20 bg-accent/5 mb-6">
-            <p className="text-xs text-accent font-medium mb-1.5">原体験</p>
+            <p className="text-xs text-accent font-medium mb-1.5">次フェーズへ向かう原体験</p>
             <p className="text-xs text-muted leading-relaxed">
-              個人開発のダーツ分析アプリ（Darts Lab）を55,000行・164テストまで構築した経験から、
-              「完成後に課題・判断・試行錯誤が振り返れない」という問題に直面。コードは残るが、なぜその実装を選んだのか・どんな課題があったのかが記録されていない状態になった。
-              この経験から、
+              Darts
+              Labの初期開発（55,000行・164テスト時点）で「完成後に課題・判断・試行錯誤が振り返れない」という問題に直面した。コードは残るが、なぜその実装を選んだのか・どんな課題があったのかが記録されていなかった。
+              その後CLAUDE.mdとメモリシステムを導入し、現在は62,000行・636テストまで成長。この経験から
               <strong className="text-foreground">開発プロセス自体を設計する重要性</strong>
-              を実感し、次フェーズのビジョンを描くきっかけとなった。
+              を実感し、「AIとの協働を仕組み化する」というビジョンに至った。
             </p>
           </div>
 
           {/* 具体的な実装予定 */}
-          <p className="text-xs text-muted mb-3">具体的な実装予定:</p>
+          <p className="text-xs text-muted mb-3">次に取り組むこと:</p>
           <div className="grid sm:grid-cols-2 gap-3">
             {AI_VISION_ITEMS.map((item) => (
               <div key={item.title} className="p-3 rounded-lg bg-card border border-border">

@@ -33,7 +33,7 @@ const DEVICON_MAP: Record<string, string> = {
   'AWS (Lambda / DynamoDB / CloudWatch)': 'amazonwebservices/amazonwebservices-original-wordmark',
   'Firebase (Auth / Firestore / Storage)': 'firebase/firebase-plain',
   Vercel: 'vercel/vercel-original',
-  'Vitest / Jest (424 tests)': 'vitejs/vitejs-original',
+  'Vitest / Jest (636 tests)': 'vitejs/vitejs-original',
   'GitHub Actions': 'githubactions/githubactions-original',
   'ESLint / Prettier': 'eslint/eslint-original',
   'Recharts 3': 'react/react-original',
@@ -105,8 +105,8 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'テスト / CI / 監視',
     items: [
-      { name: 'Vitest / Jest (424 tests)', level: 'B', source: 'personal' },
-      { name: 'Storybook', level: 'C', source: 'both', note: '16ストーリー' },
+      { name: 'Vitest / Jest (636 tests)', level: 'B', source: 'personal' },
+      { name: 'Storybook', level: 'B', source: 'both', note: '177ストーリー' },
       { name: 'GitHub Actions', level: 'B', source: 'personal', note: 'lint→format→test→build' },
       { name: 'CircleCI', level: 'C', source: 'work' },
       { name: 'Sentry', level: 'C', source: 'personal', note: 'エラー監視' },

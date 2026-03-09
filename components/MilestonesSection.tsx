@@ -25,12 +25,12 @@ const MILESTONES: MilestoneItem[] = [
   {
     year: '2024',
     emoji: '🚀',
-    title: 'SESからフリーランスへ独立',
+    title: 'フリーランスとして独立',
     description:
       '求人300件以上を技術スタック・単価・リモート可否で定量分析し、感覚ではなくデータで独立を判断。実務経験を積みながら準備を進め、フリーランスとして独立。',
   },
   {
-    year: '2025',
+    year: '2025-26',
     emoji: '💰',
     title: 'コードで収益を生む仕組みづくり',
     description:

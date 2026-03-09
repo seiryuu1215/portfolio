@@ -22,12 +22,12 @@ export default function AboutSection() {
           {/* 自己紹介テキスト */}
           <div className="space-y-4">
             <p className="text-lg leading-relaxed">
-              25歳のフルスタックエンジニア。 TypeScript / React / Next.js
+              フルスタックエンジニア。 TypeScript / React / Next.js
               を軸に、型安全性・保守性・可読性を意識した設計・実装を強みとしています。
               認証・決済・DB設計・インフラまで
               <strong>企画から運用を一人で完遂</strong>
               でき、ウォーターフォール・アジャイル双方の開発経験があります。
-              実務は大半をフルリモートで参画しており、非同期コミュニケーションとPR駆動の開発に慣れています。
+              フルリモートを基本に、週2日までの出社にも対応。非同期コミュニケーションとPR駆動の開発に慣れています。
             </p>
 
             {/* 行動パターン — 職業的強みとしての接続 */}
@@ -105,6 +105,9 @@ export default function AboutSection() {
                 </span>
                 <span className="px-2 py-0.5 text-xs rounded-md bg-accent/10 text-accent border border-accent/20 font-medium">
                   業務委託（準委任）
+                </span>
+                <span className="px-2 py-0.5 text-xs rounded-md bg-accent/10 text-accent border border-accent/20 font-medium">
+                  リモート / 週2出社可
                 </span>
               </div>
               <p className="text-xs text-muted leading-relaxed">

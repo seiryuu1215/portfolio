@@ -80,10 +80,10 @@ const WORKS: Work[] = [
     ],
     features: [
       'DARTSLIVEスタッツ自動取得 — ピアソン相関・線形回帰・スピード分析・ブル率シミュレーター・レンジ推移分析',
-      '63コンポーネントの統計ダッシュボード — Rating推移・スキルレーダー・ヒートマップ・レンジ推移・プレイヤーDNA',
+      '64コンポーネントの統計ダッシュボード — Rating推移・スキルレーダー・ヒートマップ・レンジ推移・プレイヤーDNA',
       '7,000種バレルDB — 実寸SVGシミュレーター・100点スコアリング・診断クイズ・レコメンドエンジン',
       'セッティング管理 — 登録・比較（差分カラー）・履歴・いいね/コメント・OGP付きシェア',
-      'XP/ランクシステム（14種ルール・30段階）・12種アワード・ゴールトラッキング・練習の意識ポイント',
+      'XP/ランクシステム（21種ルール・50段階）・12種アワード・ゴールトラッキング・練習の意識ポイント',
       'マイショップ管理 — Leafletマップ・路線フィルター・DARTSLIVE URL自動取得',
       'ディスカッション掲示板（6カテゴリ）・記事投稿（Markdown）',
       'LINE Bot — ロール別カルーセル通知（7種Flex Bubble）・リッチメニュー6ボタン・オンデマンド分析/トレンドコマンド・週次/月次レポート',
@@ -92,15 +92,15 @@ const WORKS: Work[] = [
       'PWA（オフラインキャッシュ）・Capacitor iOS対応・ダークモード',
     ],
     scale: [
-      { value: '294', label: 'コミット' },
-      { value: '39', label: 'API routes' },
+      { value: '307', label: 'コミット' },
+      { value: '40', label: 'API routes' },
       { value: '41', label: 'ページ' },
-      { value: '120', label: 'コンポーネント' },
-      { value: '80,000+', label: '行（TS）' },
+      { value: '144', label: 'コンポーネント' },
+      { value: '62,000+', label: '行（TS）' },
       { value: '7,000+', label: 'バレルDB' },
       { value: '636', label: 'テスト' },
       { value: '177', label: 'Storybook' },
-      { value: '10', label: '設計書' },
+      { value: '12', label: '設計書' },
     ],
     images: [
       { src: '/home.png', caption: 'ダッシュボード', fit: 'cover' },
@@ -124,9 +124,10 @@ const WORKS: Work[] = [
       '📐 アーキテクチャ',
       '🗄️ ER図',
       '🔐 認証・課金',
-      '⏰ Cron',
+      '⏰ Cronバッチ',
       '📱 画面遷移',
-      '🔄 API',
+      '🔄 API・データフロー',
+      '📋 要件・ペルソナ',
     ],
     status: 'released',
   },
@@ -134,7 +135,7 @@ const WORKS: Work[] = [
     title: 'SaaS Launcher — スターターキット販売',
     period: '2026/3 〜 販売中',
     description:
-      'darts Lab（74,000行）から認証・決済・セキュリティの共通基盤を抽出し、日本語圏初の Next.js + Firebase + Stripe SaaS スターターキットとして商品化。¥2,980で販売中。',
+      'darts Lab（62,000行）から認証・決済・セキュリティの共通基盤を抽出し、日本語圏初の Next.js + Firebase + Stripe SaaS スターターキットとして商品化。¥2,980で販売中。',
     motivation:
       'SaaS開発のたびに認証・決済・セキュリティで同じ実装を繰り返す課題を解決。英語圏にはShipFast ($199)、Makerkit ($299) 等があるが日本語対応は皆無だったため、自身の運用実績あるコードを汎用化して販売。',
     differentiation: [
@@ -209,7 +210,7 @@ const WORKS: Work[] = [
     title: 'next-api-composer — OSS npm パッケージ',
     period: '2026/3 〜 公開中',
     description:
-      'Next.js App Router の Route Handler 向けミドルウェア合成ライブラリ。darts Lab（74,000行）で実証済みの API ミドルウェアパターンを汎用 npm パッケージとして抽出・公開。compose() で withAuth / withRateLimit / withValidation 等を関数合成し、型安全にAPIルートを構築できる。',
+      'Next.js App Router の Route Handler 向けミドルウェア合成ライブラリ。darts Lab（62,000行）で実証済みの API ミドルウェアパターンを汎用 npm パッケージとして抽出・公開。compose() で withAuth / withRateLimit / withValidation 等を関数合成し、型安全にAPIルートを構築できる。',
     motivation:
       'Next.js App Router の Route Handler にはミドルウェア合成の仕組みがなく、認証・レートリミット・バリデーションのボイラープレートを毎回書く必要がある。next-connect は3年放置、next-safe-action は Server Actions 専用で、Route Handler 向けの合成ライブラリが市場に存在しなかったため開発・公開。',
     differentiation: [
@@ -612,7 +613,7 @@ export default function WorksSection() {
                   <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
                     AI × 個人開発で
                     <br />
-                    69,000行のSaaSを作った方法
+                    62,000行のSaaSを作った方法
                   </p>
                   <p className="text-xs text-blue-200/50 mt-3">
                     Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
@@ -620,8 +621,8 @@ export default function WorksSection() {
                   <div className="flex flex-wrap gap-3 mt-4">
                     {[
                       { value: '10', label: '章' },
-                      { value: '69,000+', label: '行' },
-                      { value: '446', label: 'テスト' },
+                      { value: '62,000+', label: '行' },
+                      { value: '636', label: 'テスト' },
                       { value: 'A-', label: 'セキュリティ' },
                     ].map((s) => (
                       <div key={s.label} className="text-center">
@@ -729,71 +730,75 @@ export default function WorksSection() {
           </div>
 
           {/* サブプロジェクト＋開発中（コンパクト表示） */}
-          {WORKS.filter((w) => w.title !== 'darts Lab').map((work) => (
-            <div key={work.title} className="p-5 rounded-xl border border-border/60 bg-card/50">
-              <div className="flex items-center gap-3 flex-wrap">
-                <h4 className="text-base font-bold">{work.title}</h4>
-                {work.status === 'released' ? (
-                  <span className="px-2 py-0.5 text-[10px] rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-medium">
-                    {work.url?.includes('npmjs.com') ? '公開中' : '運用中'}
-                  </span>
-                ) : (
-                  <span className="px-2 py-0.5 text-[10px] rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 font-medium">
-                    開発中
-                  </span>
-                )}
-                <span className="text-xs text-muted ml-auto">{work.period}</span>
+          <div className="space-y-3">
+            {WORKS.filter((w) => w.title !== 'darts Lab').map((work) => (
+              <div key={work.title} className="p-4 rounded-xl border border-border/60 bg-card/50">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h4 className="text-sm font-bold">{work.title}</h4>
+                  {work.status === 'released' ? (
+                    <span className="px-2 py-0.5 text-[10px] rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-medium">
+                      {work.url?.includes('npmjs.com') ? '公開中' : '運用中'}
+                    </span>
+                  ) : (
+                    <span className="px-2 py-0.5 text-[10px] rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 font-medium">
+                      開発中
+                    </span>
+                  )}
+                  <span className="text-xs text-muted ml-auto">{work.period}</span>
+                </div>
+                <p className="text-xs text-muted mt-1.5 leading-relaxed">{work.description}</p>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mt-2">
+                  <div className="flex flex-wrap gap-1">
+                    {work.techStack.slice(0, 6).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-1.5 py-0.5 text-[10px] rounded bg-card border border-border text-muted"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    {work.url && (
+                      <a
+                        href={work.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-hover transition-colors"
+                      >
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                        サイト
+                      </a>
+                    )}
+                    {work.github && (
+                      <a
+                        href={work.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs text-muted hover:text-foreground transition-colors"
+                      >
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <p className="text-xs text-muted mt-2 leading-relaxed">{work.description}</p>
-              <div className="flex flex-wrap gap-1.5 mt-3">
-                {work.techStack.slice(0, 6).map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-0.5 text-[10px] rounded-full bg-card border border-border text-muted"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex items-center gap-4 mt-3">
-                {work.url && (
-                  <a
-                    href={work.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-hover transition-colors"
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                    サイトを見る
-                  </a>
-                )}
-                {work.github && (
-                  <a
-                    href={work.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-muted hover:text-foreground transition-colors"
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                    </svg>
-                    GitHub
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

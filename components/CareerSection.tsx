@@ -9,6 +9,7 @@ interface CareerItem {
   highlights: string[];
   method?: string;
   scale?: string;
+  team?: string;
   icon: string;
   minor?: boolean;
 }
@@ -22,6 +23,7 @@ const CAREER: CareerItem[] = [
     tech: 'Next.js / React / TypeScript / MUI / Node.js / AWS (CloudWatch / DynamoDB / DocumentDB)',
     method: 'ウォーターフォール / 週3リモート・週2客先',
     scale: '4ヶ月',
+    team: 'PM1名 SE2名（自分含む）',
     icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
     highlights: [
       '要件定義からテスト・運用まで全工程を一人で担当し、上流〜下流の一気通貫を実証',
@@ -40,6 +42,7 @@ const CAREER: CareerItem[] = [
     tech: 'TypeScript / Python / Java / AWS Lambda / MySQL',
     method: 'ウォーターフォール / フル出社',
     scale: '6ヶ月',
+    team: 'PM1名 SE4名 PG2名',
     icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
     highlights: [
       'グループ各社のID基盤を統合するプロジェクトで、運用保守をメインに担当',
@@ -56,6 +59,7 @@ const CAREER: CareerItem[] = [
     tech: 'Next.js / React / TypeScript / AWS / DynamoDB / Fastly',
     method: 'スクラム（アジャイル）/ フルリモート',
     scale: '2年9ヶ月 / 会員500万人超',
+    team: 'PO1名 SM1名 Dev5〜7名',
     icon: 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z',
     highlights: [
       '登録会員500万人超の大規模サービスでフロントエンド開発',
@@ -88,9 +92,9 @@ export default function CareerSection() {
 
         <div className="flex flex-wrap items-center gap-3 -mt-4 mb-8">
           <span className="px-3 py-1.5 text-xs rounded-lg bg-accent/10 text-accent border border-accent/20 font-bold">
-            3年9ヶ月
+            実務4年目
           </span>
-          <span className="text-sm text-muted">2022/5 〜 2026/1</span>
+          <span className="text-sm text-muted">2022/5 〜</span>
           <span className="px-2 py-0.5 text-[10px] rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-medium">
             全工程経験済み
           </span>
@@ -127,6 +131,11 @@ export default function CareerSection() {
                     {item.scale && (
                       <span className="text-[10px] text-muted bg-background px-2 py-0.5 rounded border border-border">
                         {item.scale}
+                      </span>
+                    )}
+                    {item.team && (
+                      <span className="text-[10px] text-muted bg-background px-2 py-0.5 rounded border border-border">
+                        {item.team}
                       </span>
                     )}
                   </div>

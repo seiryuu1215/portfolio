@@ -1,6 +1,6 @@
 const STATS = [
   { value: '実務4年目', label: 'Web開発' },
-  { value: '500万超', label: '会員サービス開発' },
+  { value: '500万人', label: '会員規模の開発経験' },
   { value: '全工程', label: '要件定義〜運用' },
 ];
 
@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section className="min-h-[85vh] flex items-center justify-center px-6">
       <div className="max-w-3xl text-center">
         <p className="text-accent text-sm font-mono mb-3 tracking-widest uppercase">
-          フルスタックエンジニア — リモート
+          フルスタックエンジニア — リモート / 週2出社可
         </p>
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
           コードの先に、
