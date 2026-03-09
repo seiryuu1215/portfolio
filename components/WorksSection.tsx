@@ -75,7 +75,7 @@ const WORKS: Work[] = [
       'LINE Bot高度化 — ロール別カルーセル通知（7種Flex Bubble）・リッチメニュー2×3・オンデマンド分析/トレンドコマンド。月200プッシュの無料枠内で最大限の価値を提供',
       'セキュリティレビュー実施 — CRITICAL 2件・HIGH 5件・MEDIUM 4件を修正。Firestoreフィールド制限・レートリミット(60req/min)・SSRF対策・CSV Injection対策',
       'iOS HealthKit 連携 — Swift Capacitor プラグインで心拍/HRV/睡眠/歩数等10種のメトリクスを取得。ピアソン相関でカウントアップ平均スコアとの関連を分析し「HRV高い日はCU平均+15」等のインサイトを自動生成。HealthKit → Capacitor Bridge → Firestore → Next.js API → Recharts のフルスタックデータパイプライン',
-      'Storybook 177ストーリー（全41ページ対応）+ Vitest 636テスト + Playwright E2Eで品質を担保',
+      'Storybook 177ストーリー（全41ページ対応）+ Vitest 459テスト + Playwright E2Eで品質を担保',
       'スタッツカード31枚にErrorBoundary適用 — 1カードのエラーが他に波及しない堅牢設計',
     ],
     features: [
@@ -92,30 +92,28 @@ const WORKS: Work[] = [
       'PWA（オフラインキャッシュ）・Capacitor iOS対応・ダークモード',
     ],
     scale: [
-      { value: '294', label: 'コミット' },
-      { value: '39', label: 'API routes' },
+      { value: '306', label: 'コミット' },
+      { value: '40', label: 'API routes' },
       { value: '41', label: 'ページ' },
-      { value: '120', label: 'コンポーネント' },
-      { value: '80,000+', label: '行（TS）' },
+      { value: '144', label: 'コンポーネント' },
+      { value: '82,000+', label: '行（TS）' },
       { value: '7,000+', label: 'バレルDB' },
-      { value: '636', label: 'テスト' },
+      { value: '459', label: 'テスト' },
       { value: '177', label: 'Storybook' },
       { value: '10', label: '設計書' },
     ],
     images: [
-      { src: '/home.png', caption: 'ダッシュボード', fit: 'cover' },
-      { src: '/countup.png', caption: 'COUNT-UP 深掘り分析', fit: 'contain' },
-      { src: '/heatmap.png', caption: 'ダーツボードヒートマップ', fit: 'contain' },
-      { src: '/barrel-quiz.png', caption: 'バレル診断クイズ', fit: 'contain' },
-      { src: '/setting-compare.png', caption: 'セッティング比較', fit: 'contain' },
-      { src: '/barrel-recommend.jpeg', caption: 'おすすめバレル探索', fit: 'contain' },
-      { src: '/screenshots/simulator.png', caption: 'レーティングシミュレーター', fit: 'contain' },
-      {
-        src: '/screenshots/recommendations.png',
-        caption: 'AI練習レコメンド',
-        fit: 'contain',
-      },
-      { src: '/screenshots/sensor.png', caption: 'DL3センサー分析', fit: 'contain' },
+      { src: '/screenshots/home.png', caption: 'ダッシュボード', fit: 'cover' },
+      { src: '/screenshots/stats.png', caption: 'スタッツ分析', fit: 'contain' },
+      { src: '/screenshots/calendar.png', caption: 'プレイカレンダー', fit: 'contain' },
+      { src: '/screenshots/barrels.png', caption: 'バレル検索', fit: 'contain' },
+      { src: '/screenshots/simulator.png', caption: 'バレルシミュレーター', fit: 'contain' },
+      { src: '/screenshots/recommend.png', caption: 'おすすめバレル', fit: 'contain' },
+      { src: '/screenshots/darts.png', caption: 'マイダーツ', fit: 'contain' },
+      { src: '/screenshots/shops.png', caption: 'マイショップ', fit: 'contain' },
+      { src: '/screenshots/health.png', caption: 'ヘルスダッシュボード', fit: 'contain' },
+      { src: '/screenshots/discussions.png', caption: 'ディスカッション', fit: 'contain' },
+      { src: '/screenshots/admin-users.png', caption: '管理画面', fit: 'contain' },
     ],
     url: 'https://darts-app-lime.vercel.app',
     github: 'https://github.com/seiryuu1215/darts-app',
@@ -401,7 +399,7 @@ export default function WorksSection() {
         <SectionHeading id="personal" label="Personal Projects" title="個人開発" />
 
         <div className="space-y-16">
-          {WORKS.filter((w) => w.status !== 'in-dev').map((work) => (
+          {WORKS.filter((w) => w.title === 'darts Lab').map((work) => (
             <div
               key={work.title}
               className="rounded-2xl border border-border bg-card overflow-hidden"
@@ -612,7 +610,7 @@ export default function WorksSection() {
                   <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
                     AI × 個人開発で
                     <br />
-                    69,000行のSaaSを作った方法
+                    82,000+行のSaaSを作った方法
                   </p>
                   <p className="text-xs text-blue-200/50 mt-3">
                     Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
@@ -620,8 +618,8 @@ export default function WorksSection() {
                   <div className="flex flex-wrap gap-3 mt-4">
                     {[
                       { value: '10', label: '章' },
-                      { value: '69,000+', label: '行' },
-                      { value: '446', label: 'テスト' },
+                      { value: '82,000+', label: '行' },
+                      { value: '459', label: 'テスト' },
                       { value: 'A-', label: 'セキュリティ' },
                     ].map((s) => (
                       <div key={s.label} className="text-center">
@@ -728,14 +726,20 @@ export default function WorksSection() {
             </div>
           </div>
 
-          {/* 開発中プロジェクト（コンパクト表示） */}
-          {WORKS.filter((w) => w.status === 'in-dev').map((work) => (
+          {/* サブプロジェクト＋開発中（コンパクト表示） */}
+          {WORKS.filter((w) => w.title !== 'darts Lab').map((work) => (
             <div key={work.title} className="p-5 rounded-xl border border-border/60 bg-card/50">
               <div className="flex items-center gap-3 flex-wrap">
                 <h4 className="text-base font-bold">{work.title}</h4>
-                <span className="px-2 py-0.5 text-[10px] rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 font-medium">
-                  開発中
-                </span>
+                {work.status === 'released' ? (
+                  <span className="px-2 py-0.5 text-[10px] rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-medium">
+                    {work.url?.includes('npmjs.com') ? '公開中' : '運用中'}
+                  </span>
+                ) : (
+                  <span className="px-2 py-0.5 text-[10px] rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 font-medium">
+                    開発中
+                  </span>
+                )}
                 <span className="text-xs text-muted ml-auto">{work.period}</span>
               </div>
               <p className="text-xs text-muted mt-2 leading-relaxed">{work.description}</p>
@@ -749,19 +753,43 @@ export default function WorksSection() {
                   </span>
                 ))}
               </div>
-              {work.github && (
-                <a
-                  href={work.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-3 text-xs text-muted hover:text-foreground transition-colors"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                  </svg>
-                  GitHub
-                </a>
-              )}
+              <div className="flex items-center gap-4 mt-3">
+                {work.url && (
+                  <a
+                    href={work.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-hover transition-colors"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    サイトを見る
+                  </a>
+                )}
+                {work.github && (
+                  <a
+                    href={work.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-muted hover:text-foreground transition-colors"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
