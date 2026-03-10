@@ -45,8 +45,10 @@ const WORKS: Work[] = [
       '自身がダーツのプロ選手として活動してきた経験から、セッティング管理の煩雑さ・スタッツの可視化不足・バレル選びの情報分散といった課題を解決するために企画・開発。',
     differentiation: [
       '既存アプリはスタッツ閲覧のみ → 相関分析・回帰分析・スピード分析・ブル率シミュレーターなど統計的な深掘りが可能',
-      'セッティング管理・バレル探索・ショップ検索が別々のサービスに分散 → 1つのアプリに統合',
-      '公式アプリにないXP/ランクシステム・アワード・ゴールトラッキングでモチベーション維持を設計',
+      'DARTSLIVEとPHOENIXは別会社・別アプリでデータ分断 → 1つのダッシュボードで統合閲覧',
+      'バレル検索は「16〜18g」のような粗いフィルターのみ → 0.1g/0.1mm単位のスライダー指定 + 独自レコメンドエンジン',
+      'マイショップは1店舗のみ・禁煙/路線検索なし → 複数ブックマーク + 禁煙/分煙フィルター + 路線検索 + 訪問済み/未訪問管理',
+      'セッティング比較は感覚だより → 0.1mm/0.1g単位でパーツごとに定量比較',
     ],
     techStack: [
       'Next.js 16',
@@ -70,15 +72,15 @@ const WORKS: Work[] = [
     ],
     highlights: [
       'フルサーバーレス構成 — フロント〜認証・課金〜インフラまで全工程を一人で完遂',
-      'AI駆動開発 — Claude Codeで設計〜実装〜テストを協働。設計ドキュメント12本もAIと整備。デモアカウント3種で全機能を体験可能',
+      'AI駆動開発 — Claude Code SubAgents 5体制で設計〜テストを自動化。3プロジェクト間の数値同期・開発日記の自動生成・ツール呼び出しログの定量分析まで仕組み化',
       '3段階SaaSモデル（一般/Pro/管理者）— Stripe Subscription + NextAuth + Firebase Auth のロールベース制御',
       '統計分析エンジン — ピアソン相関・線形回帰・スピード分析(アダプティブ刻み幅+ミス方向検出)・ブル率改善シミュレーター・DL3レンジ推移分析',
       'DARTSLIVE API + Puppeteer + Vercel Cron（毎日JST 10:00）でスタッツを自動収集。スクレイピング→API移行でフル同期+差分同期の2モード対応',
       'DL3フルビットセンサーデータ活用 — レンジ(グルーピング半径)推移・レーティング別ベンチマーク比較・LINE通知での前回比較値表示',
       'LINE Bot高度化 — ロール別カルーセル通知（7種Flex Bubble）・リッチメニュー2×3・オンデマンド分析/トレンドコマンド。月200プッシュの無料枠内で最大限の価値を提供',
-      'セキュリティレビュー実施 — CRITICAL 2件・HIGH 5件・MEDIUM 4件を修正。Firestoreフィールド制限・レートリミット(60req/min)・SSRF対策・CSV Injection対策',
+      'セキュリティレビュー実施（A+評価）— CRITICAL 2件・HIGH 7件・MEDIUM 8件を修正。CSP nonce方式統一・XP操作ホワイトリスト制限・Firestoreフィールド制限・レートリミット(60req/min)・SSRF対策・CSV Injection対策',
       'iOS HealthKit 連携 — Swift Capacitor プラグインで心拍/HRV/睡眠/歩数等10種のメトリクスを取得。ピアソン相関でカウントアップ平均スコアとの関連を分析し「HRV高い日はCU平均+15」等のインサイトを自動生成。HealthKit → Capacitor Bridge → Firestore → Next.js API → Recharts のフルスタックデータパイプライン',
-      'Storybook 190+ストーリー（全40ページ対応）+ Vitest 632テスト + Playwright E2E（23シナリオ）で品質を担保',
+      '661テスト（Vitest 459 + Storybook 173 + Playwright E2E 29シナリオ）— 3層テスト戦略で品質を担保',
       'スタッツカード31枚にErrorBoundary適用 — 1カードのエラーが他に波及しない堅牢設計',
     ],
     features: [
@@ -97,17 +99,20 @@ const WORKS: Work[] = [
       'インタラクティブオンボーディングツアー — react-joyride で実際のUIをハイライトしながらステップ案内',
       '月次PDFレポート — Puppeteer サーバーサイド生成。スタッツ・アワード集計をA4レポートとしてエクスポート',
       'リッチカレンダー — 20+フィールド表示・アワードバッジ・セクション別詳細パネル',
+      'デモアカウント — 3ロール（一般/Pro/管理者）の体験環境。多層書き込み制限 + 日次自動リセット',
+      'ダークモード — OS連動 + 手動切替。FOUC防止のスクリプト注入',
+      'ヘルスチェックAPI — Firestore + Redis の死活監視エンドポイント',
     ],
     scale: [
-      { value: '311+', label: 'コミット' },
+      { value: '320+', label: 'コミット' },
       { value: '42', label: 'API routes' },
       { value: '40', label: 'ページ' },
       { value: '144', label: 'コンポーネント' },
       { value: '90,000+', label: '行（TS）' },
       { value: '7,000+', label: 'バレルDB' },
-      { value: '632', label: 'テスト' },
-      { value: '190+', label: 'Storybook' },
-      { value: '20+', label: '設計書' },
+      { value: '661', label: 'テスト' },
+      { value: '173', label: 'Storybook' },
+      { value: '16', label: '設計書' },
     ],
     images: [
       { src: '/home.png', caption: 'ダッシュボード', fit: 'cover' },
@@ -629,8 +634,8 @@ export default function WorksSection() {
                     {[
                       { value: '10', label: '章' },
                       { value: '90,000+', label: '行' },
-                      { value: '632', label: 'テスト' },
-                      { value: 'A-', label: 'セキュリティ' },
+                      { value: '661', label: 'テスト' },
+                      { value: 'A+', label: 'セキュリティ' },
                     ].map((s) => (
                       <div key={s.label} className="text-center">
                         <div className="text-sm font-bold text-blue-300">{s.value}</div>

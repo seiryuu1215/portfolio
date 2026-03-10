@@ -558,7 +558,12 @@ const nfrCategories: NfrCategory[] = [
     icon: '🧪',
     color: COLORS.purple,
     items: [
-      { metric: 'ユニットテスト', value: '632 tests', status: '✅', detail: 'Vitest' },
+      {
+        metric: 'ユニットテスト',
+        value: '661 tests',
+        status: '✅',
+        detail: 'Vitest + Storybook + E2E',
+      },
       { metric: 'UIカタログ', value: 'Storybook', status: '✅', detail: 'コンポーネントカタログ' },
       { metric: '型安全', value: 'strict mode', status: '✅', detail: 'TypeScript 5' },
       { metric: 'フォーマット', value: 'Prettier', status: '✅', detail: 'CI/CD統合' },

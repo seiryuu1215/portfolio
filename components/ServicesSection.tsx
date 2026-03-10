@@ -37,7 +37,7 @@ const SERVICES: Service[] = [
       '要件定義〜詳細設計〜テスト — 全工程を一貫対応',
       'CI/CD パイプライン構築（GitHub Actions / CircleCI）',
       'コードレビュー・Dependabot管理',
-      'セキュリティレビュー（CRITICAL含む11件の脆弱性修正実績）',
+      'セキュリティレビュー（CRITICAL含む17件の脆弱性修正、A+評価達成）',
     ],
   },
   {
