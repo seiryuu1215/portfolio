@@ -383,22 +383,17 @@ const WORKS: Work[] = [
         fit: 'cover',
       },
       {
-        src: '/images/devdex/04-skillsheet-viewport.png',
-        caption: 'スキルシート',
-        fit: 'cover',
-      },
-      {
-        src: '/images/devdex/05-extract-viewport.png',
+        src: '/images/devdex/04-extract-viewport.png',
         caption: '用語抽出',
         fit: 'cover',
       },
       {
-        src: '/images/devdex/07-pricing-viewport.png',
+        src: '/images/devdex/05-pricing-viewport.png',
         caption: '料金プラン',
         fit: 'cover',
       },
       {
-        src: '/images/devdex/08-diagnosis-result-viewport.png',
+        src: '/images/devdex/06-diagnosis-result-viewport.png',
         caption: '診断結果シェア（OGP対応）',
         fit: 'cover',
       },
