@@ -32,8 +32,8 @@ describe('WorksSection', () => {
 
   it('renders scale values for darts Lab', () => {
     render(<WorksSection />);
-    // "632" appears multiple times - check at least one exists
-    const testCounts = screen.getAllByText('632');
+    // darts Lab has "661" tests in scale
+    const testCounts = screen.getAllByText('661');
     expect(testCounts.length).toBeGreaterThanOrEqual(1);
   });
 
