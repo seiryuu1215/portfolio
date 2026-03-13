@@ -357,14 +357,51 @@ const WORKS: Work[] = [
       'ゲーム要素 — 習熟度累積でレベルアップ + キャラクター成長',
     ],
     scale: [
-      { value: '160+', label: 'コミット' },
-      { value: '36', label: 'API routes' },
+      { value: '220+', label: 'コミット' },
+      { value: '35', label: 'API routes' },
       { value: '18', label: 'ページ' },
       { value: '64', label: 'コンポーネント' },
       { value: '44,000+', label: '行（TS）' },
-      { value: '1,315', label: 'テスト' },
+      { value: '1,300+', label: 'テスト' },
       { value: '19', label: 'マイグレーション' },
       { value: '17', label: 'テーブル' },
+    ],
+    images: [
+      {
+        src: '/images/devdex/01-dashboard-viewport.png',
+        caption: 'ダッシュボード',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/02-terms-viewport.png',
+        caption: '用語一覧',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/03-diagnosis-viewport.png',
+        caption: 'エンジニアタイプ診断',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/04-skillsheet-viewport.png',
+        caption: 'スキルシート',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/05-extract-viewport.png',
+        caption: '用語抽出',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/07-pricing-viewport.png',
+        caption: '料金プラン',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/08-diagnosis-result-viewport.png',
+        caption: '診断結果シェア（OGP対応）',
+        fit: 'cover',
+      },
     ],
     url: 'https://devdex-app.vercel.app',
     github: 'https://github.com/seiryuu1215/devdex',
@@ -470,6 +507,8 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
   );
 }
 
+const RICH_PROJECTS = new Set(['darts Lab', 'DevDex — IT用語理解度管理ツール']);
+
 export default function WorksSection() {
   return (
     <section className="py-16 px-6 bg-card/30">
@@ -477,7 +516,7 @@ export default function WorksSection() {
         <SectionHeading id="personal" label="Personal Projects" title="個人開発" />
 
         <div className="space-y-16">
-          {WORKS.filter((w) => w.title === 'darts Lab').map((work) => (
+          {WORKS.filter((w) => RICH_PROJECTS.has(w.title)).map((work) => (
             <div
               key={work.title}
               className="rounded-2xl border border-border bg-card overflow-hidden"
@@ -806,7 +845,7 @@ export default function WorksSection() {
 
           {/* サブプロジェクト＋開発中（コンパクト表示） */}
           <div className="space-y-3">
-            {WORKS.filter((w) => w.title !== 'darts Lab').map((work) => (
+            {WORKS.filter((w) => !RICH_PROJECTS.has(w.title)).map((work) => (
               <div key={work.title} className="p-4 rounded-xl border border-border/60 bg-card/50">
                 <div className="flex items-center gap-2 flex-wrap">
                   <h4 className="text-sm font-bold">{work.title}</h4>

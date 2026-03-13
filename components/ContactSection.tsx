@@ -25,7 +25,7 @@ export default function ContactSection() {
             'Slack / Teams 非同期コミュニケーション',
             'PR駆動開発・日次進捗共有',
             'スクラム（週次スプリント）',
-            '原則フルリモート（週1出社OK）',
+            '原則フルリモート（週2出社可）',
           ].map((tag) => (
             <span key={tag} className="px-2 py-0.5 rounded-full bg-card border border-border">
               {tag}
