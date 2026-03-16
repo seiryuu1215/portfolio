@@ -401,6 +401,16 @@ const WORKS: Work[] = [
     ],
     url: 'https://devdex.dev',
     github: 'https://github.com/seiryuu1215/devdex',
+    blueprintUrl: '/projects/devdex',
+    blueprintTabs: [
+      '📐 アーキテクチャ',
+      '🗄️ ER図',
+      '🔐 認証・RLS',
+      '🔄 API・データフロー',
+      '📱 画面遷移',
+      '🤖 AI統合フロー',
+      '📋 要件・ペルソナ',
+    ],
     status: 'released',
   },
 ];
