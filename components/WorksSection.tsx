@@ -37,6 +37,112 @@ interface Work {
 
 const WORKS: Work[] = [
   {
+    title: 'DevDex — IT用語理解度管理ツール',
+    period: '2026/3（76時間で構築）〜 運用中',
+    description:
+      'IT用語の理解度を蓄積・育てていく個人開発ツール。用語登録→AI概要補完→習熟度スコアリング→レーダーチャート可視化のサイクルで「エンジニアの内面」をデータ化。長文貼り付けからの用語一括抽出、エンジニアタイプ診断、スキルシート管理、公開プロフィールURL生成まで備える。',
+    motivation:
+      '面談前に「自分がどの技術をどこまで理解しているか」を整理する手段がなく、毎回ゼロから準備していた課題を解決。スキルシートが「外面」なら、このアプリは「内面」を可視化するツールとして企画。Claude Code SubAgentsによるAI駆動開発の実践プロジェクトでもある。',
+    differentiation: [
+      '既存のスキル管理は自己申告の箇条書きのみ → 1〜5段階の習熟度スコア + カテゴリ別レーダーチャートで定量的に可視化',
+      '用語の概要を毎回手書き → Anthropic API でワンクリックAI補完。長文貼り付けからの一括抽出にも対応',
+      '技術スタックの棚卸しに特化したツールが存在しない → 用語登録・親子関係・関連用語・ピン留め・ウォッチで構造的に管理',
+      'エンジニアタイプ診断（4軸×16タイプ + 対人スタイル4タイプ）でスキル傾向を客観的に把握。登録不要で診断 → SNSシェアで集客導線を設計',
+      'Free/Pro/Enterprise の3層課金 + 組織機能で toC・toB 両方に対応。Stripe連携でサブスクリプション決済',
+    ],
+    techStack: [
+      'Next.js 16',
+      'React 19',
+      'TypeScript',
+      'Supabase (PostgreSQL + Auth + RLS)',
+      'shadcn/ui',
+      'Tailwind CSS v4',
+      'Anthropic API (Claude)',
+      'Recharts',
+      'Vitest',
+      'Playwright',
+      'Vercel',
+      'GitHub Actions',
+    ],
+    highlights: [
+      'AI駆動開発 — Claude Code SubAgents 6体制（PM/実装/テスト/レビュー/日記/ビジネス）で設計〜テスト〜収益化分析を自動化。意思決定記録・開発日記の自動生成まで仕組み化',
+      'Server Component + Client Component のハイブリッド設計 — データフェッチをサーバー側に集約し、APIラウンドトリップを排除。Recharts は dynamic import (ssr: false) で遅延読み込み',
+      'Supabase RLS（Row Level Security）による多層アクセス制御 — 全テーブルにRLSポリシーを適用。公開プロフィールは service_role キーで読み取り',
+      'Anthropic API 連携 — 用語概要のAI補完、長文からの用語一括抽出、AI面談シミュレーター、AI学習プラン生成。利用上限を Free/Pro で差別化',
+      'エンジニアタイプ診断 — 64問の質問から4軸×16タイプに分類。スコア + タイプ別キャラクター + 詳細レポート + 対人スタイル診断。SNSシェアで集客導線を設計',
+      'スキルシート管理 — 案件・担当工程・使用技術を登録し、Excel/PDF出力・Excelインポート（AI構造解析）・公開URL・面談準備リストとして活用',
+      '2,063テスト（Vitest + Playwright E2E）— ユニット145ファイル + E2Eシナリオで品質を担保。CI/CDでlint/test/buildを自動実行',
+      '3段階ロールモデル（user/pro/admin）+ 組織ロール — Feature Gate パターンでPro機能を制御。Stripe連携でサブスクリプション課金',
+    ],
+    features: [
+      '用語CRUD — 登録・編集・削除 + カテゴリフィルター・習熟度ソート・検索',
+      'AI概要補完 — Anthropic API で用語名から概要を自動生成（Free 10回/日, Pro 50回/日）',
+      '長文用語抽出 — テキスト貼り付けからIT用語を一括抽出・登録',
+      'ダッシュボード — レベル・キャラクター・統計カード・カテゴリ別レーダーチャート・ピン留め/ウォッチ一覧',
+      'エンジニアタイプ診断 — 64問→4軸×16タイプ分類 + 対人スタイル診断 + おすすめ技術レコメンド',
+      'スキルシート — 案件管理・担当工程・使用技術・PDF出力',
+      '公開プロフィール — /:username でキャラ・レーダーチャート・ピン留め用語を公開',
+      '面談準備リスト — 用語にフラグを付けて面談前の確認リストを作成',
+      '親子関係・関連用語 — 用語間のリンクで知識の構造を表現',
+      'ゲーム要素 — 習熟度累積でレベルアップ + キャラクター成長',
+    ],
+    scale: [
+      { value: '520+', label: 'マージ済みPR' },
+      { value: '63', label: 'API routes' },
+      { value: '33', label: 'ページ' },
+      { value: '109', label: 'コンポーネント' },
+      { value: '44,000+', label: '行（TS）' },
+      { value: '2,063', label: 'テスト' },
+      { value: '34', label: 'マイグレーション' },
+      { value: '456', label: 'TSファイル' },
+    ],
+    images: [
+      {
+        src: '/images/devdex/01-dashboard-viewport.png',
+        caption: 'ダッシュボード',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/02-terms-viewport.png',
+        caption: '用語一覧',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/03-diagnosis-viewport.png',
+        caption: 'エンジニアタイプ診断',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/04-extract-viewport.png',
+        caption: '用語抽出',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/05-pricing-viewport.png',
+        caption: '料金プラン',
+        fit: 'cover',
+      },
+      {
+        src: '/images/devdex/06-diagnosis-result-viewport.png',
+        caption: '診断結果シェア（OGP対応）',
+        fit: 'cover',
+      },
+    ],
+    url: 'https://devdex.dev',
+    github: 'https://github.com/seiryuu1215/devdex',
+    blueprintUrl: '/projects/devdex',
+    blueprintTabs: [
+      '📐 アーキテクチャ',
+      '🗄️ ER図',
+      '🔐 認証・RLS',
+      '🔄 API・データフロー',
+      '📱 画面遷移',
+      '🤖 AI統合フロー',
+      '📋 要件・ペルソナ',
+    ],
+    status: 'released',
+  },
+  {
     title: 'darts Lab',
     period: '2025/12 〜 運用継続中',
     description:
@@ -306,112 +412,6 @@ const WORKS: Work[] = [
     images: [{ src: '/monkmode-home.png', caption: 'ホーム画面', fit: 'contain' }],
     github: 'https://github.com/seiryuu1215/training-app',
     status: 'in-dev',
-  },
-  {
-    title: 'DevDex — IT用語理解度管理ツール',
-    period: '2026/3（76時間で構築）〜 運用中',
-    description:
-      'IT用語の理解度を蓄積・育てていく個人開発ツール。用語登録→AI概要補完→習熟度スコアリング→レーダーチャート可視化のサイクルで「エンジニアの内面」をデータ化。長文貼り付けからの用語一括抽出、エンジニアタイプ診断、スキルシート管理、公開プロフィールURL生成まで備える。',
-    motivation:
-      '面談前に「自分がどの技術をどこまで理解しているか」を整理する手段がなく、毎回ゼロから準備していた課題を解決。スキルシートが「外面」なら、このアプリは「内面」を可視化するツールとして企画。Claude Code SubAgentsによるAI駆動開発の実践プロジェクトでもある。',
-    differentiation: [
-      '既存のスキル管理は自己申告の箇条書きのみ → 1〜5段階の習熟度スコア + カテゴリ別レーダーチャートで定量的に可視化',
-      '用語の概要を毎回手書き → Anthropic API でワンクリックAI補完。長文貼り付けからの一括抽出にも対応',
-      '技術スタックの棚卸しに特化したツールが存在しない → 用語登録・親子関係・関連用語・ピン留め・ウォッチで構造的に管理',
-      'エンジニアタイプ診断（4軸×16タイプ + 対人スタイル4タイプ）でスキル傾向を客観的に把握。登録不要で診断 → SNSシェアで集客導線を設計',
-      'Free/Pro/Enterprise の3層課金 + 組織機能で toC・toB 両方に対応。Stripe連携でサブスクリプション決済',
-    ],
-    techStack: [
-      'Next.js 16',
-      'React 19',
-      'TypeScript',
-      'Supabase (PostgreSQL + Auth + RLS)',
-      'shadcn/ui',
-      'Tailwind CSS v4',
-      'Anthropic API (Claude)',
-      'Recharts',
-      'Vitest',
-      'Playwright',
-      'Vercel',
-      'GitHub Actions',
-    ],
-    highlights: [
-      'AI駆動開発 — Claude Code SubAgents 6体制（PM/実装/テスト/レビュー/日記/ビジネス）で設計〜テスト〜収益化分析を自動化。意思決定記録・開発日記の自動生成まで仕組み化',
-      'Server Component + Client Component のハイブリッド設計 — データフェッチをサーバー側に集約し、APIラウンドトリップを排除。Recharts は dynamic import (ssr: false) で遅延読み込み',
-      'Supabase RLS（Row Level Security）による多層アクセス制御 — 全テーブルにRLSポリシーを適用。公開プロフィールは service_role キーで読み取り',
-      'Anthropic API 連携 — 用語概要のAI補完、長文からの用語一括抽出、AI面談シミュレーター、AI学習プラン生成。利用上限を Free/Pro で差別化',
-      'エンジニアタイプ診断 — 64問の質問から4軸×16タイプに分類。スコア + タイプ別キャラクター + 詳細レポート + 対人スタイル診断。SNSシェアで集客導線を設計',
-      'スキルシート管理 — 案件・担当工程・使用技術を登録し、Excel/PDF出力・Excelインポート（AI構造解析）・公開URL・面談準備リストとして活用',
-      '2,063テスト（Vitest + Playwright E2E）— ユニット145ファイル + E2Eシナリオで品質を担保。CI/CDでlint/test/buildを自動実行',
-      '3段階ロールモデル（user/pro/admin）+ 組織ロール — Feature Gate パターンでPro機能を制御。Stripe連携でサブスクリプション課金',
-    ],
-    features: [
-      '用語CRUD — 登録・編集・削除 + カテゴリフィルター・習熟度ソート・検索',
-      'AI概要補完 — Anthropic API で用語名から概要を自動生成（Free 10回/日, Pro 50回/日）',
-      '長文用語抽出 — テキスト貼り付けからIT用語を一括抽出・登録',
-      'ダッシュボード — レベル・キャラクター・統計カード・カテゴリ別レーダーチャート・ピン留め/ウォッチ一覧',
-      'エンジニアタイプ診断 — 64問→4軸×16タイプ分類 + 対人スタイル診断 + おすすめ技術レコメンド',
-      'スキルシート — 案件管理・担当工程・使用技術・PDF出力',
-      '公開プロフィール — /:username でキャラ・レーダーチャート・ピン留め用語を公開',
-      '面談準備リスト — 用語にフラグを付けて面談前の確認リストを作成',
-      '親子関係・関連用語 — 用語間のリンクで知識の構造を表現',
-      'ゲーム要素 — 習熟度累積でレベルアップ + キャラクター成長',
-    ],
-    scale: [
-      { value: '520+', label: 'マージ済みPR' },
-      { value: '63', label: 'API routes' },
-      { value: '33', label: 'ページ' },
-      { value: '109', label: 'コンポーネント' },
-      { value: '44,000+', label: '行（TS）' },
-      { value: '2,063', label: 'テスト' },
-      { value: '34', label: 'マイグレーション' },
-      { value: '456', label: 'TSファイル' },
-    ],
-    images: [
-      {
-        src: '/images/devdex/01-dashboard-viewport.png',
-        caption: 'ダッシュボード',
-        fit: 'cover',
-      },
-      {
-        src: '/images/devdex/02-terms-viewport.png',
-        caption: '用語一覧',
-        fit: 'cover',
-      },
-      {
-        src: '/images/devdex/03-diagnosis-viewport.png',
-        caption: 'エンジニアタイプ診断',
-        fit: 'cover',
-      },
-      {
-        src: '/images/devdex/04-extract-viewport.png',
-        caption: '用語抽出',
-        fit: 'cover',
-      },
-      {
-        src: '/images/devdex/05-pricing-viewport.png',
-        caption: '料金プラン',
-        fit: 'cover',
-      },
-      {
-        src: '/images/devdex/06-diagnosis-result-viewport.png',
-        caption: '診断結果シェア（OGP対応）',
-        fit: 'cover',
-      },
-    ],
-    url: 'https://devdex.dev',
-    github: 'https://github.com/seiryuu1215/devdex',
-    blueprintUrl: '/projects/devdex',
-    blueprintTabs: [
-      '📐 アーキテクチャ',
-      '🗄️ ER図',
-      '🔐 認証・RLS',
-      '🔄 API・データフロー',
-      '📱 画面遷移',
-      '🤖 AI統合フロー',
-      '📋 要件・ペルソナ',
-    ],
-    status: 'released',
   },
 ];
 
@@ -719,60 +719,106 @@ export default function WorksSection() {
             </div>
 
             <div className="p-5 space-y-5">
-              {/* 本 — ヒーローカード */}
-              <a
-                href="https://zenn.dev/seiryuuu_dev/books/claude-code-darts-lab"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-xl overflow-hidden border border-border hover:border-accent/40 transition-all group"
-              >
-                <div className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] p-6">
-                  <p className="text-[10px] tracking-widest text-blue-300/60 uppercase mb-3">
-                    Zenn Book — 全10章
-                  </p>
-                  <p className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
-                    AI × 個人開発で
-                    <br />
-                    90,000行のSaaSを作った方法
-                  </p>
-                  <p className="text-xs text-blue-200/50 mt-3">
-                    Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
-                  </p>
-                  <div className="flex flex-wrap gap-3 mt-4">
-                    {[
-                      { value: '10', label: '章' },
-                      { value: '90,000+', label: '行' },
-                      { value: '661', label: 'テスト' },
-                      { value: 'A+', label: 'セキュリティ' },
-                    ].map((s) => (
-                      <div key={s.label} className="text-center">
-                        <div className="text-sm font-bold text-blue-300">{s.value}</div>
-                        <div className="text-[10px] text-blue-300/40">{s.label}</div>
-                      </div>
-                    ))}
+              {/* 書籍2冊 — ヒーローカード */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <a
+                  href="https://zenn.dev/seiryuuu_dev/books/claude-code-devdex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-xl overflow-hidden border border-accent/30 hover:border-accent/50 transition-all group ring-1 ring-accent/10"
+                >
+                  <div className="bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] p-5">
+                    <p className="text-[10px] tracking-widest text-emerald-300/60 uppercase mb-2">
+                      Zenn Book — NEW
+                    </p>
+                    <p className="text-base font-bold text-white leading-snug group-hover:text-emerald-200 transition-colors">
+                      DevDex開発記録
+                    </p>
+                    <p className="text-[11px] text-emerald-200/50 mt-2">
+                      Supabase RLS + Claude Code SubAgents 6体制で76時間構築
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {[
+                        { value: '520+', label: 'PR' },
+                        { value: '2,063', label: 'テスト' },
+                        { value: '34', label: 'マイグレーション' },
+                      ].map((s) => (
+                        <div key={s.label} className="text-center">
+                          <div className="text-xs font-bold text-emerald-300">{s.value}</div>
+                          <div className="text-[10px] text-emerald-300/40">{s.label}</div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="px-4 py-2.5 bg-card flex items-center justify-between">
-                  <span className="text-xs text-muted">読む</span>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    className="text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all"
-                  >
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </div>
-              </a>
+                  <div className="px-4 py-2 bg-card flex items-center justify-between">
+                    <span className="text-xs text-muted">読む</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all"
+                    >
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </div>
+                </a>
 
-              {/* 記事一覧（2シリーズ横並び） */}
+                <a
+                  href="https://zenn.dev/seiryuuu_dev/books/claude-code-darts-lab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-xl overflow-hidden border border-border hover:border-accent/40 transition-all group"
+                >
+                  <div className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] p-5">
+                    <p className="text-[10px] tracking-widest text-blue-300/60 uppercase mb-2">
+                      Zenn Book — 全10章
+                    </p>
+                    <p className="text-base font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
+                      AI × 個人開発で
+                      <br />
+                      90,000行のSaaSを作った方法
+                    </p>
+                    <p className="text-[11px] text-blue-200/50 mt-2">
+                      Claude Codeとの3ヶ月 — 企画・設計・実装・テスト・セキュリティの全記録
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {[
+                        { value: '10', label: '章' },
+                        { value: '90,000+', label: '行' },
+                        { value: '661', label: 'テスト' },
+                      ].map((s) => (
+                        <div key={s.label} className="text-center">
+                          <div className="text-xs font-bold text-blue-300">{s.value}</div>
+                          <div className="text-[10px] text-blue-300/40">{s.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="px-4 py-2 bg-card flex items-center justify-between">
+                    <span className="text-xs text-muted">読む</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all"
+                    >
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+
+              {/* 記事一覧（3シリーズ横並び） */}
               <div className="grid sm:grid-cols-3 gap-4">
                 <div>
                   <p className="text-xs font-medium text-muted mb-2">
-                    設計図×コードで読み解くサービス連携
+                    darts Lab — 設計図×コードで読み解くサービス連携
                   </p>
                   <div className="space-y-1.5">
                     {[

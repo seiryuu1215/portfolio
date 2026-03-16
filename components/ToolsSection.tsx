@@ -17,6 +17,10 @@ const CATEGORIES: ToolCategory[] = [
       { name: 'Python', note: '実務' },
       { name: 'Java', note: '実務' },
       { name: 'SQL', note: 'MySQL / PostgreSQL' },
+      { name: 'Supabase', note: 'Auth / RLS / PostgreSQL' },
+      { name: 'shadcn/ui', note: 'UIコンポーネント' },
+      { name: 'Tailwind CSS v4' },
+      { name: 'Stripe', note: '決済' },
     ],
   },
   {
@@ -45,7 +49,8 @@ const CATEGORIES: ToolCategory[] = [
     icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z',
     tools: [
       { name: 'Storybook', note: 'UIカタログ・190+ stories' },
-      { name: 'Vitest', note: 'ユニットテスト・632 tests' },
+      { name: 'Vitest', note: 'ユニットテスト・2,700+ tests' },
+      { name: 'Playwright', note: 'E2Eテスト' },
       { name: 'Figma', note: 'デザイン参照' },
       { name: 'Sentry', note: 'エラー監視' },
     ],

@@ -25,7 +25,7 @@ const DEVICON_MAP: Record<string, string> = {
   'Node.js': 'nodejs/nodejs-original',
   Express: 'express/express-original',
   'MUI v7': 'materialui/materialui-original',
-  'Tailwind CSS': 'tailwindcss/tailwindcss-original',
+  'Tailwind CSS v4': 'tailwindcss/tailwindcss-original',
   Handlebars: 'handlebars/handlebars-original',
   'NextAuth.js + Firebase Auth': 'firebase/firebase-plain',
   'Cloud Firestore': 'firebase/firebase-plain',
@@ -33,7 +33,8 @@ const DEVICON_MAP: Record<string, string> = {
   'AWS (Lambda / DynamoDB / CloudWatch)': 'amazonwebservices/amazonwebservices-original-wordmark',
   'Firebase (Auth / Firestore / Storage)': 'firebase/firebase-plain',
   Vercel: 'vercel/vercel-original',
-  'Vitest / Jest (632 tests)': 'vitejs/vitejs-original',
+  'Vitest (2,700+ tests)': 'vitejs/vitejs-original',
+  'Supabase (Auth / PostgreSQL / RLS)': 'supabase/supabase-original',
   'GitHub Actions': 'githubactions/githubactions-original',
   'ESLint / Prettier': 'eslint/eslint-original',
   'Recharts 3': 'react/react-original',
@@ -61,7 +62,8 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'UI / グラフ',
     items: [
       { name: 'MUI v7', level: 'B', source: 'both' },
-      { name: 'Tailwind CSS', level: 'B', source: 'personal' },
+      { name: 'Tailwind CSS v4', level: 'B', source: 'personal' },
+      { name: 'shadcn/ui', level: 'B', source: 'personal', note: 'DevDex + MonkMode' },
       { name: 'Recharts 3', level: 'B', source: 'personal', note: '統計グラフ・深掘り分析で多用' },
       { name: 'Handlebars', level: 'B', source: 'work' },
     ],
@@ -76,10 +78,16 @@ const SKILL_CATEGORIES: SkillCategory[] = [
         note: 'ロールベース制御',
       },
       {
-        name: 'Stripe (Subscription / Webhook)',
-        level: 'C',
+        name: 'Supabase (Auth / PostgreSQL / RLS)',
+        level: 'B',
         source: 'personal',
-        note: 'サーバーサイド完結',
+        note: 'DevDex + MonkMode',
+      },
+      {
+        name: 'Stripe (Subscription / Webhook)',
+        level: 'B',
+        source: 'personal',
+        note: 'darts Lab + DevDex',
       },
     ],
   },
@@ -105,7 +113,13 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'テスト / CI / 監視',
     items: [
-      { name: 'Vitest / Jest (632 tests)', level: 'B', source: 'personal' },
+      { name: 'Vitest (2,700+ tests)', level: 'B', source: 'personal', note: 'darts Lab + DevDex' },
+      {
+        name: 'Playwright (E2E)',
+        level: 'B',
+        source: 'personal',
+        note: 'DevDex E2Eシナリオ',
+      },
       { name: 'Storybook', level: 'B', source: 'both', note: '190+ストーリー' },
       { name: 'GitHub Actions', level: 'B', source: 'personal', note: 'lint→format→test→build' },
       { name: 'CircleCI', level: 'C', source: 'work' },
@@ -136,7 +150,12 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     items: [
       { name: 'Serwist (PWA)', level: 'C', source: 'personal', note: 'オフラインキャッシュ' },
       { name: 'Capacitor 8 (iOS)', level: 'C', source: 'personal' },
-      { name: 'Claude Code', level: 'B', source: 'personal', note: 'AI駆動開発' },
+      {
+        name: 'Claude Code',
+        level: 'A',
+        source: 'personal',
+        note: 'SubAgents 6体制・3プロジェクト',
+      },
       { name: 'Figma', level: 'B', source: 'work' },
       {
         name: 'Git / GitHub',
