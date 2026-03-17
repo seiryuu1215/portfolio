@@ -517,8 +517,8 @@ const RICH_PROJECTS = new Set(['darts Lab', 'DevDex — IT用語理解度管理�
 
 export default function WorksSection() {
   return (
-    <section className="py-16 px-6 bg-card/30">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-16 px-6 bg-card/30 overflow-x-hidden">
+      <div className="max-w-5xl mx-auto overflow-hidden">
         <SectionHeading id="personal" label="Personal Projects" title="個人開発" />
 
         <div className="space-y-16">
@@ -627,7 +627,7 @@ export default function WorksSection() {
                 </div>
 
                 {/* 詳細 */}
-                <div className="md:col-span-3 space-y-4">
+                <div className="md:col-span-3 space-y-4 min-w-0">
                   <p className="text-muted leading-relaxed text-sm">{work.description}</p>
 
                   {/* 動機 */}
@@ -644,9 +644,12 @@ export default function WorksSection() {
                       </p>
                       <ul className="space-y-1">
                         {work.differentiation.map((d) => (
-                          <li key={d} className="text-xs text-muted flex items-start gap-1.5">
+                          <li
+                            key={d}
+                            className="text-xs text-muted flex items-start gap-1.5 min-w-0"
+                          >
                             <span className="text-accent mt-0.5 shrink-0">&#9656;</span>
-                            {d}
+                            <span className="break-words min-w-0">{d}</span>
                           </li>
                         ))}
                       </ul>
@@ -658,9 +661,9 @@ export default function WorksSection() {
                     <p className="text-sm font-medium mb-2">設計・技術のポイント</p>
                     <ul className="space-y-1">
                       {work.highlights.map((h) => (
-                        <li key={h} className="text-xs text-muted flex items-start gap-1.5">
+                        <li key={h} className="text-xs text-muted flex items-start gap-1.5 min-w-0">
                           <span className="text-accent mt-0.5 shrink-0">&#9656;</span>
-                          {h}
+                          <span className="break-words min-w-0">{h}</span>
                         </li>
                       ))}
                     </ul>
@@ -672,9 +675,12 @@ export default function WorksSection() {
                       <p className="text-sm font-medium mb-2">主な機能</p>
                       <div className="grid sm:grid-cols-2 gap-x-4 gap-y-1">
                         {work.features.map((f) => (
-                          <div key={f} className="text-xs text-muted flex items-start gap-1.5">
+                          <div
+                            key={f}
+                            className="text-xs text-muted flex items-start gap-1.5 min-w-0"
+                          >
                             <span className="text-accent/60 mt-0.5 shrink-0">&#9656;</span>
-                            {f}
+                            <span className="break-words min-w-0">{f}</span>
                           </div>
                         ))}
                       </div>
