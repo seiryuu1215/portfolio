@@ -18,6 +18,9 @@ const AIIntegration = dynamic(() => import('@/components/diagrams/devdex/AIInteg
 const Requirements = dynamic(() => import('@/components/diagrams/devdex/Requirements'), {
   ssr: false,
 });
+const DevProcess = dynamic(() => import('@/components/diagrams/devdex/DevProcess'), {
+  ssr: false,
+});
 
 const TABS = [
   { key: 'architecture', label: '📐 アーキテクチャ', component: Architecture },
@@ -27,6 +30,7 @@ const TABS = [
   { key: 'page', label: '📱 画面遷移', component: PageFlow },
   { key: 'ai', label: '🤖 AI統合フロー', component: AIIntegration },
   { key: 'requirements', label: '📋 要件・ペルソナ', component: Requirements },
+  { key: 'process', label: '⚙️ 開発プロセス', component: DevProcess },
 ] as const;
 
 type TabKey = (typeof TABS)[number]['key'];
