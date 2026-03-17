@@ -420,7 +420,7 @@ const nodes: NodeDef[] = [
     color: C.vercel,
     glow: C.vercelGlow,
     detail:
-      'GitHub Actions で lint / format / test / build の4段階ゲート。Vercel Git Integration で自動デプロイ。2,063テストを CI で自動実行。',
+      'GitHub Actions で lint / format / test / build の4段階ゲート。Vercel Git Integration で自動デプロイ。2,100テストを CI で自動実行。',
   },
   {
     id: 'supabase-auth',
@@ -514,11 +514,11 @@ const nodes: NodeDef[] = [
     h: 52,
     icon: '&#129514;',
     label: 'Vitest',
-    sublabel: '2,063 tests',
+    sublabel: '2,100 tests',
     color: C.green,
     glow: C.greenGlow,
     detail:
-      'Vitest 4 + @testing-library/react で 2,063 テスト。ユニットテスト 145 ファイル + Playwright E2E シナリオ。CI/CD で自動実行。',
+      'Vitest 4 + @testing-library/react で 2,100 テスト。ユニットテスト 145 ファイル + Playwright E2E シナリオ。CI/CD で自動実行。',
   },
 ];
 

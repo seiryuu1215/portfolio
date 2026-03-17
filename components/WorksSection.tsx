@@ -38,9 +38,9 @@ interface Work {
 const WORKS: Work[] = [
   {
     title: 'DevDex — IT用語理解度管理ツール',
-    period: '2026/3（76時間で構築）〜 運用中',
+    period: '2026/3（5日間・76時間で構築）〜 運用中',
     description:
-      'IT用語の理解度を蓄積・育てていく個人開発ツール。用語登録→AI概要補完→習熟度スコアリング→レーダーチャート可視化のサイクルで「エンジニアの内面」をデータ化。長文貼り付けからの用語一括抽出、エンジニアタイプ診断、スキルシート管理、公開プロフィールURL生成まで備える。',
+      'たった5日間（実稼働76時間）、Claude Code SubAgents 6体制によるAI駆動開発で構築したIT用語理解度管理ツール。用語登録→AI概要補完→習熟度スコアリング→レーダーチャート可視化のサイクルで「エンジニアの内面」をデータ化。長文貼り付けからの用語一括抽出、エンジニアタイプ診断、スキルシート管理、公開プロフィールURL生成まで備える。',
     motivation:
       '面談前に「自分がどの技術をどこまで理解しているか」を整理する手段がなく、毎回ゼロから準備していた課題を解決。スキルシートが「外面」なら、このアプリは「内面」を可視化するツールとして企画。Claude Code SubAgentsによるAI駆動開発の実践プロジェクトでもある。',
     differentiation: [
@@ -85,15 +85,20 @@ const WORKS: Work[] = [
       '面談準備リスト — 用語にフラグを付けて面談前の確認リストを作成',
       '親子関係・関連用語 — 用語間のリンクで知識の構造を表現',
       'ゲーム要素 — 習熟度累積でレベルアップ + キャラクター成長',
+      'ウォッチリスト — 気になる技術をウォッチ登録し、学習優先度を管理',
+      'オンボーディング — ウェルカムモーダル→3ステップガイドで初回体験を最適化',
+      'fal.ai キャラクター生成 — 16タイプ別のキャラクターアイコンをAI画像生成',
+      'OGP動的生成 — 診断結果・公開プロフィールのシェア画像をサーバーサイドで生成',
     ],
     scale: [
       { value: '543+', label: 'マージ済みPR' },
+      { value: '334+', label: 'コミット' },
       { value: '63', label: 'API routes' },
       { value: '33', label: 'ページ' },
-      { value: '109', label: 'コンポーネント' },
+      { value: '127', label: 'コンポーネント' },
       { value: '86,000+', label: '行（TS）' },
       { value: '2,100', label: 'テスト' },
-      { value: '35', label: 'マイグレーション' },
+      { value: '34', label: 'マイグレーション' },
       { value: '461', label: 'TSファイル' },
     ],
     images: [
@@ -679,7 +684,7 @@ export default function WorksSection() {
                             key={f}
                             className="text-xs text-muted flex items-start gap-1.5 min-w-0"
                           >
-                            <span className="text-accent/60 mt-0.5 shrink-0">&#9656;</span>
+                            <span className="text-accent mt-0.5 shrink-0">&#9656;</span>
                             <span className="break-words min-w-0">{f}</span>
                           </div>
                         ))}
@@ -747,7 +752,7 @@ export default function WorksSection() {
                       {[
                         { value: '543+', label: 'PR' },
                         { value: '2,100', label: 'テスト' },
-                        { value: '35', label: 'マイグレーション' },
+                        { value: '34', label: 'マイグレーション' },
                       ].map((s) => (
                         <div key={s.label} className="text-center">
                           <div className="text-xs font-bold text-emerald-300">{s.value}</div>
