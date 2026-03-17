@@ -92,14 +92,16 @@ const WORKS: Work[] = [
     ],
     scale: [
       { value: '627+', label: 'マージ済みPR' },
-      { value: '334+', label: 'コミット' },
+      { value: '570+', label: 'コミット' },
       { value: '63', label: 'API routes' },
       { value: '33', label: 'ページ' },
       { value: '118', label: 'コンポーネント' },
       { value: '94,329', label: '行（TS）' },
       { value: '2,422', label: 'テスト' },
       { value: '40', label: 'マイグレーション' },
-      { value: '491', label: 'TSファイル' },
+      { value: '6', label: 'リリース' },
+      { value: '28', label: '意思決定記録' },
+      { value: '0', label: 'open issue' },
     ],
     images: [
       {
