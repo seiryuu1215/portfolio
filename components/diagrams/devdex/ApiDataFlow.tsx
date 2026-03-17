@@ -347,7 +347,7 @@ export default function DevDexApiDataFlow() {
       <p
         style={{ color: C.textDim, fontSize: 10, textAlign: 'center', marginTop: 12, opacity: 0.5 }}
       >
-        ※ グループをクリックしてエンドポイント一覧を確認 | 64 endpoints / 7 groups
+        ※ グループをクリックしてエンドポイント一覧を確認 | 63 endpoints / 7 groups
       </p>
     </div>
   );

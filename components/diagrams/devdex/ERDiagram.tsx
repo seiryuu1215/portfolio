@@ -454,7 +454,7 @@ export default function DevDexERDiagram() {
       >
         {[
           { label: 'RLS', desc: '全テーブルにポリシー適用' },
-          { label: '34 migrations', desc: 'スキーマ管理' },
+          { label: '40 migrations', desc: 'スキーマ管理' },
           { label: 'ENUM', desc: 'user_role / org_role' },
         ].map((p) => (
           <div
@@ -599,7 +599,7 @@ export default function DevDexERDiagram() {
         ))}
       </div>
       <p style={{ color: C.textDim, fontSize: 9, textAlign: 'center', marginTop: 8, opacity: 0.5 }}>
-        ※ 各テーブルをクリックすると詳細が表示されます | 12 tables / 34 migrations / RLS on all
+        ※ 各テーブルをクリックすると詳細が表示されます | 12 tables / 40 migrations / RLS on all
         tables
       </p>
     </div>

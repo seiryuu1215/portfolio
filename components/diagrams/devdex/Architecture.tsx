@@ -388,11 +388,11 @@ const nodes: NodeDef[] = [
     h: 52,
     icon: '&#9881;',
     label: 'API Routes',
-    sublabel: '64 endpoints',
+    sublabel: '63 endpoints',
     color: C.vercel,
     glow: C.vercelGlow,
     detail:
-      '64 の API Routes で用語CRUD、診断、AI連携、スキルシート、Stripe Webhook、組織、通知、エンゲージメント等を提供。Serverless Functions として Vercel 上で実行。',
+      '63 の API Routes で用語CRUD、診断、AI連携、スキルシート、Stripe Webhook、組織、通知、エンゲージメント等を提供。Serverless Functions として Vercel 上で実行。',
   },
   {
     id: 'sc',
@@ -420,7 +420,7 @@ const nodes: NodeDef[] = [
     color: C.vercel,
     glow: C.vercelGlow,
     detail:
-      'GitHub Actions で lint / format / test / build の4段階ゲート。Vercel Git Integration で自動デプロイ。2,111テストを CI で自動実行。',
+      'GitHub Actions で lint / format / test / build の4段階ゲート。Vercel Git Integration で自動デプロイ。2,422テストを CI で自動実行。',
   },
   {
     id: 'supabase-auth',
@@ -444,11 +444,11 @@ const nodes: NodeDef[] = [
     h: 52,
     icon: '&#128451;',
     label: 'PostgreSQL',
-    sublabel: '35 migrations + RLS',
+    sublabel: '40 migrations + RLS',
     color: C.supabase,
     glow: C.supabaseGlow,
     detail:
-      'Supabase PostgreSQL に 35 マイグレーションで構築。全テーブルに RLS ポリシーを適用。profiles / terms / diagnosis_results / organizations 等のスキーマ。',
+      'Supabase PostgreSQL に 40 マイグレーションで構築。全テーブルに RLS ポリシーを適用。profiles / terms / diagnosis_results / organizations 等のスキーマ。',
   },
   {
     id: 'supabase-storage',
@@ -514,11 +514,11 @@ const nodes: NodeDef[] = [
     h: 52,
     icon: '&#129514;',
     label: 'Vitest',
-    sublabel: '2,111 tests',
+    sublabel: '2,422 tests',
     color: C.green,
     glow: C.greenGlow,
     detail:
-      'Vitest 4 + @testing-library/react で 2,111 テスト。ユニットテスト 145 ファイル + Playwright E2E シナリオ。CI/CD で自動実行。',
+      'Vitest 4 + @testing-library/react で 2,422 テスト。ユニットテスト 171 ファイル + Playwright E2E シナリオ。CI/CD で自動実行。',
   },
 ];
 
