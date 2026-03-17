@@ -38,9 +38,9 @@ interface Work {
 const WORKS: Work[] = [
   {
     title: 'DevDex — IT用語理解度管理ツール',
-    period: '2026/3（5日間・76時間で構築）〜 運用中',
+    period: '2026/3（7日間・78時間で構築）〜 運用中',
     description:
-      'たった5日間（実稼働76時間）、Claude Code SubAgents 6体制によるAI駆動開発で構築したIT用語理解度管理ツール。用語登録→AI概要補完→習熟度スコアリング→レーダーチャート可視化のサイクルで「エンジニアの内面」をデータ化。長文貼り付けからの用語一括抽出、エンジニアタイプ診断、スキルシート管理、公開プロフィールURL生成まで備える。',
+      'たった7日間（実稼働78時間）、Claude Code SubAgents 6体制によるAI駆動開発で構築したIT用語理解度管理ツール。用語登録→AI概要補完→習熟度スコアリング→レーダーチャート可視化のサイクルで「エンジニアの内面」をデータ化。長文貼り付けからの用語一括抽出、エンジニアタイプ診断、スキルシート管理、公開プロフィールURL生成まで備える。',
     motivation:
       '面談前に「自分がどの技術をどこまで理解しているか」を整理する手段がなく、毎回ゼロから準備していた課題を解決。スキルシートが「外面」なら、このアプリは「内面」を可視化するツールとして企画。Claude Code SubAgentsによるAI駆動開発の実践プロジェクトでもある。',
     differentiation: [
@@ -71,7 +71,7 @@ const WORKS: Work[] = [
       'Anthropic API 連携 — 用語概要のAI補完、長文からの用語一括抽出、AI面談シミュレーター、AI学習プラン生成。利用上限を Free/Pro で差別化',
       'エンジニアタイプ診断 — 64問の質問から4軸×16タイプに分類。スコア + タイプ別キャラクター + 詳細レポート + 対人スタイル診断。SNSシェアで集客導線を設計',
       'スキルシート管理 — 案件・担当工程・使用技術を登録し、Excel/PDF出力・Excelインポート（AI構造解析）・公開URL・面談準備リストとして活用',
-      '2,111テスト（Vitest + Playwright E2E）— ユニット150ファイル + E2Eシナリオで品質を担保。CI/CDでlint/test/buildを自動実行',
+      '2,422テスト（Vitest + Playwright E2E）— ユニット171ファイル + E2Eシナリオで品質を担保。CI/CDでlint/test/buildを自動実行',
       '3段階ロールモデル（user/pro/admin）+ 組織ロール — Feature Gate パターンでPro機能を制御。Stripe連携でサブスクリプション課金',
     ],
     features: [
@@ -91,15 +91,15 @@ const WORKS: Work[] = [
       'OGP動的生成 — 診断結果・公開プロフィールのシェア画像をサーバーサイドで生成',
     ],
     scale: [
-      { value: '568+', label: 'マージ済みPR' },
+      { value: '627+', label: 'マージ済みPR' },
       { value: '334+', label: 'コミット' },
-      { value: '64', label: 'API routes' },
+      { value: '63', label: 'API routes' },
       { value: '33', label: 'ページ' },
-      { value: '127', label: 'コンポーネント' },
-      { value: '86,000+', label: '行（TS）' },
-      { value: '2,111', label: 'テスト' },
-      { value: '35', label: 'マイグレーション' },
-      { value: '461', label: 'TSファイル' },
+      { value: '118', label: 'コンポーネント' },
+      { value: '94,329', label: '行（TS）' },
+      { value: '2,422', label: 'テスト' },
+      { value: '40', label: 'マイグレーション' },
+      { value: '491', label: 'TSファイル' },
     ],
     images: [
       {
@@ -746,13 +746,13 @@ export default function WorksSection() {
                       DevDex開発記録
                     </p>
                     <p className="text-[11px] text-emerald-200/50 mt-2">
-                      Supabase RLS + Claude Code SubAgents 6体制で76時間構築
+                      Supabase RLS + Claude Code SubAgents 6体制で78時間構築
                     </p>
                     <div className="flex flex-wrap gap-2 mt-3">
                       {[
-                        { value: '568+', label: 'PR' },
-                        { value: '2,111', label: 'テスト' },
-                        { value: '35', label: 'マイグレーション' },
+                        { value: '627+', label: 'PR' },
+                        { value: '2,422', label: 'テスト' },
+                        { value: '40', label: 'マイグレーション' },
                       ].map((s) => (
                         <div key={s.label} className="text-center">
                           <div className="text-xs font-bold text-emerald-300">{s.value}</div>
