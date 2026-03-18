@@ -329,14 +329,14 @@ const sections: Section[] = [
     content: (
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
         {[
-          { value: '627+', label: 'PRs', color: C.blue },
-          { value: '63', label: 'API Routes', color: C.green },
-          { value: '33', label: 'Pages', color: C.purple },
-          { value: '118', label: 'Components', color: C.amber },
-          { value: '94,000+', label: 'Lines (TS)', color: C.cyan },
-          { value: '2,422', label: 'Tests', color: C.green },
+          { value: '637+', label: 'Issues/PRs', color: C.blue },
+          { value: '62', label: 'API Routes', color: C.green },
+          { value: '35', label: 'Pages', color: C.purple },
+          { value: '169', label: 'Components', color: C.amber },
+          { value: '96,000+', label: 'Lines (TS)', color: C.cyan },
+          { value: '2,429', label: 'Tests', color: C.green },
           { value: '40', label: 'Migrations', color: C.pink },
-          { value: '491', label: 'TS Files', color: C.blue },
+          { value: '495', label: 'TS Files', color: C.blue },
         ].map((m) => (
           <div
             key={m.label}

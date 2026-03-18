@@ -71,7 +71,7 @@ const WORKS: Work[] = [
       'Anthropic API 連携 — 用語概要のAI補完、長文からの用語一括抽出、AI面談シミュレーター、AI学習プラン生成。利用上限を Free/Pro で差別化',
       'エンジニアタイプ診断 — 64問の質問から4軸×16タイプに分類。スコア + タイプ別キャラクター + 詳細レポート + 対人スタイル診断。SNSシェアで集客導線を設計',
       'スキルシート管理 — 案件・担当工程・使用技術を登録し、Excel/PDF出力・Excelインポート（AI構造解析）・公開URL・面談準備リストとして活用',
-      '2,422テスト（Vitest + Playwright E2E）— ユニット171ファイル + E2Eシナリオで品質を担保。CI/CDでlint/test/buildを自動実行',
+      '2,429テスト（Vitest + Playwright E2E）— ユニット171ファイル + E2Eシナリオで品質を担保。CI/CDでlint/test/buildを自動実行',
       '3段階ロールモデル（user/pro/admin）+ 組織ロール — Feature Gate パターンでPro機能を制御。Stripe連携でサブスクリプション課金',
     ],
     features: [
