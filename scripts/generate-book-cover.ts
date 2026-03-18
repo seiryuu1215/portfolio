@@ -101,7 +101,7 @@ async function generateCover() {
       <text x="${WIDTH / 2}" y="90" text-anchor="middle" fill="url(#titleGrad)" font-family="sans-serif" font-size="90" font-weight="bold" letter-spacing="4">DevDex</text>
 
       <!-- 5日で構築（タイトル直下・強調） -->
-      <text x="${WIDTH / 2}" y="140" text-anchor="middle" fill="#f59e0b" font-family="sans-serif" font-size="34" font-weight="bold">— 5日間で構築 —</text>
+      <text x="${WIDTH / 2}" y="140" text-anchor="middle" fill="#f59e0b" font-family="sans-serif" font-size="34" font-weight="bold">— 実質7日で構築 —</text>
 
       <!-- サブタイトル -->
       <text x="${WIDTH / 2}" y="190" text-anchor="middle" fill="#f1f5f9" font-family="sans-serif" font-size="26" font-weight="bold">エンジニアの「内面」を可視化する</text>
@@ -110,9 +110,9 @@ async function generateCover() {
       <text x="${WIDTH / 2}" y="230" text-anchor="middle" fill="#cbd5e1" font-family="sans-serif" font-size="17">タイプ診断 × AI学習 × 用語管理 × 相性分析</text>
 
       <!-- メトリクス（大きく3つ横並び） -->
-      <text x="155" y="290" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="36" font-weight="bold">86,000</text>
+      <text x="155" y="290" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="36" font-weight="bold">95,000+</text>
       <text x="155" y="315" text-anchor="middle" fill="#cbd5e1" font-family="sans-serif" font-size="16">行</text>
-      <text x="${WIDTH / 2}" y="290" text-anchor="middle" fill="#60a5fa" font-family="monospace" font-size="36" font-weight="bold">2,111</text>
+      <text x="${WIDTH / 2}" y="290" text-anchor="middle" fill="#60a5fa" font-family="monospace" font-size="36" font-weight="bold">2,400+</text>
       <text x="${WIDTH / 2}" y="315" text-anchor="middle" fill="#cbd5e1" font-family="sans-serif" font-size="16">テスト</text>
       <text x="545" y="285" text-anchor="middle" fill="#e2e8f0" font-family="sans-serif" font-size="22" font-weight="bold">無料で診断</text>
       <text x="545" y="315" text-anchor="middle" fill="#34d399" font-family="sans-serif" font-size="16" font-weight="bold">devdex.dev</text>
