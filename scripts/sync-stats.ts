@@ -205,6 +205,128 @@ function updateImagePaths(content: string, service: ServiceStats): string {
   return updated;
 }
 
+// --- Zenn 更新 ---
+
+const ZENN_DIR = path.join(ROOT_DIR, '..', 'zenn-content');
+
+interface ZennUpdate {
+  file: string;
+  updates: Array<{ old: string | RegExp; new: string }>;
+}
+
+function getZennUpdates(): ZennUpdate[] {
+  const tests = getTestCount(DEVDEX_PATH);
+  const prs = countPRs(DEVDEX_PATH);
+  const lines = countLines(DEVDEX_PATH);
+  const apis = countApiRoutes(DEVDEX_PATH);
+  const pages = countPages(DEVDEX_PATH);
+  const migrations = countMigrations(DEVDEX_PATH);
+  const decisions = countDecisions(DEVDEX_PATH);
+
+  return [
+    // 1. config.yaml タイトル
+    {
+      file: 'books/claude-code-devdex/config.yaml',
+      updates: [
+        {
+          old: /実質7日で作った[\d,]+行のSaaS/,
+          new: `実質7日で作った${lines}行のSaaS`,
+        },
+      ],
+    },
+    // 2. 10-retrospective.md 集計テーブル
+    {
+      file: 'books/claude-code-devdex/10-retrospective.md',
+      updates: [
+        { old: /APIエンドポイント \| \d+本/, new: `APIエンドポイント | ${apis}本` },
+        { old: /ページ数 \| \d+画面/, new: `ページ数 | ${pages}画面` },
+        {
+          old: /ユニットテスト \| [\d,]+件（\d+ファイル）/,
+          new: `ユニットテスト | ${tests}件（228ファイル）`,
+        },
+        { old: /DBマイグレーション \| \d+本/, new: `DBマイグレーション | ${migrations}本` },
+        { old: /PR（マージ済み） \| [\d,]+\+件/, new: `PR（マージ済み） | ${prs}件` },
+        { old: /意思決定記録 \| \d+件/, new: `意思決定記録 | ${decisions}件` },
+      ],
+    },
+    // 3. 10-retrospective.md 末尾に最新数値セクション追加（なければ）
+    {
+      file: 'books/claude-code-devdex/10-retrospective.md',
+      updates: [
+        {
+          old: /\n---\n\n> \*\*📊 最新の数値[\s\S]*$/,
+          new: `\n---\n\n> **📊 最新の数値（自動更新）**: ${tests}テスト / ${prs} PR / ${lines}行（TS） / ${apis} API / ${pages}ページ / ${migrations}マイグレーション / ${decisions}意思決定記録 — [devdex.dev](https://devdex.dev)`,
+        },
+      ],
+    },
+    // 4. 告知記事 devdex-launch.md の冒頭数値
+    {
+      file: 'articles/devdex-launch.md',
+      updates: [
+        {
+          old: /[\d,]+行・[\d,]+テスト・Stripe/,
+          new: `${lines}行・${tests}テスト・Stripe`,
+        },
+      ],
+    },
+  ];
+}
+
+function updateZenn(): void {
+  if (!fs.existsSync(ZENN_DIR)) {
+    console.log('  ⏭️  zenn-content リポジトリが見つかりません、スキップ');
+    return;
+  }
+
+  console.log('\n📖 Zenn コンテンツ更新');
+
+  const updates = getZennUpdates();
+
+  for (const { file, updates: fileUpdates } of updates) {
+    const filePath = path.join(ZENN_DIR, file);
+    if (!fs.existsSync(filePath)) {
+      console.log(`  ⏭️  ${file} が見つかりません`);
+      continue;
+    }
+
+    let content = fs.readFileSync(filePath, 'utf-8');
+    let changed = false;
+
+    for (const update of fileUpdates) {
+      const before = content;
+      if (typeof update.old === 'string') {
+        content = content.replaceAll(update.old, update.new);
+      } else {
+        content = content.replace(update.old, update.new);
+      }
+      if (content !== before) changed = true;
+    }
+
+    if (changed) {
+      fs.writeFileSync(filePath, content, 'utf-8');
+      console.log(`  ✅ ${file}`);
+    } else {
+      console.log(`  — ${file}（変更なし）`);
+    }
+  }
+
+  // 最新数値セクションがなければ追加
+  const retroFile = path.join(ZENN_DIR, 'books/claude-code-devdex/10-retrospective.md');
+  let retroContent = fs.readFileSync(retroFile, 'utf-8');
+  if (!retroContent.includes('📊 最新の数値')) {
+    const tests = getTestCount(DEVDEX_PATH);
+    const prs = countPRs(DEVDEX_PATH);
+    const lines = countLines(DEVDEX_PATH);
+    const apis = countApiRoutes(DEVDEX_PATH);
+    const pages = countPages(DEVDEX_PATH);
+    const migrations = countMigrations(DEVDEX_PATH);
+    const decisions = countDecisions(DEVDEX_PATH);
+    retroContent += `\n---\n\n> **📊 最新の数値（自動更新）**: ${tests}テスト / ${prs} PR / ${lines}行（TS） / ${apis} API / ${pages}ページ / ${migrations}マイグレーション / ${decisions}意思決定記録 — [devdex.dev](https://devdex.dev)\n`;
+    fs.writeFileSync(retroFile, retroContent, 'utf-8');
+    console.log(`  ✅ 10-retrospective.md（最新数値セクション追加）`);
+  }
+}
+
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const serviceFilter = args[0];
@@ -237,6 +359,11 @@ async function main(): Promise<void> {
 
   fs.writeFileSync(WORKS_FILE, content, 'utf-8');
   console.log('\n✅ WorksSection.tsx を更新しました');
+
+  // Zenn更新（devdexが対象に含まれる場合）
+  if (targets.some((t) => t.id === 'devdex')) {
+    updateZenn();
+  }
 }
 
 main().catch((err) => {
