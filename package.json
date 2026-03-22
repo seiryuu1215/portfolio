@@ -14,7 +14,12 @@
     "prepare": "husky",
     "diary": "ts-node scripts/generate-diary.ts",
     "diary:weekly": "ts-node scripts/generate-weekly-diary.ts",
-    "logs:analyze": "tsx scripts/analyze-logs.ts --days=7"
+    "logs:analyze": "tsx scripts/analyze-logs.ts --days=7",
+    "capture": "tsx scripts/capture.ts",
+    "capture:devdex": "tsx scripts/capture.ts devdex",
+    "sync-stats": "tsx scripts/sync-stats.ts",
+    "sync-stats:devdex": "tsx scripts/sync-stats.ts devdex",
+    "update-portfolio": "tsx scripts/capture.ts && tsx scripts/sync-stats.ts"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -28,6 +33,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.3.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "husky": "^9.1.7",
