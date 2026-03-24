@@ -124,7 +124,7 @@ export default function CareerSection() {
                   </svg>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-xl bg-card border border-border hover:border-accent/30 shadow-[0_1px_3px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 transition-all duration-300">
+                <div className="p-4 sm:p-5 rounded-xl bg-card border border-border hover:border-accent/30 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3">
                     <h4 className="font-bold text-sm">{item.project}</h4>
                     <span className="text-xs text-accent font-mono bg-accent/5 px-2 py-0.5 rounded">

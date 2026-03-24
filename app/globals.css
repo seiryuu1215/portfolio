@@ -71,6 +71,16 @@ html {
   border-radius: 3px;
 }
 
+/* アクセシビリティ: モーション軽減 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
 /* セクション区切り */
 .section-divider {
   height: 1px;

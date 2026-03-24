@@ -299,7 +299,7 @@ export default function SkillsSection() {
             return (
               <div
                 key={item.name}
-                className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg bg-card border border-border shadow-[0_1px_3px_rgba(0,0,0,0.3)]"
+                className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg bg-card border border-border shadow-card"
               >
                 {slug ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
@@ -354,7 +354,7 @@ export default function SkillsSection() {
             {filteredCategories.map((cat) => (
               <div
                 key={cat.category}
-                className="p-5 rounded-xl bg-card border border-border shadow-[0_1px_3px_rgba(0,0,0,0.3)]"
+                className="p-5 rounded-xl bg-card border border-border shadow-card"
               >
                 <h3 className="text-sm font-bold text-accent mb-3">{cat.category}</h3>
                 <div className="space-y-2.5">
@@ -443,7 +443,7 @@ export default function SkillsSection() {
             ].map((service) => (
               <div
                 key={service.title}
-                className={`p-4 rounded-xl bg-card border transition-all duration-300 shadow-[0_1px_3px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 ${
+                className={`p-4 rounded-xl bg-card border transition-all duration-300 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 ${
                   service.strong ? 'border-accent/40 ring-1 ring-accent/10' : 'border-border'
                 }`}
               >

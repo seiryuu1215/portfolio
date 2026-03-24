@@ -14,7 +14,7 @@ export default function HeroSection() {
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
           コードの先に、
           <br />
-          <span className="bg-gradient-to-r from-accent to-[#818cf8] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
             信頼がある。
           </span>
         </h1>
@@ -27,7 +27,7 @@ export default function HeroSection() {
           {STATS.map((s) => (
             <div
               key={s.label}
-              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border shadow-[0_1px_3px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 transition-all duration-300"
+              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300"
             >
               <div className="text-lg font-bold text-accent">{s.value}</div>
               <div className="text-[10px] text-muted mt-0.5">{s.label}</div>
@@ -38,7 +38,7 @@ export default function HeroSection() {
         <div className="flex gap-4 justify-center flex-wrap">
           <a
             href="#work"
-            className="px-8 py-3 bg-accent hover:bg-accent-hover text-white rounded-lg font-medium transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            className="px-8 py-3 bg-accent hover:bg-accent-hover text-white rounded-lg font-medium transition-all duration-300 hover:shadow-glow-strong"
           >
             実績を見る
           </a>

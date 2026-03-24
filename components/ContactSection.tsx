@@ -37,7 +37,7 @@ export default function ContactSection() {
         <div>
           <a
             href="mailto:mt.oikawa@gmail.com"
-            className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-accent hover:bg-accent-hover text-white rounded-xl font-medium transition-all duration-300 text-base sm:text-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-accent hover:bg-accent-hover text-white rounded-xl font-medium transition-all duration-300 text-base sm:text-lg hover:shadow-glow-strong"
           >
             <svg
               width="20"

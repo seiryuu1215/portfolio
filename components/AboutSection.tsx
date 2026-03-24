@@ -59,7 +59,7 @@ export default function AboutSection() {
             </div>
 
             {/* アウトプット実績 */}
-            <div className="p-4 rounded-xl bg-card border border-border shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
+            <div className="p-4 rounded-xl bg-card border border-border shadow-card">
               <p className="text-xs text-accent font-medium mb-2">アウトプット習慣</p>
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex items-start gap-2">
@@ -100,7 +100,7 @@ export default function AboutSection() {
             </div>
 
             {/* パーソナリティ */}
-            <div className="p-4 rounded-xl bg-card border border-border shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
+            <div className="p-4 rounded-xl bg-card border border-border shadow-card">
               <p className="text-xs text-accent font-medium mb-2">パーソナリティ</p>
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 {/* アバター */}
@@ -138,7 +138,7 @@ export default function AboutSection() {
               </div>
             </div>
             {/* 稼働条件 */}
-            <div className="p-4 rounded-xl bg-card border border-border shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
+            <div className="p-4 rounded-xl bg-card border border-border shadow-card">
               <p className="text-xs text-accent font-medium mb-2">稼働条件</p>
               <div className="flex flex-wrap gap-2 mb-2">
                 <span className="px-2 py-0.5 text-xs rounded-md bg-accent/10 text-accent border border-accent/20 font-medium">

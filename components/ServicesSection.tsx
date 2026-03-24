@@ -61,7 +61,7 @@ export default function ServicesSection() {
           {SERVICES.map((service) => (
             <div
               key={service.title}
-              className={`p-6 rounded-xl bg-card border transition-all duration-300 group shadow-[0_1px_3px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 ${
+              className={`p-6 rounded-xl bg-card border transition-all duration-300 group shadow-card hover:shadow-card-hover hover:-translate-y-0.5 ${
                 service.strong
                   ? 'border-accent/40 hover:border-accent/60 ring-1 ring-accent/10'
                   : 'border-border hover:border-accent/30'

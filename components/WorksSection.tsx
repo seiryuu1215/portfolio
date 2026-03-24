@@ -532,7 +532,7 @@ export default function WorksSection() {
           {WORKS.filter((w) => RICH_PROJECTS.has(w.title)).map((work) => (
             <div
               key={work.title}
-              className="rounded-2xl border border-border bg-card overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.3)]"
+              className="rounded-2xl border border-border bg-card overflow-hidden shadow-card"
             >
               {/* ヘッダー */}
               <div className="p-5 pb-0 flex items-center gap-3 flex-wrap">
@@ -725,7 +725,7 @@ export default function WorksSection() {
           ))}
 
           {/* 技術発信 */}
-          <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
+          <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-card">
             <div className="p-5 pb-0 flex items-center gap-3 flex-wrap">
               <h3 className="text-xl font-bold">AI駆動開発の知見を発信</h3>
               <span className="text-xs text-muted ml-auto">Zenn</span>
