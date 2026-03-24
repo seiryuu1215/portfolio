@@ -435,7 +435,7 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
 
   return (
     <div className="space-y-2" onKeyDown={handleKeyDown}>
-      <div className="rounded-xl bg-card border border-border overflow-hidden bg-[#1a1a1a] relative group">
+      <div className="rounded-xl bg-[#222222] border border-border/60 ring-1 ring-white/[0.04] overflow-hidden relative group shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
         <Image
           src={images[current].src}
           alt={images[current].caption}
@@ -445,7 +445,7 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
             images[current].fit === 'contain'
               ? 'h-auto object-contain mx-auto'
               : 'h-[280px] sm:h-[420px] object-cover object-top'
-          } ${images[current].lightBg ? 'brightness-[.85] contrast-[.95]' : ''}`}
+          } ${images[current].lightBg ? 'brightness-[.85] contrast-[.95]' : 'brightness-[1.08] contrast-[1.02]'}`}
         />
         {images.length > 1 && (
           <>
@@ -510,7 +510,7 @@ function ImageGallery({ images }: { images: Screenshot[] }) {
                 alt={img.caption}
                 width={64}
                 height={40}
-                className={`w-full h-full object-cover ${img.lightBg ? 'brightness-[.85]' : ''}`}
+                className={`w-full h-full object-cover ${img.lightBg ? 'brightness-[.85]' : 'brightness-[1.08]'}`}
               />
             </button>
           ))}
@@ -532,7 +532,7 @@ export default function WorksSection() {
           {WORKS.filter((w) => RICH_PROJECTS.has(w.title)).map((work) => (
             <div
               key={work.title}
-              className="rounded-2xl border border-border bg-card overflow-hidden"
+              className="rounded-2xl border border-border bg-card overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.3)]"
             >
               {/* ヘッダー */}
               <div className="p-5 pb-0 flex items-center gap-3 flex-wrap">
@@ -725,7 +725,7 @@ export default function WorksSection() {
           ))}
 
           {/* 技術発信 */}
-          <div className="rounded-2xl border border-border bg-card overflow-hidden">
+          <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
             <div className="p-5 pb-0 flex items-center gap-3 flex-wrap">
               <h3 className="text-xl font-bold">AI駆動開発の知見を発信</h3>
               <span className="text-xs text-muted ml-auto">Zenn</span>

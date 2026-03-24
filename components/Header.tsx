@@ -63,7 +63,7 @@ export default function Header() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-muted hover:text-foreground transition-colors"
+                  className="text-sm text-muted hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item.label}
                 </a>

@@ -15,12 +15,15 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <div className="section-divider" />
       <FadeIn>
         <AboutSection />
       </FadeIn>
+      <div className="section-divider" />
       <FadeIn>
         <CareerSection />
       </FadeIn>
+      <div className="section-divider" />
       <FadeIn>
         <WorksSection />
       </FadeIn>

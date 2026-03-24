@@ -37,7 +37,7 @@ export default function ContactSection() {
         <div>
           <a
             href="mailto:mt.oikawa@gmail.com"
-            className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-accent hover:bg-accent-hover text-white rounded-xl font-medium transition-colors text-base sm:text-lg"
+            className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-accent hover:bg-accent-hover text-white rounded-xl font-medium transition-all duration-300 text-base sm:text-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
           >
             <svg
               width="20"
@@ -84,7 +84,7 @@ export default function ContactSection() {
             href="https://github.com/seiryuu1215"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted hover:text-foreground transition-colors"
+            className="text-muted hover:text-foreground hover:scale-110 transition-transform duration-200"
             aria-label="GitHub"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -95,7 +95,7 @@ export default function ContactSection() {
             href="https://x.com/seiryuu_darts"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted hover:text-foreground transition-colors"
+            className="text-muted hover:text-foreground hover:scale-110 transition-transform duration-200"
             aria-label="X (Twitter)"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -106,7 +106,7 @@ export default function ContactSection() {
             href="https://zenn.dev/seiryuuu_dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted hover:text-foreground transition-colors"
+            className="text-muted hover:text-foreground hover:scale-110 transition-transform duration-200"
             aria-label="Zenn"
           >
             <svg width="24" height="24" viewBox="0 0 88 88" fill="currentColor">

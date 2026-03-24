@@ -45,7 +45,7 @@ export default function VisionSection() {
           {GROWTH.map((g) => (
             <div
               key={g.label}
-              className="p-5 rounded-xl bg-card border border-border hover:border-accent/30 transition-colors group"
+              className="p-5 rounded-xl bg-card border border-border hover:border-accent/30 shadow-[0_1px_3px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 transition-all duration-300 group"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">

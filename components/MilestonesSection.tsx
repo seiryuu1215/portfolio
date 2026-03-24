@@ -49,7 +49,7 @@ export default function MilestonesSection() {
 
         <div className="relative pl-8">
           {/* タイムライン */}
-          <div className="absolute left-3 top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-3 top-0 bottom-0 w-px bg-gradient-to-b from-accent to-[#818cf8]" />
 
           <div className="space-y-5">
             {MILESTONES.map((item, i) => (
@@ -62,7 +62,7 @@ export default function MilestonesSection() {
                 />
 
                 <div
-                  className={`p-4 rounded-xl border ${
+                  className={`p-4 rounded-xl border shadow-[0_1px_3px_rgba(0,0,0,0.3)] ${
                     item.current ? 'bg-accent/5 border-accent/30' : 'bg-card border-border'
                   }`}
                 >

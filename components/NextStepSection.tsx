@@ -90,7 +90,7 @@ export default function NextStepSection() {
             {LEARNING_TECHS.map((tech) => (
               <div
                 key={tech.name}
-                className="p-4 rounded-xl bg-card border border-border flex items-start gap-3"
+                className="p-4 rounded-xl bg-card border border-border flex items-start gap-3 shadow-[0_1px_3px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 transition-all duration-300"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -114,7 +114,7 @@ export default function NextStepSection() {
         <div>
           <h3 className="text-sm font-bold mb-4">AI駆動開発のビジョン</h3>
 
-          <div className="p-4 rounded-xl bg-card border border-border mb-4">
+          <div className="p-4 rounded-xl bg-card border border-border mb-4 shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
             <p className="text-sm text-muted leading-relaxed">
               Claude Codeを活用したAI駆動開発を実践中。「AIを道具として使う」段階から
               <strong className="text-foreground">
@@ -174,7 +174,10 @@ export default function NextStepSection() {
           <p className="text-xs text-muted mb-3">次のチャレンジ:</p>
           <div className="grid sm:grid-cols-3 gap-3">
             {AI_NEXT_ITEMS.map((item) => (
-              <div key={item.title} className="p-3 rounded-lg bg-card border border-border">
+              <div
+                key={item.title}
+                className="p-3 rounded-lg bg-card border border-border shadow-[0_1px_3px_rgba(0,0,0,0.3)]"
+              >
                 <div className="flex items-center gap-1.5 mb-1">
                   <span className="text-accent text-xs shrink-0">&#9656;</span>
                   <span className="text-sm font-bold">{item.title}</span>

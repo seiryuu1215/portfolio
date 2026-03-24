@@ -53,7 +53,7 @@ function FAQItem({ faq }: { faq: FAQ }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-border rounded-xl overflow-hidden hover:border-accent/30 transition-colors">
+    <div className="border border-border rounded-xl overflow-hidden hover:border-accent/30 shadow-[0_1px_3px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.4)] transition-all duration-300">
       <button
         className="w-full flex items-center justify-between gap-4 p-5 text-left"
         onClick={() => setOpen(!open)}
