@@ -3,9 +3,8 @@ import { render, screen } from '@testing-library/react';
 import Home from '../page';
 
 vi.mock('next/image', () => ({
-  default: (props: Record<string, unknown>) => {
-    return <img {...props} />;
-  },
+  // eslint-disable-next-line jsx-a11y/alt-text, @next/next/no-img-element
+  default: (props: Record<string, unknown>) => <img {...props} />,
 }));
 
 vi.mock('next/link', () => ({
