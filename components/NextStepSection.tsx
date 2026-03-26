@@ -66,7 +66,7 @@ const CURRENT_PRACTICE = [
   },
   {
     label: '技術記事・書籍',
-    detail: 'Zenn Book（全10章）+ 記事19本をAIと協働で執筆・公開',
+    detail: 'Zenn Book 2冊 + 記事20本 + note 2本をAIと協働で執筆・公開',
   },
   {
     label: 'SubAgents + Hooks',

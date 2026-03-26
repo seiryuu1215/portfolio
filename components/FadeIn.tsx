@@ -31,13 +31,18 @@ export default function FadeIn({
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      } ${className}`}
-    >
-      {children}
-    </div>
+    <>
+      <noscript>
+        <style>{'.fade-in-js{opacity:1!important;transform:none!important}'}</style>
+      </noscript>
+      <div
+        ref={ref}
+        className={`fade-in-js transition-all duration-700 ease-out ${
+          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        } ${className}`}
+      >
+        {children}
+      </div>
+    </>
   );
 }

@@ -27,18 +27,23 @@ export default function Home() {
       <FadeIn>
         <WorksSection />
       </FadeIn>
+      <div className="section-divider" />
       <FadeIn>
         <SkillsSection />
       </FadeIn>
+      <div className="section-divider" />
       <FadeIn>
         <MilestonesSection />
       </FadeIn>
+      <div className="section-divider" />
       <FadeIn>
         <NextStepSection />
       </FadeIn>
+      <div className="section-divider" />
       <FadeIn>
         <FAQSection />
       </FadeIn>
+      <div className="section-divider" />
       <FadeIn>
         <ContactSection />
       </FadeIn>

@@ -63,7 +63,7 @@ export default function OgImage() {
           marginTop: 24,
         }}
       >
-        Next.js / React / TypeScript / Firebase
+        Next.js / React / TypeScript / Supabase / Firebase
       </div>
     </div>,
     { ...size },

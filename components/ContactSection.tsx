@@ -113,6 +113,17 @@ export default function ContactSection() {
               <path d="M2.8 83.5h17.6c1 0 1.9-.5 2.5-1.3L69.6 5.2c.5-.8-.1-1.7-1-1.7H52.5c-.7 0-1.4.4-1.8 1L3.3 81.8c-.4.7.1 1.7 1 1.7h-1.5zM61 83.5h15.3c.7 0 1.3-.4 1.7-1L88 66.2c.5-.8-.1-1.8-1-1.8H71.8c-.7 0-1.3.4-1.7 1L60 82.1c-.4.7.1 1.4 1 1.4z" />
             </svg>
           </a>
+          <a
+            href="https://note.com/seiryuu_dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted hover:text-foreground hover:scale-110 transition-transform duration-200"
+            aria-label="note"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h15a1.5 1.5 0 001.5-1.5v-15A1.5 1.5 0 0019.5 3zM17 14.25H7v-1.5h10v1.5zm0-3.5H7v-1.5h10v1.5z" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

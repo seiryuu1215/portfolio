@@ -15,6 +15,7 @@ export default function AboutSection() {
               alt="プロフィール写真"
               width={120}
               height={120}
+              priority
               className="w-[120px] h-[120px] rounded-2xl bg-card border border-border object-cover object-top"
             />
           </div>

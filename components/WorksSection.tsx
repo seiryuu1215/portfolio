@@ -136,7 +136,6 @@ const WORKS: Work[] = [
       },
     ],
     url: 'https://devdex.dev',
-    github: 'https://github.com/seiryuu1215/devdex',
     blueprintUrl: '/projects/devdex',
     blueprintTabs: [
       '📐 アーキテクチャ',
@@ -320,7 +319,6 @@ const WORKS: Work[] = [
       },
     ],
     url: 'https://saas-launcher.vercel.app',
-    github: 'https://github.com/seiryuu1215/saas-launcher',
     blueprintUrl: '/projects/saas-launcher',
     blueprintTabs: [
       '📐 アーキテクチャ',
@@ -417,7 +415,6 @@ const WORKS: Work[] = [
       'PWA（Serwist）・Capacitor iOS対応・オフライン対応',
     ],
     images: [{ src: '/monkmode-home.png', caption: 'ホーム画面', fit: 'contain' }],
-    github: 'https://github.com/seiryuu1215/training-app',
     status: 'in-dev',
   },
 ];
@@ -752,9 +749,9 @@ export default function WorksSection() {
                     </p>
                     <div className="flex flex-wrap gap-2 mt-3">
                       {[
-                        { value: '627+', label: 'PR' },
-                        { value: '2,422', label: 'テスト' },
-                        { value: '40', label: 'マイグレーション' },
+                        { value: '421+', label: 'PR' },
+                        { value: '3,077', label: 'テスト' },
+                        { value: '53', label: 'マイグレーション' },
                       ].map((s) => (
                         <div key={s.label} className="text-center">
                           <div className="text-xs font-bold text-emerald-300">{s.value}</div>
@@ -831,7 +828,7 @@ export default function WorksSection() {
               <div className="grid sm:grid-cols-3 gap-4">
                 <div>
                   <p className="text-xs font-medium text-muted mb-2">
-                    darts Lab — 設計図×コードで読み解くサービス連携
+                    darts Lab — 設計図×コードで読み解く実装
                   </p>
                   <div className="space-y-1.5">
                     {[
@@ -844,6 +841,18 @@ export default function WorksSection() {
                         slug: 'darts-lab-line-statemachine',
                       },
                       { emoji: '🛡️', title: '多層防御', slug: 'darts-lab-defense-layers' },
+                      {
+                        emoji: '📅',
+                        title: 'カレンダーUIリッチ化',
+                        slug: 'darts-lab-calendar-rich',
+                      },
+                      { emoji: '🎭', title: 'デモアカウント設計', slug: 'darts-lab-demo-account' },
+                      {
+                        emoji: '🎭',
+                        title: 'Playwright E2E導入',
+                        slug: 'darts-lab-e2e-playwright',
+                      },
+                      { emoji: '🌙', title: 'ダークモード完全対応', slug: 'darts-lab-darkmode' },
                     ].map((article) => (
                       <a
                         key={article.slug}
@@ -870,6 +879,7 @@ export default function WorksSection() {
                       { emoji: '🤖', title: 'Cron・LINE Bot', slug: 'darts-lab-cron-line' },
                       { emoji: '🔄', title: 'API設計', slug: 'darts-lab-api' },
                       { emoji: '📋', title: '要件定義', slug: 'darts-lab-requirements' },
+                      { emoji: '📖', title: '技術用語集', slug: 'darts-lab-glossary' },
                     ].map((article) => (
                       <a
                         key={article.slug}
@@ -886,22 +896,55 @@ export default function WorksSection() {
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium text-muted mb-2">SaaS スターターキット</p>
+                  <p className="text-xs font-medium text-muted mb-2">DevDex & その他</p>
                   <div className="space-y-1.5">
-                    {[{ emoji: '🚀', title: 'SaaS Launcher 公開', slug: 'saas-launcher' }].map(
-                      (article) => (
-                        <a
-                          key={article.slug}
-                          href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
-                        >
-                          <span>{article.emoji}</span>
-                          <span>{article.title}</span>
-                        </a>
-                      ),
-                    )}
+                    {[
+                      { emoji: '🧬', title: 'DevDex 収益化の全記録', slug: 'devdex-launch' },
+                      {
+                        emoji: '🎯',
+                        title: 'darts Lab v3.2 開発日記',
+                        slug: 'darts-lab-dev-diary-w10',
+                      },
+                      { emoji: '🚀', title: 'SaaS Launcher 公開', slug: 'saas-launcher' },
+                    ].map((article) => (
+                      <a
+                        key={article.slug}
+                        href={`https://zenn.dev/seiryuuu_dev/articles/${article.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
+                      >
+                        <span>{article.emoji}</span>
+                        <span>{article.title}</span>
+                      </a>
+                    ))}
+                  </div>
+
+                  <p className="text-xs font-medium text-muted mb-2 mt-4">note</p>
+                  <div className="space-y-1.5">
+                    {[
+                      {
+                        emoji: '👤',
+                        title: 'Seiryuu Oikawa is 何者？',
+                        url: 'https://note.com/seiryuu_dev/n/na94580969999',
+                      },
+                      {
+                        emoji: '💡',
+                        title: 'ITの才能が眠ってる',
+                        url: 'https://note.com/seiryuu_dev/n/nb29d52309875',
+                      },
+                    ].map((article) => (
+                      <a
+                        key={article.url}
+                        href={article.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-border hover:border-accent/30 hover:bg-accent/5 transition-all text-xs text-muted hover:text-foreground"
+                      >
+                        <span>{article.emoji}</span>
+                        <span>{article.title}</span>
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>

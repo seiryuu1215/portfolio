@@ -27,6 +27,14 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileOpen) setMobileOpen(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [mobileOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -58,7 +66,7 @@ export default function Header() {
         ) : (
           <>
             {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav aria-label="メインナビゲーション" className="hidden md:flex items-center gap-8">
               {NAV_ITEMS.map((item) => (
                 <a
                   key={item.href}
@@ -97,7 +105,10 @@ export default function Header() {
 
       {/* Mobile menu - top page only */}
       {!isSubpage && mobileOpen && (
-        <nav className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-4">
+        <nav
+          aria-label="モバイルナビゲーション"
+          className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-4"
+        >
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
