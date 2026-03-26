@@ -91,8 +91,8 @@ const WORKS: Work[] = [
       'OGP動的生成 — 診断結果・公開プロフィールのシェア画像をサーバーサイドで生成',
     ],
     scale: [
-      { value: '421+', label: 'マージ済みPR' },
-      { value: '584+', label: 'コミット' },
+      { value: '875+', label: 'マージ済みPR' },
+      { value: '542+', label: 'コミット' },
       { value: '74', label: 'API routes' },
       { value: '52', label: 'ページ' },
       { value: '137', label: 'コンポーネント' },
@@ -749,7 +749,7 @@ export default function WorksSection() {
                     </p>
                     <div className="flex flex-wrap gap-2 mt-3">
                       {[
-                        { value: '421+', label: 'PR' },
+                        { value: '875+', label: 'PR' },
                         { value: '3,077', label: 'テスト' },
                         { value: '53', label: 'マイグレーション' },
                       ].map((s) => (
