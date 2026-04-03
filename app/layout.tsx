@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Seiryuu | フリーランスエンジニア',
   description:
-    'Webアプリを企画から運用まで一人で作れるフルスタックエンジニア。Next.js / React / TypeScript / Supabase / Firebase を中心に、認証・決済・DB設計・インフラまで一気通貫で対応。',
+    'Webアプリを企画から運用まで一人で作れるフリーランスエンジニア。Next.js / React / TypeScript / Supabase / Firebase を中心に、認証・決済・DB設計・インフラまで一気通貫で対応。',
   keywords: [
     'フリーランスエンジニア',
-    'フルスタックエンジニア',
+    'フリーランスエンジニア',
     'Next.js',
     'React',
     'TypeScript',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Seiryuu | フリーランスエンジニア',
     description:
-      'Next.js / React / TypeScript を軸にWebアプリを企画から運用まで一人で構築。122,000行のSaaSを7日で構築した実績を持つフルスタックエンジニア。',
+      'Next.js / React / TypeScript を軸にWebアプリを企画から運用まで一人で構築。90,000+行のSaaSを7日で構築した実績を持つフリーランスエンジニア。',
     url: 'https://portfolio-seiryuu.vercel.app',
     siteName: 'Seiryuu Portfolio',
     locale: 'ja_JP',
@@ -58,7 +58,7 @@ const jsonLd = {
   mainEntity: {
     '@type': 'Person',
     name: 'Seiryuu',
-    jobTitle: 'フリーランス フルスタックエンジニア',
+    jobTitle: 'フリーランスエンジニア',
     url: 'https://portfolio-seiryuu.vercel.app',
     sameAs: [
       'https://github.com/seiryuu1215',

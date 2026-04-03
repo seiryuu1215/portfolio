@@ -75,7 +75,7 @@ export default function ContactSection() {
             </svg>
             スキルシートをダウンロード
           </a>
-          <p className="text-xs text-muted mt-2">更新日: 2026/3/2</p>
+          <p className="text-xs text-muted mt-2">更新日: 2026/4/3</p>
         </div>
 
         {/* SNS リンク */}
